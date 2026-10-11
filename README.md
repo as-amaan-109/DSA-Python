@@ -1,6 +1,6 @@
 from pathlib import Path
 
-readme = r"""# 🚀 Python, DSA & Placement Preparation
+readme = 🚀 Python, DSA & Placement Preparation
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" />
@@ -473,13 +473,13 @@ Space        → O(1)
 Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/Python-DSA-Placement-Preparation.git
+git clone https://github.com/as-amaan-109/DSA-Python.git
 ```
 
 Move into the repository:
 
 ```bash
-cd Python-DSA-Placement-Preparation
+cd DSA-Python
 ```
 
 Run a Python file:
