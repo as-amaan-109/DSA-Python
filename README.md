@@ -541,6 +541,3 @@ It motivates me to keep learning and improving.
 </p>
 """
 
-path = Path("/mnt/data/README.md")
-path.write_text(readme, encoding="utf-8")
-print(f"Created: {path}")
