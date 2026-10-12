@@ -1,53 +1,143 @@
-# 🐍 01 - Introduction to Programming
+# 01 - Introduction to Python
+
+Welcome to the first topic of the Python Programming Fundamentals section.
+
+This section introduces the basic concepts required before starting variables, data types, operators, conditions, loops, and DSA.
+
+---
 
 ## 📚 Topics Covered
 
-This section introduces the fundamentals of programming and Python.
+### 1. Hello World
 
-### Concepts
+Learn the basics of writing and executing your first Python program.
 
-- What is Programming?
-- What is a Programming Language?
-- Introduction to Python
-- Why Python?
-- First Python Program
+Topics:
+
+- What is Python?
+- Python programming language
+- First Python program
+- `print()` function
+- Strings
+- Integers
+- Floats
+- Boolean values
 - Comments
-- `print()`
-- `input()`
-- Type Conversion
-- Basic User Interaction
+- Basic output
+- How Python executes a program
+
+📁 Folder:
+
+`01_hello_world/`
 
 ---
 
-# 📂 Files
+### 2. Print Statements
 
-| File | Description |
-|---|---|
-| `01_hello_world.py` | First Python program |
-| `02_comments.py` | Understanding comments |
-| `03_print_function.py` | Using `print()` |
-| `04_user_input.py` | Taking user input |
-| `05_type_conversion.py` | Converting data types |
-| `06_my_introduction.py` | Basic mini program |
-| `07_practice.py` | Practice questions |
+Learn how Python displays information on the screen.
+
+Topics:
+
+- Basic `print()`
+- Printing multiple values
+- `sep` parameter
+- `end` parameter
+- Printing variables
+- Printing expressions
+- Combining text and values
+
+Files:
+
+- `02_print_statements.py`
+- `02_print_statements.md`
 
 ---
 
-# 🧠 What is Programming?
+### 3. Escape Sequences
 
-Programming is the process of writing instructions that tell a computer how to perform a task.
+Learn how to format text output using escape characters.
 
-Basic flow:
+Topics:
 
-```text
-Problem
-   ↓
-Logic
-   ↓
-Algorithm
-   ↓
-Code
-   ↓
-Execution
-   ↓
-Output
+- New line `\n`
+- Tab `\t`
+- Backslash `\\`
+- Double quote `\"`
+- Single quote `\'`
+- Carriage return `\r`
+
+Files:
+
+- `03_escape_sequences.py`
+- `03_escape_sequences.md`
+
+---
+
+## 🎯 Learning Objectives
+
+After completing this section, you should be able to:
+
+- Understand what Python is
+- Write your first Python program
+- Use the `print()` function
+- Print text and numbers
+- Understand basic Python values
+- Use comments
+- Format output
+- Use escape sequences
+- Understand basic Python syntax
+- Run a Python program
+
+---
+
+## 💼 Placement Preparation
+
+Important interview questions from this section:
+
+1. What is Python?
+2. Why is Python popular?
+3. Who created Python?
+4. What is the use of the `print()` function?
+5. What is a string?
+6. What is the difference between `"100"` and `100`?
+7. What are Boolean values in Python?
+8. What are comments?
+9. What is an escape sequence?
+10. What is the difference between `\n` and `\t`?
+11. What is the use of `sep` in `print()`?
+12. What is the use of `end` in `print()`?
+
+---
+
+## 🧪 Practice
+
+Before moving to the next topic, practice:
+
+- Print your name
+- Print your age
+- Print your college name
+- Print your career goal
+- Print multiple values
+- Print a formatted message
+- Use `\n`
+- Use `\t`
+- Use `sep`
+- Use `end`
+
+---
+
+## ✅ Progress
+
+- [ ] Hello World
+- [ ] Print Statements
+- [ ] Escape Sequences
+- [ ] Practice Questions
+- [ ] Interview Questions
+
+---
+
+## 🚀 Next Topic
+
+After completing Introduction, move to:
+
+`02-Flowcharts-Algorithms`

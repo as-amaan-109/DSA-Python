@@ -1,6 +1,3 @@
-
-## `01_hello_world/01_hello_world.py`
-
 # ============================================================
 # File Name: 01_hello_world.py
 # Topic: Hello World - First Python Program
@@ -23,20 +20,16 @@ print("Hello World")
 # ------------------------------------------------------------
 
 # Text is written inside quotes.
+
 print("Hello")
-
-# Print another message.
 print("Welcome to Python")
-
-# Print another sentence.
 print("I am learning Python")
 
 
 # ------------------------------------------------------------
-# Example 3: Print My Information
+# Example 3: Print Personal Information
 # ------------------------------------------------------------
 
-# We can print personal information as text.
 print("My name is Amaan Syed")
 print("I am learning Python for placements")
 
@@ -76,14 +69,16 @@ print(False)
 # ------------------------------------------------------------
 
 # "100" is a string because it is inside quotes.
+
 print("100")
 
 # 100 is an integer because it is not inside quotes.
+
 print(100)
 
 
 # ------------------------------------------------------------
-# Example 8: Simple Learning Message
+# Example 8: Print Multiple Lines
 # ------------------------------------------------------------
 
 print("========================")
@@ -93,3 +88,21 @@ print("Name: Amaan Syed")
 print("Age: 22")
 print("Goal: Software Developer")
 print("========================")
+
+
+# ------------------------------------------------------------
+# Example 9: Comments
+# ------------------------------------------------------------
+
+# This is a single-line comment.
+
+print("Python is easy to learn")
+
+
+# ------------------------------------------------------------
+# Learning Message
+# ------------------------------------------------------------
+
+print("I am learning Python")
+print("I am preparing for placements")
+print("I will learn Python and DSA")
