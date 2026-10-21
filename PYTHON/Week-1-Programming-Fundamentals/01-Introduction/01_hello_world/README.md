@@ -109,19 +109,19 @@ Compared with many programming languages, Python requires less boilerplate code 
 
 ### Important advantages of Python
 
-####### 1. Simple Syntax
+###### 1. Simple Syntax
 
 Python code is generally easy to read and understand.
 
-####### 2. Beginner Friendly
+###### 2. Beginner Friendly
 
 Python is commonly recommended for beginners because the syntax is relatively straightforward.
 
-####### 3. Large Ecosystem
+###### 3. Large Ecosystem
 
 Python has a large collection of libraries and frameworks.
 
-####### 4. Multiple Applications
+###### 4. Multiple Applications
 
 Python can be used in many different areas such as:
 
@@ -163,7 +163,7 @@ Let's understand this statement carefully.
 
 `print()` is a built-in Python function used to display information on the screen.
 
-####### Syntax
+###### Syntax
 
 ```python
 print(value)
@@ -369,7 +369,7 @@ This is an integer.
 
 The quotation marks make the difference.
 
-####### Example
+###### Example
 
 ```python
 print("100")
@@ -1311,4 +1311,4 @@ print("Hello World")
 ```
 
 This is our first step toward learning Python programming, problem solving, and eventually Data Structures and Algorithms.
-```
+
