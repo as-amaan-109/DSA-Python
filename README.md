@@ -1,6 +1,6 @@
-from pathlib import Path
+# DSA using Python
 
-readme = 🚀 Python, DSA & Placement Preparation
+🚀 Python, DSA & Placement Preparation
 
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" />
@@ -510,7 +510,7 @@ This repository will be updated week by week as I progress through the complete 
 
 ## Amaan Syed
 
-**Final-Year B.Tech CSE | Full Stack Developer | MERN Stack Developer | Java Developer**
+**B.Tech CSE 2026 Batch | Full Stack Developer | MERN Stack Developer | Java Developer**
 
 ### Interests
 
@@ -539,5 +539,3 @@ It motivates me to keep learning and improving.
 <p align="center">
   <b>Python + DSA + Core CS = Strong Placement Preparation 💯</b>
 </p>
-"""
-
