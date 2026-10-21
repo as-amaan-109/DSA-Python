@@ -1,13 +1,52 @@
-```markdown
 # Python - Hello World
 
 > **Topic:** Python Programming Fundamentals  
 > **Level:** Beginner  
 > **Goal:** Understand your first Python program, `print()`, basic output, comments, and Python syntax.
 
+
+## Table of Contents
+
+- [1. Introduction](#1-introduction)
+- [2. What is Python?](#2-what-is-python)
+- [3. Why Learn Python?](#3-why-learn-python)
+- [4. Your First Python Program](#4-your-first-python-program)
+- [5. Understanding `print()`](#5-understanding-print)
+- [6. What is a Function?](#6-what-is-a-function)
+- [7. Printing Text](#7-printing-text)
+- [8. What is a String?](#8-what-is-a-string)
+- [9. Printing Numbers](#9-printing-numbers)
+- [10. String vs Integer](#10-string-vs-integer)
+- [11. Printing Boolean Values](#11-printing-boolean-values)
+- [12. Printing Multiple Values](#12-printing-multiple-values)
+- [13. Printing Personal Information](#13-printing-personal-information)
+- [14. How Python Executes the Program](#14-how-python-executes-the-program)
+- [15. Comments in Python](#15-comments-in-python)
+- [16. Why Use Comments?](#16-why-use-comments)
+- [17. Python is Case-Sensitive](#17-python-is-case-sensitive)
+- [18. Basic Python Syntax](#18-basic-python-syntax)
+- [19. Parentheses `()`](#19-parentheses)
+- [20. Quotation Marks](#20-quotation-marks)
+- [21. Single Quotes vs Double Quotes](#21-single-quotes-vs-double-quotes)
+- [22. Multiple `print()` Statements](#22-multiple-print-statements)
+- [23. Basic Data Types Used in This Topic](#23-basic-data-types-used-in-this-topic)
+- [24. Checking Data Type with `type()`](#24-checking-data-type-with-type)
+- [25. Example: Complete Beginner Program](#25-example-complete-beginner-program)
+- [26. Common Beginner Mistakes](#26-common-beginner-mistakes)
+- [27. Real-World Example](#27-real-world-example)
+- [28. Hello World Program Breakdown](#28-hello-world-program-breakdown)
+- [29. Important Terms](#29-important-terms)
+- [30. Interview Questions](#30-interview-questions)
+- [31. Practice Questions](#31-practice-questions)
+- [32. Mini Practice Program](#32-mini-practice-program)
+- [33. Key Takeaways](#33-key-takeaways)
+- [34. Learning Checklist](#34-learning-checklist)
+- [35. What's Next?](#35-whats-next)
+- [36. Folder Structure](#36-folder-structure)
+
 ---
 
-# 1. Introduction
+## 1. Introduction
 
 When learning any programming language, the first step is to understand how to write and execute a basic program.
 
@@ -31,7 +70,7 @@ Before moving toward advanced topics like variables, loops, functions, OOP, and 
 
 ---
 
-# 2. What is Python?
+## 2. What is Python?
 
 Python is a high-level, interpreted, general-purpose programming language.
 
@@ -39,7 +78,7 @@ It was created by **Guido van Rossum** and was first released in **1991**.
 
 Python is designed with a simple and readable syntax, which makes it beginner-friendly.
 
-## Python is used in:
+### Python is used in:
 
 - Web Development
 - Backend Development
@@ -56,7 +95,7 @@ Python is designed with a simple and readable syntax, which makes it beginner-fr
 
 ---
 
-# 3. Why Learn Python?
+## 3. Why Learn Python?
 
 Python is one of the most popular programming languages because its syntax is relatively simple and readable.
 
@@ -68,21 +107,21 @@ print("Hello World")
 
 Compared with many programming languages, Python requires less boilerplate code for simple tasks.
 
-## Important advantages of Python
+### Important advantages of Python
 
-### 1. Simple Syntax
+####### 1. Simple Syntax
 
 Python code is generally easy to read and understand.
 
-### 2. Beginner Friendly
+####### 2. Beginner Friendly
 
 Python is commonly recommended for beginners because the syntax is relatively straightforward.
 
-### 3. Large Ecosystem
+####### 3. Large Ecosystem
 
 Python has a large collection of libraries and frameworks.
 
-### 4. Multiple Applications
+####### 4. Multiple Applications
 
 Python can be used in many different areas such as:
 
@@ -102,7 +141,7 @@ Software Development
 
 ---
 
-# 4. Your First Python Program
+## 4. Your First Python Program
 
 The traditional first program is:
 
@@ -120,11 +159,11 @@ Let's understand this statement carefully.
 
 ---
 
-# 5. Understanding `print()`
+## 5. Understanding `print()`
 
 `print()` is a built-in Python function used to display information on the screen.
 
-### Syntax
+####### Syntax
 
 ```python
 print(value)
@@ -150,7 +189,7 @@ Hello
 
 ---
 
-# 6. What is a Function?
+## 6. What is a Function?
 
 A function is a reusable block of code designed to perform a particular task.
 
@@ -175,7 +214,7 @@ The `print()` function is used to display output.
 
 ---
 
-# 7. Printing Text
+## 7. Printing Text
 
 Text in Python is represented using a string.
 
@@ -206,7 +245,7 @@ Hello World
 
 ---
 
-# 8. What is a String?
+## 8. What is a String?
 
 A string is a sequence of characters.
 
@@ -240,11 +279,11 @@ For now, remember:
 
 ---
 
-# 9. Printing Numbers
+## 9. Printing Numbers
 
 Python can also print numbers.
 
-## Integer
+### Integer
 
 An integer is a whole number without a decimal point.
 
@@ -266,7 +305,7 @@ Output:
 1000
 ```
 
-## Floating-Point Number
+### Floating-Point Number
 
 A number containing a decimal point is generally represented as a floating-point value.
 
@@ -288,7 +327,7 @@ Output:
 
 ---
 
-# 10. String vs Integer
+## 10. String vs Integer
 
 This is an important beginner concept.
 
@@ -312,7 +351,7 @@ They may look similar when displayed:
 
 But Python treats them differently.
 
-## `"100"`
+### `"100"`
 
 This is a string.
 
@@ -320,7 +359,7 @@ This is a string.
 "100"
 ```
 
-## `100`
+### `100`
 
 This is an integer.
 
@@ -330,7 +369,7 @@ This is an integer.
 
 The quotation marks make the difference.
 
-### Example
+####### Example
 
 ```python
 print("100")
@@ -348,7 +387,7 @@ Although the output looks the same, their data types are different.
 
 ---
 
-# 11. Printing Boolean Values
+## 11. Printing Boolean Values
 
 Python has two Boolean values:
 
@@ -393,7 +432,7 @@ are strings.
 
 ---
 
-# 12. Printing Multiple Values
+## 12. Printing Multiple Values
 
 The `print()` function can display multiple values.
 
@@ -429,7 +468,7 @@ Python Java C++
 
 ---
 
-# 13. Printing Personal Information
+## 13. Printing Personal Information
 
 We can use multiple `print()` statements to display information.
 
@@ -455,7 +494,7 @@ This is a simple example of how multiple instructions are executed one after ano
 
 ---
 
-# 14. How Python Executes the Program
+## 14. How Python Executes the Program
 
 Consider:
 
@@ -495,7 +534,7 @@ Later, we will learn how conditions and loops can change the normal flow of exec
 
 ---
 
-# 15. Comments in Python
+## 15. Comments in Python
 
 Comments are used to write explanations inside the source code.
 
@@ -525,7 +564,7 @@ The comment is not displayed as output.
 
 ---
 
-# 16. Why Use Comments?
+## 16. Why Use Comments?
 
 Comments help programmers:
 
@@ -546,7 +585,7 @@ The comment explains what the next statement does.
 
 ---
 
-# 17. Python is Case-Sensitive
+## 17. Python is Case-Sensitive
 
 Python is case-sensitive.
 
@@ -592,7 +631,7 @@ are not the same in Python.
 
 ---
 
-# 18. Basic Python Syntax
+## 18. Basic Python Syntax
 
 Syntax means the rules used to write valid code.
 
@@ -620,7 +659,7 @@ print("Hello World")
 
 ---
 
-# 19. Parentheses `()`
+## 19. Parentheses `()`
 
 The `print()` function uses parentheses.
 
@@ -654,7 +693,7 @@ print("Hello")
 
 ---
 
-# 20. Quotation Marks
+## 20. Quotation Marks
 
 Strings require quotation marks.
 
@@ -680,7 +719,7 @@ The last example is invalid because Python does not recognize `Hello World` as a
 
 ---
 
-# 21. Single Quotes vs Double Quotes
+## 21. Single Quotes vs Double Quotes
 
 Both are commonly used for strings.
 
@@ -722,7 +761,7 @@ Incorrect:
 
 ---
 
-# 22. Multiple `print()` Statements
+## 22. Multiple `print()` Statements
 
 We can use multiple print statements in one program.
 
@@ -748,7 +787,7 @@ Each statement produces output on a separate line by default.
 
 ---
 
-# 23. Basic Data Types Used in This Topic
+## 23. Basic Data Types Used in This Topic
 
 At this stage, we have already seen some basic Python data types.
 
@@ -770,7 +809,7 @@ print(True)
 
 ---
 
-# 24. Checking Data Type with `type()`
+## 24. Checking Data Type with `type()`
 
 Python provides the `type()` function to check the type of a value.
 
@@ -796,7 +835,7 @@ This is useful when learning how Python handles different types of data.
 
 ---
 
-# 25. Example: Complete Beginner Program
+## 25. Example: Complete Beginner Program
 
 ```python
 # My first Python program
@@ -820,9 +859,9 @@ My goal is to become a Software Developer
 
 ---
 
-# 26. Common Beginner Mistakes
+## 26. Common Beginner Mistakes
 
-## Mistake 1: Incorrect Function Name
+### Mistake 1: Incorrect Function Name
 
 Incorrect:
 
@@ -838,7 +877,7 @@ print("Hello")
 
 ---
 
-## Mistake 2: Missing Parenthesis
+### Mistake 2: Missing Parenthesis
 
 Incorrect:
 
@@ -854,7 +893,7 @@ print("Hello")
 
 ---
 
-## Mistake 3: Missing Quotation Marks
+### Mistake 3: Missing Quotation Marks
 
 Incorrect:
 
@@ -870,7 +909,7 @@ print("Hello")
 
 ---
 
-## Mistake 4: Mismatched Quotes
+### Mistake 4: Mismatched Quotes
 
 Incorrect:
 
@@ -886,7 +925,7 @@ print("Hello")
 
 ---
 
-## Mistake 5: Confusing String and Number
+### Mistake 5: Confusing String and Number
 
 ```python
 print("100")
@@ -902,7 +941,7 @@ Here `100` is an integer.
 
 ---
 
-# 27. Real-World Example
+## 27. Real-World Example
 
 Suppose we want to display information about a student.
 
@@ -942,7 +981,7 @@ Variables will be covered in a later topic.
 
 ---
 
-# 28. Hello World Program Breakdown
+## 28. Hello World Program Breakdown
 
 Let's break down:
 
@@ -950,19 +989,19 @@ Let's break down:
 print("Hello World")
 ```
 
-### `print`
+####### `print`
 
 A built-in Python function used to display output.
 
-### `(`
+####### `(`
 
 Opening parenthesis for the function call.
 
-### `"Hello World"`
+####### `"Hello World"`
 
 A string value.
 
-### `)`
+####### `)`
 
 Closing parenthesis.
 
@@ -972,7 +1011,7 @@ So the complete statement means:
 
 ---
 
-# 29. Important Terms
+## 29. Important Terms
 
 | Term | Meaning |
 |---|---|
@@ -990,33 +1029,33 @@ So the complete statement means:
 
 ---
 
-# 30. Interview Questions
+## 30. Interview Questions
 
-## Q1. What is Python?
+### Q1. What is Python?
 
 Python is a high-level, interpreted, general-purpose programming language known for its readable syntax and wide range of applications.
 
 ---
 
-## Q2. Who created Python?
+### Q2. Who created Python?
 
 Python was created by **Guido van Rossum**.
 
 ---
 
-## Q3. When was Python first released?
+### Q3. When was Python first released?
 
 Python was first released in **1991**.
 
 ---
 
-## Q4. What is `print()` in Python?
+### Q4. What is `print()` in Python?
 
 `print()` is a built-in Python function used to display information on the output screen.
 
 ---
 
-## Q5. How do you print Hello World in Python?
+### Q5. How do you print Hello World in Python?
 
 ```python
 print("Hello World")
@@ -1024,7 +1063,7 @@ print("Hello World")
 
 ---
 
-## Q6. What is a string?
+### Q6. What is a string?
 
 A string is a sequence of characters, generally represented using quotation marks.
 
@@ -1036,7 +1075,7 @@ Example:
 
 ---
 
-## Q7. What is the difference between `"10"` and `10`?
+### Q7. What is the difference between `"10"` and `10`?
 
 ```python
 "10"
@@ -1052,7 +1091,7 @@ is an integer.
 
 ---
 
-## Q8. Is Python case-sensitive?
+### Q8. Is Python case-sensitive?
 
 Yes. Python is case-sensitive.
 
@@ -1072,7 +1111,7 @@ are different.
 
 ---
 
-## Q9. How do you write a comment in Python?
+### Q9. How do you write a comment in Python?
 
 A single-line comment is written using `#`.
 
@@ -1084,7 +1123,7 @@ Example:
 
 ---
 
-## Q10. What are Boolean values in Python?
+### Q10. What are Boolean values in Python?
 
 Python has two Boolean values:
 
@@ -1095,13 +1134,13 @@ False
 
 ---
 
-# 31. Practice Questions
+## 31. Practice Questions
 
 Try solving these yourself before checking any solution.
 
-### Beginner Level
+####### Beginner Level
 
-### Question 1
+####### Question 1
 
 Print:
 
@@ -1111,7 +1150,7 @@ Hello Python
 
 ---
 
-### Question 2
+####### Question 2
 
 Print your:
 
@@ -1122,7 +1161,7 @@ Print your:
 
 ---
 
-### Question 3
+####### Question 3
 
 Print the following:
 
@@ -1134,7 +1173,7 @@ I want to become a Software Developer
 
 ---
 
-### Question 4
+####### Question 4
 
 Print:
 
@@ -1145,13 +1184,13 @@ Print:
 
 ---
 
-### Question 5
+####### Question 5
 
 Write a Python program containing three comments and three print statements.
 
 ---
 
-# 32. Mini Practice Program
+## 32. Mini Practice Program
 
 Create a program that displays your learning information.
 
@@ -1173,7 +1212,7 @@ Try writing this program yourself using only `print()`.
 
 ---
 
-# 33. Key Takeaways
+## 33. Key Takeaways
 
 After completing this topic, you should remember:
 
@@ -1190,7 +1229,7 @@ After completing this topic, you should remember:
 
 ---
 
-# 34. Learning Checklist
+## 34. Learning Checklist
 
 - [x] Understand what Python is
 - [x] Write the first Python program
@@ -1209,11 +1248,11 @@ After completing this topic, you should remember:
 
 ---
 
-# 35. What's Next?
+## 35. What's Next?
 
 Now that we understand the basic `print()` function and how Python displays output, the next topic is:
 
-## Print Statements
+### Print Statements
 
 In the next topic, we will learn more about:
 
@@ -1228,7 +1267,7 @@ In the next topic, we will learn more about:
 
 ---
 
-# 36. Folder Structure
+## 36. Folder Structure
 
 Current folder:
 
@@ -1239,11 +1278,11 @@ Current folder:
 └── README.md
 ```
 
-### `01_hello_world.py`
+####### `01_hello_world.py`
 
 Contains the practical Python programs and examples.
 
-### `README.md`
+####### `README.md`
 
 Contains detailed study notes, explanations, examples, interview questions, and practice problems for the Hello World topic.
 
@@ -1273,5 +1312,3 @@ print("Hello World")
 
 This is our first step toward learning Python programming, problem solving, and eventually Data Structures and Algorithms.
 ```
-
-**Ye version `README.md` ke liye proper hai** — detailed notes + examples + output + mistakes + interview questions + practice + checklist sab included hain.
