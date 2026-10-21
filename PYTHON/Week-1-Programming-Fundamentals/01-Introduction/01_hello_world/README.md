@@ -989,19 +989,19 @@ Let's break down:
 print("Hello World")
 ```
 
-####### `print`
+ `print`
 
 A built-in Python function used to display output.
 
-####### `(`
+ `(`
 
 Opening parenthesis for the function call.
 
-####### `"Hello World"`
+ `"Hello World"`
 
 A string value.
 
-####### `)`
+ `)`
 
 Closing parenthesis.
 
@@ -1138,9 +1138,9 @@ False
 
 Try solving these yourself before checking any solution.
 
-####### Beginner Level
+# Beginner Level
 
-####### Question 1
+# Question 1
 
 Print:
 
@@ -1150,7 +1150,7 @@ Hello Python
 
 ---
 
-####### Question 2
+# Question 2
 
 Print your:
 
@@ -1161,7 +1161,7 @@ Print your:
 
 ---
 
-####### Question 3
+# Question 3
 
 Print the following:
 
@@ -1173,7 +1173,7 @@ I want to become a Software Developer
 
 ---
 
-####### Question 4
+# Question 4
 
 Print:
 
@@ -1184,7 +1184,7 @@ Print:
 
 ---
 
-####### Question 5
+# Question 5
 
 Write a Python program containing three comments and three print statements.
 
@@ -1278,11 +1278,11 @@ Current folder:
 └── README.md
 ```
 
-####### `01_hello_world.py`
+# `01_hello_world.py`
 
 Contains the practical Python programs and examples.
 
-####### `README.md`
+# `README.md`
 
 Contains detailed study notes, explanations, examples, interview questions, and practice problems for the Hello World topic.
 
