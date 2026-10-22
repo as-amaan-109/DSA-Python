@@ -1,494 +1,785 @@
-# Conditional Pseudocode
+# Conditional Pseudocode — Python
 
-Welcome to **Conditional Pseudocode**, the third topic in the Pseudocode section of Python Programming Fundamentals.
+Welcome to **Conditional Pseudocode**, the third topic in the Pseudocode section of the DSA-Python repository.
 
-Conditional statements allow a program to make decisions based on whether a condition is true or false. They help a program choose which instructions to execute.
-
-In this topic, you will learn how to represent decision-making logic using pseudocode and implement it using Python conditional statements.
+This topic explains how to represent decision-making logic with conditions, alternative branches, combined conditions, and nested decisions. You will learn to describe a decision in pseudocode and then implement the same logic in Python.
 
 ---
 
-## 📌 About This Topic
+## Table of Contents
 
-- **Section:** Pseudocode and Problem Solving
-- **Subsection:** Pseudocode
-- **Topic:** Conditional Pseudocode
-- **Level:** Beginner
-- **Programming Language:** Python
+1. [About This Topic](#about-this-topic)
+2. [Learning Objectives](#learning-objectives)
+3. [What Is Conditional Pseudocode?](#what-is-conditional-pseudocode)
+4. [Why Are Conditions Important?](#why-are-conditions-important)
+5. [Comparison Operators](#comparison-operators)
+6. [Logical Operators](#logical-operators)
+7. [Types of Conditional Structures](#types-of-conditional-structures)
+8. [Worked Example: Even or Odd](#worked-example-even-or-odd)
+9. [Worked Example: Largest of Three Numbers](#worked-example-largest-of-three-numbers)
+10. [Worked Example: Grade Calculator](#worked-example-grade-calculator)
+11. [Nested Decisions](#nested-decisions)
+12. [Conditions with Multiple Requirements](#conditions-with-multiple-requirements)
+13. [Dry Runs and Boundary Testing](#dry-runs-and-boundary-testing)
+14. [Time and Space Complexity](#time-and-space-complexity)
+15. [Folder Structure](#folder-structure)
+16. [How to Run the Program](#how-to-run-the-program)
+17. [Practice Questions](#practice-questions)
+18. [Common Mistakes](#common-mistakes)
+19. [Interview Questions](#interview-questions)
+20. [Learning Checklist](#learning-checklist)
 
 ---
 
-## 🎯 Learning Objectives
+## About This Topic
 
-After completing this topic, you will be able to:
+Conditional pseudocode describes how an algorithm chooses between alternative actions based on a condition.
 
-- Understand conditional statements.
-- Write pseudocode using `IF`, `ELSE`, and `ELSE IF`.
+Examples include:
+
+- Checking whether a number is positive, negative, or zero.
+- Determining whether an integer is even or odd.
+- Comparing two or more values.
+- Checking pass or fail.
+- Assigning a grade.
+- Applying a discount according to a purchase amount.
+- Checking divisibility.
+- Selecting a calculator operation.
+- Validating whether three side lengths can form a triangle.
+
+Conditions allow an algorithm to respond differently to different inputs instead of executing the same operations in every situation.
+
+## Learning Objectives
+
+After completing this topic, you should be able to:
+
+- Explain conditional logic.
+- Write `IF`, `ELSE IF`, `ELSE`, and `END IF` structures.
 - Understand comparison operators.
-- Represent multiple decision branches.
-- Use logical operators in conditions.
-- Solve basic decision-making problems.
-- Convert conditional pseudocode into Python code.
+- Use `AND`, `OR`, and `NOT`.
+- Represent nested conditions.
+- Design multiple-branch decisions.
+- Translate conditional pseudocode into Python.
+- Check that every intended case is covered.
+- Perform dry runs and test boundaries.
+- Explain basic complexity for decision-based algorithms.
 
 ---
 
-## 1. What Is Conditional Pseudocode?
+## What Is Conditional Pseudocode?
 
-Conditional pseudocode describes how a program makes decisions based on a condition.
-
-A condition is an expression that evaluates to either **TRUE** or **FALSE**.
-
-For example:
-
-```text
-IF AGE >= 18
-    DISPLAY "Eligible"
-ELSE
-    DISPLAY "Not eligible"
-END IF
-```
-
-If `AGE` is at least 18, the first message is displayed. Otherwise, the second message is displayed.
-
-Conditional logic is useful in eligibility checks, result processing, comparisons, number classification, and many other programming problems.
-
----
-
-## 2. Types of Conditional Statements
-
-### A. IF Statement
-
-An `IF` statement executes instructions only when its condition is true.
-
-```text
-IF CONDITION
-    DISPLAY "Condition is true"
-END IF
-```
-
-If the condition is false, the instructions inside the `IF` block are skipped.
-
-### B. IF-ELSE Statement
-
-An `IF-ELSE` statement chooses between two alternative paths.
-
-```text
-IF CONDITION
-    DISPLAY "Condition is true"
-ELSE
-    DISPLAY "Condition is false"
-END IF
-```
-
-Exactly one of these two branches executes.
-
-### C. IF-ELSE IF-ELSE Statement
-
-Use multiple conditions when a problem has several possible outcomes.
-
-```text
-IF CONDITION_1
-    DISPLAY "Result 1"
-ELSE IF CONDITION_2
-    DISPLAY "Result 2"
-ELSE
-    DISPLAY "Other result"
-END IF
-```
-
-Conditions are checked in order. The first true branch is executed, and the remaining branches are skipped.
-
-Python uses `elif` for the `ELSE IF` branch.
-
----
-
-## 3. Comparison Operators
-
-Comparison operators compare two values and produce a Boolean result: `True` or `False`.
-
-| Operator | Meaning | Example |
-|---|---|---|
-| `==` | Equal to | `A == B` |
-| `!=` | Not equal to | `A != B` |
-| `>` | Greater than | `A > B` |
-| `<` | Less than | `A < B` |
-| `>=` | Greater than or equal to | `A >= B` |
-| `<=` | Less than or equal to | `A <= B` |
-
-**Important:** In Python, `=` assigns a value, whereas `==` compares two values.
+Conditional pseudocode represents a decision using one or more Boolean conditions.
 
 Example:
 
-```python
-age = 20       # Assignment
-print(age == 20)  # Comparison: True
-```
-
----
-
-## 4. Example 1 — Positive, Negative, or Zero
-
-### Problem
-
-Accept an integer and determine whether it is positive, negative, or zero.
-
-### Pseudocode
-
 ```text
 START
-    INPUT NUMBER
+    INPUT N
 
-    IF NUMBER > 0
-        DISPLAY "Positive"
-    ELSE IF NUMBER < 0
-        DISPLAY "Negative"
+    IF N > 0 THEN
+        OUTPUT "Positive"
+    ELSE IF N < 0 THEN
+        OUTPUT "Negative"
     ELSE
-        DISPLAY "Zero"
+        OUTPUT "Zero"
     END IF
 END
 ```
 
-### Python Code
+The algorithm follows one branch according to the value of N.
 
-```python
-number = int(input("Enter a number: "))
+- If N is greater than zero, the output is Positive.
+- Otherwise, if N is less than zero, the output is Negative.
+- If both conditions are false, N is zero.
 
-if number > 0:
-    print("The number is positive.")
-elif number < 0:
-    print("The number is negative.")
-else:
-    print("The number is zero.")
-```
-
-### Sample Output
-
-```text
-Enter a number: -5
-The number is negative.
-```
-
-### Dry Run
-
-| Input | First condition | Second condition | Result |
-|---|---|---|---|
-| `8` | True | Not checked | Positive |
-| `-5` | False | True | Negative |
-| `0` | False | False | Zero |
+Conditional pseudocode is language-independent. This topic uses `IF`, `ELSE IF`, and `END IF` as a consistent convention; other pseudocode styles may use slightly different keywords.
 
 ---
 
-## 5. Example 2 — Even or Odd
+## Why Are Conditions Important?
 
-### Problem
+### 1. Decision-making
 
-Determine whether an integer is even or odd.
+Conditions let an algorithm select an action according to the data it receives.
 
-An integer is even if it is divisible by 2 with a remainder of zero.
+### 2. Validation
 
-### Pseudocode
+Conditions can check whether values fall within permitted ranges.
 
-```text
-START
-    INPUT NUMBER
+### 3. Classification
 
-    IF NUMBER MOD 2 = 0
-        DISPLAY "Even"
-    ELSE
-        DISPLAY "Odd"
-    END IF
-END
-```
+They can assign categories such as even/odd, grade, or number type.
 
-Here, `MOD` represents the remainder operation. In Python, the corresponding operator is `%`.
+### 4. Multiple outcomes
 
-### Python Code
+An algorithm can support several possible outcomes without duplicating the entire solution.
 
-```python
-number = int(input("Enter a number: "))
+### 5. Real problem modelling
 
-if number % 2 == 0:
-    print("The number is even.")
-else:
-    print("The number is odd.")
-```
+Many tasks involve rules, thresholds, eligibility, or different calculations for different ranges.
 
-### Sample Output
-
-```text
-Enter a number: 11
-The number is odd.
-```
-
-### Explanation
-
-For `11`, the expression `11 % 2` produces `1`. Since the remainder is not zero, the number is classified as odd.
+The conditions must match the actual problem requirements. The thresholds used in beginner examples should not be treated as universal policies.
 
 ---
 
-## 6. Example 3 — Find the Larger of Two Numbers
+## Comparison Operators
 
-### Problem
+Comparison operators test a relationship between values.
 
-Accept two integers and identify the larger number. Also handle the case in which both numbers are equal.
+| Operator | Meaning | Example |
+|---|---|---|
+| `=` | Equal to in this pseudocode convention | `A = B` |
+| `!=` | Not equal to | `A != B` |
+| `>` | Greater than | `A > B` |
+| `<` | Less than | `A < B` |
+| `>=` | Greater than or equal to | `MARKS >= 40` |
+| `<=` | Less than or equal to | `AGE <= 12` |
 
-### Pseudocode
+A comparison generally evaluates to true or false.
 
-```text
-START
-    INPUT A, B
-
-    IF A > B
-        DISPLAY A
-    ELSE IF B > A
-        DISPLAY B
-    ELSE
-        DISPLAY "Both are equal"
-    END IF
-END
-```
-
-### Python Code
-
-```python
-a, b = map(int, input("Enter two numbers: ").split())
-
-if a > b:
-    print("Larger number:", a)
-elif b > a:
-    print("Larger number:", b)
-else:
-    print("Both numbers are equal.")
-```
-
-### Sample Output
+### Example
 
 ```text
-Enter two numbers: 15 20
-Larger number: 20
+INPUT A, B
+
+IF A > B THEN
+    OUTPUT A
+ELSE IF B > A THEN
+    OUTPUT B
+ELSE
+    OUTPUT "Equal"
+END IF
 ```
 
-Enter exactly two integers separated by a space for this example.
+The final `ELSE` handles the case where the two values are equal.
+
+**Important:** In the pseudocode convention used in this topic, `=` means comparison. Python uses `==` for comparison and `=` for assignment.
 
 ---
 
-## 7. Example 4 — Pass or Fail
-
-### Problem
-
-Accept marks out of 100 and display whether a student passes or fails.
-
-**Assumption for this practice example:** Passing marks are 40. This is an illustrative rule; actual passing requirements depend on the relevant institution or examination.
-
-### Pseudocode
-
-```text
-START
-    INPUT MARKS
-
-    IF MARKS < 0 OR MARKS > 100
-        DISPLAY "Invalid marks"
-    ELSE IF MARKS >= 40
-        DISPLAY "Pass"
-    ELSE
-        DISPLAY "Fail"
-    END IF
-END
-```
-
-### Python Code
-
-```python
-marks = int(input("Enter marks out of 100: "))
-
-if marks < 0 or marks > 100:
-    print("Invalid marks.")
-elif marks >= 40:
-    print("Result: Pass")
-else:
-    print("Result: Fail")
-```
-
-### Sample Output
-
-```text
-Enter marks out of 100: 35
-Result: Fail
-```
-
-The code first checks whether the input is within the allowed range. Only then does it decide the result.
-
----
-
-## 8. Example 5 — Divisibility by Both 3 and 5
-
-### Problem
-
-Accept an integer and check whether it is divisible by both 3 and 5.
-
-### Pseudocode
-
-```text
-START
-    INPUT NUMBER
-
-    IF NUMBER MOD 3 = 0 AND NUMBER MOD 5 = 0
-        DISPLAY "Divisible by both 3 and 5"
-    ELSE
-        DISPLAY "Not divisible by both 3 and 5"
-    END IF
-END
-```
-
-### Python Code
-
-```python
-number = int(input("Enter a number: "))
-
-if number % 3 == 0 and number % 5 == 0:
-    print("The number is divisible by both 3 and 5.")
-else:
-    print("The number is not divisible by both 3 and 5.")
-```
-
-### Sample Output
-
-```text
-Enter a number: 30
-The number is divisible by both 3 and 5.
-```
-
-### Explanation
-
-The `and` operator means that both conditions must be true:
-
-- The number must be divisible by 3.
-- The number must be divisible by 5.
-
-If either condition is false, the combined condition is false.
-
----
-
-## 9. Logical Operators
+## Logical Operators
 
 Logical operators combine or reverse conditions.
 
 | Operator | Meaning | Example |
 |---|---|---|
-| `and` | True when both conditions are true | `A > 0 and A < 10` |
-| `or` | True when at least one condition is true | `A < 0 or A > 100` |
-| `not` | Reverses a Boolean condition | `not (A == 0)` |
+| `AND` | Both conditions must be true | `AGE >= 18 AND HAS_ID = TRUE` |
+| `OR` | At least one condition must be true | `A = 0 OR B = 0` |
+| `NOT` | Reverses a Boolean condition | `NOT VALID` |
 
-### Example
+### AND example
 
-```python
-age = int(input("Enter age: "))
+An illustrative rule requires both attendance and marks to meet thresholds.
 
-if age >= 18 and age <= 60:
-    print("Age is between 18 and 60.")
-else:
-    print("Age is outside the specified range.")
+```text
+IF ATTENDANCE >= 75 AND MARKS >= 40 THEN
+    OUTPUT "Eligible under example rules"
+ELSE
+    OUTPUT "Not eligible under example rules"
+END IF
 ```
 
-This example illustrates a range check. It does not establish legal eligibility for any activity.
+Both conditions must be true to select the first branch.
+
+### OR example
+
+```text
+IF A = 0 OR B = 0 THEN
+    OUTPUT "At least one value is zero"
+ELSE
+    OUTPUT "Neither value is zero"
+END IF
+```
+
+This branch is selected if either value equals zero.
+
+### NOT example
+
+```text
+IF NOT VALID THEN
+    OUTPUT "Invalid input"
+ELSE
+    OUTPUT "Valid input"
+END IF
+```
+
+When using several operators in one condition, parentheses can help clarify which expressions should be evaluated together.
 
 ---
 
-## 10. Conditional Pseudocode vs Python
+## Types of Conditional Structures
 
-| Pseudocode | Python |
+### 1. Simple IF
+
+A single action executes when the condition is true.
+
+```text
+IF NUMBER > 0 THEN
+    OUTPUT "Positive"
+END IF
+```
+
+Python equivalent:
+
+```python
+if number > 0:
+    print("Positive")
+```
+
+### 2. IF-ELSE
+
+One of two paths executes.
+
+```text
+IF NUMBER MOD 2 = 0 THEN
+    OUTPUT "Even"
+ELSE
+    OUTPUT "Odd"
+END IF
+```
+
+Python equivalent:
+
+```python
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+```
+
+### 3. IF-ELSE IF-ELSE
+
+Multiple conditions are checked in order.
+
+```text
+IF MARKS >= 90 THEN
+    OUTPUT "A"
+ELSE IF MARKS >= 75 THEN
+    OUTPUT "B"
+ELSE IF MARKS >= 60 THEN
+    OUTPUT "C"
+ELSE
+    OUTPUT "Other grade"
+END IF
+```
+
+The first true condition selects the branch. Later conditions are not evaluated once a matching branch is chosen.
+
+### 4. Nested IF
+
+One decision appears inside another decision's branch.
+
+```text
+IF NUMBER >= 0 THEN
+    IF NUMBER = 0 THEN
+        OUTPUT "Zero"
+    ELSE
+        OUTPUT "Positive"
+    END IF
+ELSE
+    OUTPUT "Negative"
+END IF
+```
+
+Nested decisions are useful when one condition must be checked only after another condition has been satisfied.
+
+### 5. Combined conditions
+
+A single branch can depend on multiple conditions.
+
+```text
+IF PRICE >= 1000 AND QUANTITY > 0 THEN
+    OUTPUT "Meets example criteria"
+ELSE
+    OUTPUT "Does not meet example criteria"
+END IF
+```
+
+When several conditions are combined, make sure the order of operations and intended requirements are clear.
+
+---
+
+## Worked Example: Even or Odd
+
+**Problem:** Read an integer and determine whether it is even or odd.
+
+### Algorithm
+
+1. Start.
+2. Read integer N.
+3. Calculate the remainder when N is divided by 2.
+4. If the remainder is zero, output Even.
+5. Otherwise, output Odd.
+6. End.
+
+### Pseudocode
+
+```text
+START
+    INPUT N
+
+    IF N MOD 2 = 0 THEN
+        OUTPUT "Even"
+    ELSE
+        OUTPUT "Odd"
+    END IF
+END
+```
+
+### Python implementation
+
+```python
+number = int(input("Enter an integer: "))
+
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+```
+
+### Dry run
+
+| Input | Remainder after division by 2 | Output |
+|---:|---:|---|
+| 8 | 0 | Even |
+| 7 | 1 | Odd |
+| 0 | 0 | Even |
+| -4 | 0 | Even |
+
+This example requires one condition and two possible outcomes.
+
+### Complexity
+
+- Time: `O(1)` under the standard fixed-size integer model.
+- Auxiliary space: `O(1)`.
+
+---
+
+## Worked Example: Largest of Three Numbers
+
+**Problem:** Read three values and display the largest one.
+
+### Pseudocode
+
+```text
+START
+    INPUT A, B, C
+
+    IF A >= B AND A >= C THEN
+        OUTPUT A
+    ELSE IF B >= A AND B >= C THEN
+        OUTPUT B
+    ELSE
+        OUTPUT C
+    END IF
+END
+```
+
+### Python implementation
+
+```python
+a = float(input("Enter A: "))
+b = float(input("Enter B: "))
+c = float(input("Enter C: "))
+
+if a >= b and a >= c:
+    largest = a
+elif b >= a and b >= c:
+    largest = b
+else:
+    largest = c
+
+print("Largest:", largest)
+```
+
+### Dry run
+
+Suppose A = 12, B = 25, and C = 17.
+
+1. `A >= B AND A >= C` is false.
+2. `B >= A AND B >= C` is true.
+3. The algorithm selects B.
+4. The output is 25.
+
+The use of `>=` also handles equality correctly.
+
+### Complexity
+
+The algorithm uses a fixed number of comparisons, so its time complexity is `O(1)` and auxiliary space is `O(1)` under the standard introductory model.
+
+---
+
+## Worked Example: Grade Calculator
+
+**Problem:** Assign an illustrative grade based on a percentage.
+
+The following thresholds are for programming practice only. Grading policies can differ between institutions.
+
+| Percentage | Example grade |
 |---|---|
-| `IF A > B` | `if a > b:` |
-| `ELSE IF B > A` | `elif b > a:` |
-| `ELSE` | `else:` |
-| `AND` | `and` |
-| `OR` | `or` |
-| `NOT` | `not` |
-| `END IF` | Indentation marks the end of the block |
+| 90–100 | A |
+| 75–less than 90 | B |
+| 60–less than 75 | C |
+| 40–less than 60 | D |
+| 0–less than 40 | F |
 
-Pseudocode is a language-independent description of logic. Python implements that logic using its own syntax and indentation rules.
+### Pseudocode
 
----
+```text
+START
+    INPUT PERCENTAGE
 
-## 11. Common Mistakes
+    IF PERCENTAGE < 0 OR PERCENTAGE > 100 THEN
+        OUTPUT "Invalid percentage"
+    ELSE IF PERCENTAGE >= 90 THEN
+        OUTPUT "A"
+    ELSE IF PERCENTAGE >= 75 THEN
+        OUTPUT "B"
+    ELSE IF PERCENTAGE >= 60 THEN
+        OUTPUT "C"
+    ELSE IF PERCENTAGE >= 40 THEN
+        OUTPUT "D"
+    ELSE
+        OUTPUT "F"
+    END IF
+END
+```
 
-- Using `=` instead of `==` for comparison in Python.
-- Forgetting the colon (`:`) after `if`, `elif`, or `else`.
-- Incorrect indentation inside conditional blocks.
-- Checking conditions in the wrong order.
-- Forgetting to handle equality when comparing two numbers.
-- Using `and` when the problem requires `or`, or vice versa.
-- Forgetting to validate input where a valid range is required.
+### Python implementation
 
----
+```python
+percentage = float(input("Enter percentage (0-100): "))
 
-## 12. Practice Problems
+if not 0 <= percentage <= 100:
+    print("Invalid percentage.")
+elif percentage >= 90:
+    print("Grade A")
+elif percentage >= 75:
+    print("Grade B")
+elif percentage >= 60:
+    print("Grade C")
+elif percentage >= 40:
+    print("Grade D")
+else:
+    print("Grade F")
+```
 
-Write pseudocode first, then implement each problem in Python.
+### Why condition order matters
 
-1. Check whether a number is positive or negative, while handling zero.
-2. Check whether a number is even or odd.
-3. Find the larger of two numbers.
-4. Find the largest of three numbers.
-5. Check whether a person meets a specified age threshold.
-6. Classify marks into grades using a grading scale you define.
-7. Check whether a year is a leap year.
-8. Check whether a number is divisible by 3.
-9. Check whether a number is divisible by both 3 and 5.
-10. Check whether a number is divisible by 3 or 5.
-11. Calculate a discount based on a price range.
-12. Check whether a character is a vowel or consonant.
+A score of 95 also satisfies `percentage >= 40`. If the lowest passing threshold were checked first, a score of 95 could be classified incorrectly.
 
-For each problem, identify the possible outcomes, write the conditions in the correct order, and test normal and boundary values.
+Checking the highest threshold first ensures the intended category is selected.
 
----
+### Boundary tests
 
-## 13. Interview Questions
+| Percentage | Expected example output |
+|---:|---|
+| 100 | A |
+| 90 | A |
+| 89.9 | B |
+| 75 | B |
+| 60 | C |
+| 40 | D |
+| 39.9 | F |
+| -1 | Invalid percentage |
+| 101 | Invalid percentage |
 
-**Q1. What is a conditional statement?**  
-A conditional statement selects which instructions execute based on whether a condition is true or false.
-
-**Q2. What is the difference between `IF` and `IF-ELSE`?**  
-An `IF` statement has a branch that runs when its condition is true. An `IF-ELSE` statement provides an alternative branch when the condition is false.
-
-**Q3. What is the purpose of `ELSE IF`?**  
-It allows a program to test additional conditions when earlier conditions are false.
-
-**Q4. What is the difference between `=` and `==` in Python?**  
-`=` assigns a value. `==` compares two values.
-
-**Q5. What is a nested conditional?**  
-A nested conditional is a conditional statement placed inside another conditional block.
-
-**Q6. What is the purpose of logical operators?**  
-They combine conditions or reverse a condition's Boolean result.
-
-**Q7. Why is condition order important?**  
-The order can determine which branch runs, especially when multiple conditions overlap.
-
-**Q8. What happens if no `IF` or `ELIF` condition is true and there is no `ELSE`?**  
-The conditional blocks are skipped, and execution continues with the next statement.
+Boundary testing helps find mistakes involving `>` versus `>=` and incorrect ranges.
 
 ---
 
-## ✅ Completion Checklist
+## Nested Decisions
 
-- [ ] Understand the purpose of conditional pseudocode.
-- [ ] Learn `IF`, `IF-ELSE`, and `ELSE IF`.
-- [ ] Understand comparison operators.
-- [ ] Understand `AND`, `OR`, and `NOT`.
-- [ ] Complete the five example programs.
-- [ ] Trace each example using a dry run.
-- [ ] Handle equality and boundary cases correctly.
-- [ ] Complete the practice problems.
-- [ ] Convert your pseudocode into working Python code.
+Nested decisions are useful when a decision depends on an earlier condition.
+
+Example: classify a number.
+
+```text
+INPUT N
+
+IF N >= 0 THEN
+    IF N = 0 THEN
+        OUTPUT "Zero"
+    ELSE
+        OUTPUT "Positive"
+    END IF
+ELSE
+    OUTPUT "Negative"
+END IF
+```
+
+The outer decision separates non-negative and negative values. The inner decision separates zero from positive values.
+
+A nested structure can be appropriate, but too many levels may make the solution difficult to understand. Use a clear `IF-ELSE IF-ELSE` structure when it makes the logic easier to read.
 
 ---
 
-## 🚀 Learning Outcome
+## Conditions with Multiple Requirements
 
-After completing this topic, you should be able to describe decision-making logic using pseudocode and implement it in Python.
+Some problems require all of their conditions to be satisfied, while others require only one condition to be satisfied.
 
-You are now ready to learn **Loop Pseudocode**, which explains how to represent repeated operations.
+### Example: Both conditions required
 
-**Remember: identify the possible outcomes, write clear conditions, and test every branch.**
+```text
+IF SCORE >= 40 AND ATTENDANCE >= 75 THEN
+    OUTPUT "Meets example requirements"
+ELSE
+    OUTPUT "Does not meet example requirements"
+END IF
+```
+
+Both thresholds must be met.
+
+### Example: Either condition sufficient
+
+```text
+IF NUMBER = 0 OR NUMBER = 1 THEN
+    OUTPUT "Special value"
+ELSE
+    OUTPUT "Other value"
+END IF
+```
+
+The first branch executes if either condition is true.
+
+### Validation example
+
+```text
+IF MARKS < 0 OR MARKS > 100 THEN
+    OUTPUT "Invalid marks"
+ELSE
+    OUTPUT "Marks accepted"
+END IF
+```
+
+Before implementing multiple conditions, state the requirements in plain language and verify that the chosen operators express those requirements correctly.
+
+---
+
+## Dry Runs and Boundary Testing
+
+A dry run traces the conditions with a particular input to determine which path is taken.
+
+For conditional algorithms, test:
+
+- Every possible branch.
+- Values exactly on a threshold.
+- Values just above and below the threshold.
+- Equal values when comparing numbers.
+- Zero and negative numbers when relevant.
+- Invalid values outside the accepted range.
+
+### Example: Pass/fail
+
+Assume the practice passing threshold is 40 out of 100.
+
+| Marks | Result |
+|---:|---|
+| 85 | PASS |
+| 40 | PASS |
+| 39 | FAIL |
+| 0 | FAIL |
+| 101 | Invalid marks |
+| -1 | Invalid marks |
+
+The results depend on the specified example rule. Use the actual requirements when solving a real task.
+
+---
+
+## Time and Space Complexity
+
+A decision structure with a fixed number of branches often requires a constant number of condition evaluations.
+
+| Algorithm | Typical complexity |
+|---|---|
+| Even/odd check | `O(1)` time |
+| Largest of three numbers | `O(1)` time |
+| Grade classification | `O(1)` time |
+| Triangle validation with three sides | `O(1)` time |
+| Fixed number of input validations | `O(1)` time under the fixed-size model |
+
+Auxiliary space is usually `O(1)` for these examples because they use a fixed number of additional variables.
+
+If a condition is evaluated repeatedly inside a loop, the complete algorithm's time complexity also depends on the number of iterations.
+
+---
+
+## Folder Structure
+
+```text
+03_Conditional_Pseudocode/
+│
+├── README.md
+└── 03_conditional_pseudocode.py
+```
+
+The Python file contains pseudocode demonstrations, runnable solutions, and practice questions. This README provides the theory, conventions, worked examples, testing guidance, and interview questions.
+
+---
+
+## How to Run the Program
+
+Open PowerShell in the root folder of the `DSA-Python` repository.
+
+Run:
+
+```powershell
+python "PYTHON\Week-1-Programming-Fundamentals\03-Pseudocode-Problem-Solving\01-Pseudocode\03_Conditional_Pseudocode\03_conditional_pseudocode.py"
+```
+
+The interactive menu provides:
+
+1. Run examples.
+2. Run solved practice questions.
+3. Show unsolved practice questions.
+0. Exit.
+
+Select an option and follow the prompts. Use `0` inside a sub-menu to return to the main menu.
+
+If the `python` command is not recognized, verify your Python installation. The `py` command may work on Windows.
+
+---
+
+## Practice Questions
+
+The Python file contains 12 examples, 12 solved practice questions, and 5 unsolved questions.
+
+### 12 Examples
+
+1. Positive, negative, or zero.
+2. Even or odd.
+3. Largest of two.
+4. Largest of three.
+5. Pass or fail.
+6. Grade calculator.
+7. Leap-year check.
+8. Divisibility by 3 and 5.
+9. Simple calculator.
+10. Character classification.
+11. Triangle classification.
+12. Combined-condition example.
+
+### 12 Solved Questions
+
+1. Smallest of three numbers.
+2. Discount calculator using illustrative thresholds.
+3. Age-category example.
+4. Scholarship-eligibility example using illustrative criteria.
+5. Quadratic root classification.
+6. Weekday name from a number.
+7. Divisibility by 5 and 11.
+8. Triangle type.
+9. Delivery-charge example.
+10. Largest of four numbers.
+11. Example progressive tax calculation.
+12. Result classification using two conditions.
+
+The discount, eligibility, delivery-charge, tax, and grade rules are practice examples rather than official policies.
+
+### 5 Unsolved Questions
+
+1. Validate a date, including leap years.
+2. Calculate an electricity bill using stated progressive unit-consumption slabs.
+3. Design a calculator with operator and input validation.
+4. Determine a student's final result using a clearly stated passing rule.
+5. Find the median of three values without using a sorting function.
+
+For every problem:
+
+1. Identify input and output.
+2. Write the conditional rules in plain language.
+3. Translate the rules into pseudocode.
+4. Check every branch and boundary.
+5. Implement the logic in Python.
+6. Explain the solution and its complexity.
+
+---
+
+## Common Mistakes
+
+- Using `=` as Python's comparison operator instead of `==`.
+- Forgetting the final `ELSE` when an alternative outcome is required.
+- Writing overlapping conditions in the wrong order.
+- Ignoring values exactly at a threshold.
+- Using `AND` instead of `OR`, or vice versa.
+- Creating a nested condition that does not cover every intended case.
+- Forgetting to validate input ranges.
+- Writing conditions that do not match the problem statement.
+- Testing only the first branch.
+- Mixing assignment and comparison notation.
+- Copying code without verifying that it matches the pseudocode.
+
+---
+
+## Interview Questions
+
+**1. What is conditional pseudocode?**
+
+It is a structured way of describing decision-making logic using conditions and alternative branches.
+
+**2. What does IF represent?**
+
+It checks a condition and executes a block when that condition is true.
+
+**3. What is the purpose of ELSE?**
+
+It defines the alternative path when earlier conditions in the structure are false.
+
+**4. What is ELSE IF used for?**
+
+It checks another condition when the previous conditions were false.
+
+**5. What is a nested decision?**
+
+It is a decision placed inside another decision's branch.
+
+**6. What does AND mean?**
+
+Both conditions must evaluate to true.
+
+**7. What does OR mean?**
+
+At least one condition must evaluate to true.
+
+**8. Why does condition order matter?**
+
+The first true branch in an ordered conditional structure is selected. Incorrect ordering can produce the wrong result.
+
+**9. What is boundary testing?**
+
+Boundary testing checks values at and around limits, such as 39, 40, and 41 for an illustrative threshold of 40.
+
+**10. What is the difference between assignment and comparison in Python?**
+
+Python uses `=` for assignment and `==` for equality comparison.
+
+**11. How can a conditional algorithm be tested?**
+
+Trace every branch using normal, boundary, equal-value, and invalid inputs where applicable.
+
+**12. What is the complexity of a fixed-size conditional algorithm?**
+
+It is usually `O(1)` time when it performs a fixed number of operations, with `O(1)` auxiliary space when it uses a fixed number of variables.
+
+---
+
+## Learning Checklist
+
+- [ ] I understand conditional pseudocode.
+- [ ] I can write IF-ELSE structures.
+- [ ] I can write multiple-branch conditions.
+- [ ] I understand comparison operators.
+- [ ] I can combine conditions with AND and OR.
+- [ ] I can represent nested decisions.
+- [ ] I can convert conditional pseudocode into Python.
+- [ ] I can dry-run each branch.
+- [ ] I have tested important boundary values.
+- [ ] I have run all examples.
+- [ ] I have studied the solved questions.
+- [ ] I have attempted all five unsolved questions.
+
+---
+
+## Next Topic
+
+After completing Conditional Pseudocode, move to **Loop Pseudocode**, where you will learn to represent repetition, loop initialization, conditions, updates, and termination using structured instructions.
