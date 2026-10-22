@@ -1,899 +1,508 @@
-# Python - Hello World
+# Hello World — Python Basics
 
-> **Topic:** Python Programming Fundamentals  
-> **Level:** Beginner  
-> **Goal:** Understand your first Python program, `print()`, basic output, comments, and Python syntax.
+Welcome to **Hello World**, the first topic in the Python Programming Fundamentals journey.
 
+Every programming journey starts with a simple output statement. In Python, the `print()` function displays text, numbers, variables, and calculation results on the screen.
 
-## Table of Contents
-
-- [1. Introduction](#1-introduction)
-- [2. What is Python?](#2-what-is-python)
-- [3. Why Learn Python?](#3-why-learn-python)
-- [4. Your First Python Program](#4-your-first-python-program)
-- [5. Understanding `print()`](#5-understanding-print)
-- [6. What is a Function?](#6-what-is-a-function)
-- [7. Printing Text](#7-printing-text)
-- [8. What is a String?](#8-what-is-a-string)
-- [9. Printing Numbers](#9-printing-numbers)
-- [10. String vs Integer](#10-string-vs-integer)
-- [11. Printing Boolean Values](#11-printing-boolean-values)
-- [12. Printing Multiple Values](#12-printing-multiple-values)
-- [13. Printing Personal Information](#13-printing-personal-information)
-- [14. How Python Executes the Program](#14-how-python-executes-the-program)
-- [15. Comments in Python](#15-comments-in-python)
-- [16. Why Use Comments?](#16-why-use-comments)
-- [17. Python is Case-Sensitive](#17-python-is-case-sensitive)
-- [18. Basic Python Syntax](#18-basic-python-syntax)
-- [19. Parentheses `()`](#19-parentheses)
-- [20. Quotation Marks](#20-quotation-marks)
-- [21. Single Quotes vs Double Quotes](#21-single-quotes-vs-double-quotes)
-- [22. Multiple `print()` Statements](#22-multiple-print-statements)
-- [23. Basic Data Types Used in This Topic](#23-basic-data-types-used-in-this-topic)
-- [24. Checking Data Type with `type()`](#24-checking-data-type-with-type)
-- [25. Example: Complete Beginner Program](#25-example-complete-beginner-program)
-- [26. Common Beginner Mistakes](#26-common-beginner-mistakes)
-- [27. Real-World Example](#27-real-world-example)
-- [28. Hello World Program Breakdown](#28-hello-world-program-breakdown)
-- [29. Important Terms](#29-important-terms)
-- [30. Interview Questions](#30-interview-questions)
-- [31. Practice Questions](#31-practice-questions)
-- [32. Mini Practice Program](#32-mini-practice-program)
-- [33. Key Takeaways](#33-key-takeaways)
-- [34. Learning Checklist](#34-learning-checklist)
-- [35. What's Next?](#35-whats-next)
-- [36. Folder Structure](#36-folder-structure)
+This topic introduces the first steps of Python programming and provides practical examples and exercises to help you understand how a Python program displays information.
 
 ---
 
-## 1. Introduction
+## 1. About This Topic
 
-When learning any programming language, the first step is to understand how to write and execute a basic program.
+- **Week:** 1 – Programming Fundamentals
+- **Section:** 01 – Introduction
+- **Topic:** Hello World
+- **Level:** Beginner
+- **Language:** Python
+- **Practical File:** `01_hello_world.py`
 
-In Python, one of the simplest programs is:
+### Learning Objectives
+
+After completing this topic, you should be able to:
+
+- Understand what a Python program is.
+- Run a simple Python program.
+- Use `print()` to display output.
+- Display text, integers, floating-point numbers, and Boolean values.
+- Display multiple values in a single statement.
+- Understand the `sep` and `end` parameters of `print()`.
+- Use variables and f-strings for formatted output.
+- Read and understand basic Python examples.
+- Solve simple output-based programming questions.
+- Write your own small Python programs.
+
+---
+
+## 2. What Is Python?
+
+Python is a general-purpose programming language used for a wide range of tasks, including automation, web development, data analysis, artificial intelligence, and software development.
+
+Python is popular among beginners because its syntax is generally readable and its basic programs are easy to write.
+
+Example:
 
 ```python
-print("Hello World")
+print("Hello, World!")
 ```
 
 Output:
 
 ```text
-Hello World
+Hello, World!
 ```
 
-This simple program introduces us to one of the most important concepts in programming:
-
-> **Taking an instruction from the programmer and producing an output.**
-
-Before moving toward advanced topics like variables, loops, functions, OOP, and DSA, it is important to understand these basic Python concepts properly.
+This program uses Python's built-in `print()` function to display a message.
 
 ---
 
-## 2. What is Python?
+## 3. What Is a Python Program?
 
-Python is a high-level, interpreted, general-purpose programming language.
+A Python program is a collection of instructions written in Python that a Python interpreter can execute.
 
-It was created by **Guido van Rossum** and was first released in **1991**.
-
-Python is designed with a simple and readable syntax, which makes it beginner-friendly.
-
-### Python is used in:
-
-- Web Development
-- Backend Development
-- Data Science
-- Artificial Intelligence
-- Machine Learning
-- Automation
-- Scripting
-- Cybersecurity
-- Software Development
-- Data Analysis
-- Competitive Programming
-- DSA and Problem Solving
-
----
-
-## 3. Why Learn Python?
-
-Python is one of the most popular programming languages because its syntax is relatively simple and readable.
-
-For example, printing something in Python requires only:
+A beginner program may contain just one statement:
 
 ```python
-print("Hello World")
+print("I am learning Python.")
 ```
 
-Compared with many programming languages, Python requires less boilerplate code for simple tasks.
+Larger programs can contain variables, conditions, loops, functions, classes, and many other structures.
 
-### Important advantages of Python
-
-###### 1. Simple Syntax
-
-Python code is generally easy to read and understand.
-
-###### 2. Beginner Friendly
-
-Python is commonly recommended for beginners because the syntax is relatively straightforward.
-
-###### 3. Large Ecosystem
-
-Python has a large collection of libraries and frameworks.
-
-###### 4. Multiple Applications
-
-Python can be used in many different areas such as:
-
-```text
-Web Development
-       ↓
-Data Science
-       ↓
-Artificial Intelligence
-       ↓
-Machine Learning
-       ↓
-Automation
-       ↓
-Software Development
-```
+For now, the goal is to understand simple statements and observe how their output changes.
 
 ---
 
-## 4. Your First Python Program
+## 4. Understanding the `print()` Function
 
-The traditional first program is:
+The `print()` function displays the values passed to it.
 
-```python
-print("Hello World")
-```
-
-Output:
-
-```text
-Hello World
-```
-
-Let's understand this statement carefully.
-
----
-
-## 5. Understanding `print()`
-
-`print()` is a built-in Python function used to display information on the screen.
-
-###### Syntax
+### Basic syntax
 
 ```python
 print(value)
 ```
 
-Here:
-
-- `print` → function name
-- `()` → parentheses used to call the function
-- `value` → information that we want to display
-
-Example:
+Examples:
 
 ```python
-print("Hello")
+print("Hello, World!")
+print(100)
+print(3.14)
+print(True)
 ```
 
 Output:
 
 ```text
-Hello
+Hello, World!
+100
+3.14
+True
 ```
+
+### Important points
+
+- Text is generally written inside quotation marks.
+- Integer values can be printed without quotation marks.
+- Decimal numbers can be printed directly.
+- Boolean values are written as `True` or `False` in Python.
+- Python is case-sensitive: `True` is valid, but `true` is not the Boolean literal.
+- The `print()` function adds a newline at the end by default.
 
 ---
 
-## 6. What is a Function?
+## 5. Strings and Numbers in Output
 
-A function is a reusable block of code designed to perform a particular task.
+### Strings
 
-Python provides many built-in functions.
-
-Examples:
+A string represents text.
 
 ```python
-print()
-len()
-type()
-input()
+print("Python")
+print('Programming is fun')
 ```
 
-For this topic, we are mainly focusing on:
+Python permits both single and double quotes for string literals, provided the quotation marks are correctly matched.
 
-```python
-print()
-```
+### Integers
 
-The `print()` function is used to display output.
-
----
-
-## 7. Printing Text
-
-Text in Python is represented using a string.
-
-Strings can be written using:
-
-- Double quotes `" "`
-- Single quotes `' '`
-
-Example:
-
-```python
-print("Hello World")
-```
-
-We can also write:
-
-```python
-print('Hello World')
-```
-
-Both are valid.
-
-Output:
-
-```text
-Hello World
-```
-
----
-
-## 8. What is a String?
-
-A string is a sequence of characters.
-
-Examples:
-
-```python
-"Hello"
-"Python"
-"Amaan"
-"Hello World"
-```
-
-A string is usually written inside quotation marks.
-
-Example:
-
-```python
-name = "Amaan"
-```
-
-Here:
-
-```text
-name       → variable
-"Amaan"    → string value
-```
-
-For now, remember:
-
-> **Text written inside quotation marks is treated as a string.**
-
----
-
-## 9. Printing Numbers
-
-Python can also print numbers.
-
-### Integer
-
-An integer is a whole number without a decimal point.
-
-Example:
+Integers represent whole numbers.
 
 ```python
 print(10)
-print(100)
-print(500)
-print(1000)
+print(-25)
+print(0)
 ```
 
-Output:
+### Floating-point numbers
 
-```text
-10
-100
-500
-1000
-```
-
-### Floating-Point Number
-
-A number containing a decimal point is generally represented as a floating-point value.
-
-Example:
+Floating-point values represent numbers that can contain a fractional part.
 
 ```python
-print(10.5)
-print(99.99)
 print(3.14)
+print(99.5)
+print(-12.75)
 ```
 
-Output:
+### Boolean values
 
-```text
-10.5
-99.99
-3.14
-```
-
----
-
-## 10. String vs Integer
-
-This is an important beginner concept.
-
-Consider:
-
-```python
-print("100")
-```
-
-and:
-
-```python
-print(100)
-```
-
-They may look similar when displayed:
-
-```text
-100
-```
-
-But Python treats them differently.
-
-### `"100"`
-
-This is a string.
-
-```python
-"100"
-```
-
-### `100`
-
-This is an integer.
-
-```python
-100
-```
-
-The quotation marks make the difference.
-
-###### Example
-
-```python
-print("100")
-print(100)
-```
-
-Output:
-
-```text
-100
-100
-```
-
-Although the output looks the same, their data types are different.
-
----
-
-## 11. Printing Boolean Values
-
-Python has two Boolean values:
-
-```python
-True
-False
-```
-
-Example:
+Boolean values represent truth values.
 
 ```python
 print(True)
 print(False)
 ```
 
-Output:
-
-```text
-True
-False
-```
-
-Boolean values are commonly used when working with conditions and decision-making.
-
-Remember:
+### String versus numeric value
 
 ```python
-True
-False
+print(100)
+print("100")
 ```
 
-are Boolean values.
-
-Whereas:
-
-```python
-"True"
-"False"
-```
-
-are strings.
+Both can appear as `100` in the output, but their data types differ: the first is an integer and the second is a string.
 
 ---
 
-## 12. Printing Multiple Values
+## 6. Displaying Multiple Values
 
-The `print()` function can display multiple values.
-
-We can separate values using commas.
-
-Example:
+The `print()` function can accept multiple positional arguments, separated by commas.
 
 ```python
-print("Name:", "Amaan")
-print("Age:", 21)
-print("Student:", True)
+name = "Amaan"
+age = 22
+
+print("Name:", name)
+print("Age:", age)
 ```
 
 Output:
 
 ```text
 Name: Amaan
-Age: 21
-Student: True
+Age: 22
+```
+
+Python's default separator places a space between separate arguments.
+
+Example:
+
+```python
+print("Learning", "Python", "Programming")
+```
+
+Output:
+
+```text
+Learning Python Programming
+```
+
+This is useful when displaying labels alongside variable values.
+
+---
+
+## 7. The `sep` Parameter
+
+The `sep` parameter specifies the string inserted between multiple arguments to `print()`.
+
+The default separator is a single space.
+
+Example:
+
+```python
+print("Python", "Java", "JavaScript", sep=" | ")
+```
+
+Output:
+
+```text
+Python | Java | JavaScript
 ```
 
 Another example:
 
 ```python
-print("Python", "Java", "C++")
+print(10, 20, 30, sep=" --> ")
 ```
 
 Output:
 
 ```text
-Python Java C++
+10 --> 20 --> 30
 ```
+
+Use `sep` when you want a particular format between values.
 
 ---
 
-## 13. Printing Personal Information
+## 8. The `end` Parameter
 
-We can use multiple `print()` statements to display information.
+The `end` parameter specifies what is printed after the supplied values.
+
+By default, `print()` ends with a newline.
 
 Example:
 
 ```python
-print("Name: Amaan")
-print("Course: B.Tech Computer Science")
-print("Learning: Python")
-print("Goal: Software Developer")
+print("Hello", end=" ")
+print("World!")
 ```
 
 Output:
 
 ```text
-Name: Amaan
-Course: B.Tech Computer Science
-Learning: Python
-Goal: Software Developer
+Hello World!
 ```
 
-This is a simple example of how multiple instructions are executed one after another.
-
----
-
-## 14. How Python Executes the Program
-
-Consider:
+Another example:
 
 ```python
-print("Hello")
+print("Learning", end="...")
 print("Python")
-print("DSA")
-```
-
-Python executes the statements sequentially.
-
-Conceptually:
-
-```text
-Start
-  ↓
-print("Hello")
-  ↓
-print("Python")
-  ↓
-print("DSA")
-  ↓
-End
 ```
 
 Output:
 
 ```text
-Hello
-Python
-DSA
+Learning...Python
 ```
 
-This introduces the idea of program execution.
-
-Later, we will learn how conditions and loops can change the normal flow of execution.
+This is useful when several print statements must contribute to the same output line.
 
 ---
 
-## 15. Comments in Python
+## 9. Displaying Variables
 
-Comments are used to write explanations inside the source code.
-
-Python ignores comments during normal execution.
-
-A single-line comment starts with:
-
-```python
-#
-```
+A variable is a named reference to a value.
 
 Example:
 
 ```python
-# This is my first Python program
+course = "Python Programming"
+week = 1
+is_beginner = True
 
-print("Hello World")
+print("Course:", course)
+print("Week:", week)
+print("Beginner:", is_beginner)
 ```
 
 Output:
 
 ```text
-Hello World
+Course: Python Programming
+Week: 1
+Beginner: True
 ```
 
-The comment is not displayed as output.
+Variables help programs display information without repeatedly writing the same values directly into output statements.
 
----
+### Good variable naming practices
 
-## 16. Why Use Comments?
-
-Comments help programmers:
-
-- Explain code
-- Document logic
-- Remember important information
-- Make code easier to understand
-- Help other developers understand the program
+- Choose names that describe their purpose.
+- Use letters, digits, and underscores where permitted.
+- Do not start a variable name with a digit.
+- Avoid Python reserved keywords as variable names.
+- Follow a consistent naming convention, such as `student_name`.
 
 Example:
 
 ```python
-# Display welcome message
-print("Welcome to Python")
-```
-
-The comment explains what the next statement does.
-
----
-
-## 17. Python is Case-Sensitive
-
-Python is case-sensitive.
-
-This means uppercase and lowercase letters are treated differently.
-
-Correct:
-
-```python
-print("Hello World")
-```
-
-Incorrect:
-
-```python
-Print("Hello World")
-```
-
-The function name is:
-
-```python
-print()
-```
-
-not:
-
-```python
-Print()
-```
-
-Similarly:
-
-```python
-True
-```
-
-and:
-
-```python
-true
-```
-
-are not the same in Python.
-
----
-
-## 18. Basic Python Syntax
-
-Syntax means the rules used to write valid code.
-
-For example:
-
-```python
-print("Hello World")
-```
-
-is valid Python syntax.
-
-But:
-
-```python
-print("Hello World"
-```
-
-is incomplete because the closing parenthesis is missing.
-
-Correct:
-
-```python
-print("Hello World")
+student_name = "Amaan"
 ```
 
 ---
 
-## 19. Parentheses `()`
+## 10. Formatted Output with F-Strings
 
-The `print()` function uses parentheses.
+An f-string allows expressions and variable values to be inserted into a string.
 
 Example:
 
 ```python
-print("Hello")
-```
+name = "Amaan"
+age = 22
 
-Here:
-
-```text
-print → function
-()    → function call
-"Hello" → argument/value
-```
-
-The parentheses are important.
-
-Incorrect:
-
-```python
-print"Hello"
-```
-
-Correct:
-
-```python
-print("Hello")
-```
-
----
-
-## 20. Quotation Marks
-
-Strings require quotation marks.
-
-Correct:
-
-```python
-print("Hello World")
-```
-
-Also correct:
-
-```python
-print('Hello World')
-```
-
-Incorrect:
-
-```python
-print(Hello World)
-```
-
-The last example is invalid because Python does not recognize `Hello World` as a string.
-
----
-
-## 21. Single Quotes vs Double Quotes
-
-Both are commonly used for strings.
-
-```python
-print("Hello")
-```
-
-and:
-
-```python
-print('Hello')
-```
-
-Both produce:
-
-```text
-Hello
-```
-
-The important thing is to use matching quotation marks.
-
-Correct:
-
-```python
-"Hello"
-```
-
-Correct:
-
-```python
-'Hello'
-```
-
-Incorrect:
-
-```python
-"Hello'
-```
-
----
-
-## 22. Multiple `print()` Statements
-
-We can use multiple print statements in one program.
-
-Example:
-
-```python
-print("Hello World")
-print("Welcome to Python")
-print("I am learning programming")
-print("I am learning DSA")
+print(f"My name is {name} and I am {age} years old.")
 ```
 
 Output:
 
 ```text
-Hello World
-Welcome to Python
-I am learning programming
-I am learning DSA
+My name is Amaan and I am 22 years old.
 ```
 
-Each statement produces output on a separate line by default.
+The letter `f` before the opening quotation mark enables expressions inside curly braces to be evaluated.
 
----
-
-## 23. Basic Data Types Used in This Topic
-
-At this stage, we have already seen some basic Python data types.
-
-| Data Type | Example | Description |
-|---|---|---|
-| `str` | `"Hello"` | Text |
-| `int` | `100` | Whole number |
-| `float` | `10.5` | Decimal number |
-| `bool` | `True` | Boolean value |
-
-Example:
+Another example:
 
 ```python
-print("Python")
-print(100)
-print(10.5)
-print(True)
-```
+a = 10
+b = 20
 
----
-
-## 24. Checking Data Type with `type()`
-
-Python provides the `type()` function to check the type of a value.
-
-Example:
-
-```python
-print(type("Hello"))
-print(type(100))
-print(type(10.5))
-print(type(True))
+print(f"The sum of {a} and {b} is {a + b}.")
 ```
 
 Output:
 
 ```text
-<class 'str'>
-<class 'int'>
-<class 'float'>
-<class 'bool'>
+The sum of 10 and 20 is 30.
 ```
 
-This is useful when learning how Python handles different types of data.
+F-strings are useful when output combines text, variable values, and calculations.
 
 ---
 
-## 25. Example: Complete Beginner Program
+## 11. Arithmetic in Output
+
+Python can calculate expressions and display their results.
 
 ```python
-# My first Python program
+a = 10
+b = 20
 
-print("Hello World")
-print("Welcome to Python")
-print("I am learning Python")
-print("I am learning DSA")
-print("My goal is to become a Software Developer")
+print("Addition:", a + b)
+print("Subtraction:", a - b)
+print("Multiplication:", a * b)
+print("Division:", a / b)
 ```
 
 Output:
 
 ```text
-Hello World
-Welcome to Python
-I am learning Python
-I am learning DSA
-My goal is to become a Software Developer
+Addition: 30
+Subtraction: -10
+Multiplication: 200
+Division: 0.5
+```
+
+The expression is evaluated before its result is displayed.
+
+You can also print a calculation directly:
+
+```python
+print(5 + 3)
+```
+
+Output:
+
+```text
+8
 ```
 
 ---
 
-## 26. Common Beginner Mistakes
+## 12. Python Comments
 
-### Mistake 1: Incorrect Function Name
+Comments explain the code to the person reading it. Python ignores comments when executing a program.
 
-Incorrect:
-
-```python
-Print("Hello")
-```
-
-Correct:
+A single-line comment starts with `#`.
 
 ```python
-print("Hello")
+# Display a greeting
+print("Hello, World!")
 ```
+
+Useful comments describe a program's purpose or clarify logic that may not be obvious.
+
+Avoid comments that simply repeat every line without adding useful information.
 
 ---
 
-### Mistake 2: Missing Parenthesis
+## 13. Overview of the 12 Examples
 
-Incorrect:
+The practical file `01_hello_world.py` contains these examples:
 
-```python
-print("Hello"
-```
+| No. | Example | Concept |
+|---:|---|---|
+| 1 | Hello World | First Python output |
+| 2 | Display a Simple Message | Printing text |
+| 3 | Display a Name | Printing a personal message |
+| 4 | Display Integers | Printing whole numbers |
+| 5 | Display Float Values | Printing decimal numbers |
+| 6 | Display Boolean Values | Printing `True` and `False` |
+| 7 | Display Multiple Values | Multiple arguments to `print()` |
+| 8 | Use the `sep` Parameter | Custom separators |
+| 9 | Use the `end` Parameter | Custom line endings |
+| 10 | Display Multiple Lines | Separate print statements |
+| 11 | Display Variables | Printing stored values |
+| 12 | Display a Calculation | Showing arithmetic results |
 
-Correct:
+### How to study the examples
 
-```python
-print("Hello")
-```
+1. Read the comments above the example.
+2. Predict its output.
+3. Run only that example through the menu.
+4. Compare the actual output with your prediction.
+5. Change one value and observe what happens.
+6. Explain the result in your own words.
 
 ---
 
-### Mistake 3: Missing Quotation Marks
+## 14. Twelve Solved Practice Questions
+
+The Python file also includes 12 solved exercises:
+
+1. Print Your Full Name
+2. Print Your Course
+3. Display Two Messages
+4. Display Five Numbers
+5. Display Numbers from 1 to 5 on One Line
+6. Display Subjects Separated by Commas
+7. Display an Addition Equation
+8. Use an F-String
+9. Display a Student Profile
+10. Display Arithmetic Results
+11. Display Square and Cube
+12. Display a Personal Introduction
+
+These exercises reinforce basic output, variables, arithmetic, separators, and formatting.
+
+The answers are included in the Python file so that you can run each solution independently and compare its result with your understanding.
+
+---
+
+## 15. Five Questions for Independent Practice
+
+Try these five questions without looking for a solution in the code.
+
+### Question 1: Create Your Own Introduction
+
+Display your name, course, current learning topic, and career goal.
+
+### Question 2: Display a Weekly Study Plan
+
+Print the names of five subjects, each on a separate line.
+
+### Question 3: Create an Output Card
+
+Print a title, a decorative border, and at least three lines of information.
+
+### Question 4: Format Arithmetic Equations
+
+Store two numbers in variables and display their addition, subtraction, and multiplication as readable equations.
+
+### Question 5: Create a Mini Student Report
+
+Display a student's name, roll number, course, and favourite subject with clear labels and consistent formatting.
+
+### Suggested approach
+
+For each question:
+
+1. Understand the required output.
+2. Identify the values you need.
+3. Decide whether to use separate `print()` calls, multiple arguments, `sep`, `end`, or an f-string.
+4. Write the program.
+5. Run it and verify the formatting.
+
+The practice questions intentionally do not include completed solutions.
+
+---
+
+## 16. Common Beginner Mistakes
+
+### Forgetting quotation marks around text
 
 Incorrect:
 
@@ -907,408 +516,161 @@ Correct:
 print("Hello")
 ```
 
----
+Without quotation marks, Python generally treats `Hello` as a variable name.
 
-### Mistake 4: Mismatched Quotes
+### Using the wrong Boolean capitalization
 
 Incorrect:
 
 ```python
-print("Hello')
+print(true)
 ```
 
 Correct:
 
 ```python
-print("Hello")
+print(True)
 ```
 
----
+Python's Boolean literals are case-sensitive.
 
-### Mistake 5: Confusing String and Number
+### Confusing `sep` with `end`
+
+- `sep` controls the text placed between multiple arguments.
+- `end` controls the text printed after the arguments.
+
+### Expecting `print()` calls to stay on the same line
+
+By default, each `print()` statement ends with a newline. Use `end` to change that behaviour.
+
+### Confusing text and numbers
 
 ```python
-print("100")
+print("10")
+print(10)
 ```
 
-Here `100` is a string.
+The output looks similar, but one value is text and the other is numeric.
+
+### Writing unclear output
+
+Instead of:
 
 ```python
-print(100)
+print(20)
 ```
 
-Here `100` is an integer.
-
----
-
-## 27. Real-World Example
-
-Suppose we want to display information about a student.
+Consider:
 
 ```python
-print("Student Information")
-print("Name: Amaan")
-print("Course: B.Tech CSE")
-print("Language: Python")
-print("Topic: DSA")
+print("Total:", 20)
 ```
 
-Output:
+Labels make results easier to understand.
 
-```text
-Student Information
-Name: Amaan
-Course: B.Tech CSE
-Language: Python
-Topic: DSA
+---
+
+## 17. How to Run This File
+
+Open PowerShell or your VS Code terminal at the repository root and run:
+
+```powershell
+python "PYTHON\Week-1-Programming-Fundamentals\01-Introduction\01_hello_world\01_hello_world.py"
 ```
 
-This is a very basic example, but later we will replace fixed values with variables.
+The program displays a menu with three main options:
 
-For example:
+1. Run the 12 examples.
+2. Run the 12 solved questions.
+3. View the 5 questions without answers.
 
-```python
-name = "Amaan"
-```
+Choose a category and then select the required item. Enter `0` to return to the previous menu or exit from the main menu.
 
-and then use:
+If Python is not available under the `python` command on your Windows machine, try:
 
-```python
-print(name)
-```
-
-Variables will be covered in a later topic.
-
----
-
-## 28. Hello World Program Breakdown
-
-Let's break down:
-
-```python
-print("Hello World")
-```
-
- `print`
-
-A built-in Python function used to display output.
-
- `(`
-
-Opening parenthesis for the function call.
-
- `"Hello World"`
-
-A string value.
-
- `)`
-
-Closing parenthesis.
-
-So the complete statement means:
-
-> Call the `print()` function and display the string `"Hello World"`.
-
----
-
-## 29. Important Terms
-
-| Term | Meaning |
-|---|---|
-| Python | Programming language |
-| Program | Set of instructions |
-| Function | Reusable block of code |
-| `print()` | Function used to display output |
-| String | Sequence of characters |
-| Integer | Whole number |
-| Float | Decimal number |
-| Boolean | `True` or `False` |
-| Comment | Non-executed explanation in source code |
-| Syntax | Rules for writing valid code |
-| Output | Result produced by a program |
-
----
-
-## 30. Interview Questions
-
-### Q1. What is Python?
-
-Python is a high-level, interpreted, general-purpose programming language known for its readable syntax and wide range of applications.
-
----
-
-### Q2. Who created Python?
-
-Python was created by **Guido van Rossum**.
-
----
-
-### Q3. When was Python first released?
-
-Python was first released in **1991**.
-
----
-
-### Q4. What is `print()` in Python?
-
-`print()` is a built-in Python function used to display information on the output screen.
-
----
-
-### Q5. How do you print Hello World in Python?
-
-```python
-print("Hello World")
+```powershell
+py "PYTHON\Week-1-Programming-Fundamentals\01-Introduction\01_hello_world\01_hello_world.py"
 ```
 
 ---
 
-### Q6. What is a string?
+## 18. Basic Interview Questions
 
-A string is a sequence of characters, generally represented using quotation marks.
+**Q1. What is Python?**
 
-Example:
+Python is a general-purpose programming language used for many kinds of software and automation tasks.
 
-```python
-"Hello Python"
-```
+**Q2. What is the purpose of `print()`?**
 
----
+It displays values or messages to the output stream, usually the terminal.
 
-### Q7. What is the difference between `"10"` and `10`?
+**Q3. What is a string?**
 
-```python
-"10"
-```
+A string represents text, such as `"Python"`.
 
-is a string, while:
+**Q4. What is the difference between an integer and a float?**
 
-```python
-10
-```
+An integer represents a whole number. A float represents a floating-point number that may contain a fractional part.
 
-is an integer.
+**Q5. What is a Boolean value?**
 
----
+A Boolean value represents either `True` or `False`.
 
-### Q8. Is Python case-sensitive?
+**Q6. What is a variable?**
 
-Yes. Python is case-sensitive.
+A variable is a name that refers to a value in a program.
 
-For example:
+**Q7. What does the `sep` parameter do?**
 
-```python
-print()
-```
+It defines the separator inserted between multiple arguments passed to `print()`.
 
-and:
+**Q8. What does the `end` parameter do?**
 
-```python
-Print()
-```
+It defines what is printed after the values in a `print()` call. Its default is a newline.
 
-are different.
+**Q9. What is an f-string?**
 
----
+An f-string is a formatted string literal that allows expressions to be embedded inside curly braces.
 
-### Q9. How do you write a comment in Python?
+**Q10. What is a comment in Python?**
 
-A single-line comment is written using `#`.
+A comment is text intended to explain code to readers. A single-line comment begins with `#`.
 
-Example:
+**Q11. Are `"100"` and `100` the same data type?**
 
-```python
-# This is a comment
-```
+No. `"100"` is a string, whereas `100` is an integer.
+
+**Q12. Why should we test output formatting?**
+
+Testing helps confirm that the result is readable and matches the expected layout.
 
 ---
 
-### Q10. What are Boolean values in Python?
+## ✅ Completion Checklist
 
-Python has two Boolean values:
-
-```python
-True
-False
-```
-
----
-
-## 31. Practice Questions
-
-Try solving these yourself before checking any solution.
-
-### Beginner Level
-
-#### Question 1
-
-Print:
-
-```text
-Hello Python
-```
+- [ ] Run the Hello World example.
+- [ ] Understand strings, integers, floats, and Booleans.
+- [ ] Display multiple values.
+- [ ] Experiment with `sep` and `end`.
+- [ ] Display variables and arithmetic results.
+- [ ] Understand comments and f-strings.
+- [ ] Complete all 12 solved questions.
+- [ ] Attempt all 5 independent practice questions.
+- [ ] Answer the interview questions in your own words.
+- [ ] Run the entire menu without errors.
 
 ---
 
-#### Question 2
+## 🚀 Learning Outcome
 
-Print your:
+After completing this topic, you should be able to write simple Python programs, display different kinds of values, format output, and solve beginner-level output problems.
 
-- Name
-- Age
-- College
-- Course
+These concepts prepare you for the next topic, **Print Statement**, where you can study printing and output formatting in greater detail.
 
 ---
 
-#### Question 3
+## 📌 Final Note
 
-Print the following:
+**Do not just copy the output. Predict it, run the code, and explain why it appears that way.**
 
-```text
-I am learning Python
-I am learning DSA
-I want to become a Software Developer
-```
-
----
-
-#### Question 4
-
-Print:
-
-- An integer
-- A float
-- A Boolean
-- A string
-
----
-
-#### Question 5
-
-Write a Python program containing three comments and three print statements.
-
----
-
-## 32. Mini Practice Program
-
-Create a program that displays your learning information.
-
-Expected output:
-
-```text
-========================
-My Learning Profile
-========================
-Name: Amaan
-Language: Python
-Topic: Programming Fundamentals
-Next Topic: Print Statements
-Goal: Software Developer
-========================
-```
-
-Try writing this program yourself using only `print()`.
-
----
-
-## 33. Key Takeaways
-
-After completing this topic, you should remember:
-
-1. Python is a high-level, interpreted, general-purpose programming language.
-2. `print()` is used to display output.
-3. Strings are written inside quotation marks.
-4. Integers are whole numbers.
-5. Floating-point numbers contain decimal values.
-6. Boolean values are `True` and `False`.
-7. Python is case-sensitive.
-8. Comments start with `#`.
-9. Correct syntax is important.
-10. `type()` can be used to check the data type of a value.
-
----
-
-## 34. Learning Checklist
-
-- [x] Understand what Python is
-- [x] Write the first Python program
-- [x] Understand `print()`
-- [x] Print strings
-- [x] Print integers
-- [x] Print floating-point values
-- [x] Print Boolean values
-- [x] Print multiple values
-- [x] Understand string vs integer
-- [x] Understand comments
-- [x] Understand basic syntax
-- [x] Understand Python case sensitivity
-- [x] Check data types using `type()`
-- [x] Solve basic practice questions
-
----
-
-## 35. What's Next?
-
-Now that we understand the basic `print()` function and how Python displays output, the next topic is:
-
-### Print Statements
-
-In the next topic, we will learn more about:
-
-- Different ways of using `print()`
-- Printing multiple values
-- Separators
-- End parameter
-- Formatting output
-- New lines
-- Combining values
-- Practical examples
-
----
-
-## 36. Folder Structure
-
-Current folder:
-
-```text
-01_hello_world/
-│
-├── 01_hello_world.py
-└── README.md
-```
-
-#### `01_hello_world.py`
-
-Contains the practical Python programs and examples.
-
-#### `README.md`
-
-Contains detailed study notes, explanations, examples, interview questions, and practice problems for the Hello World topic.
-
----
-
-# Conclusion
-
-The `Hello World` program may look very simple, but it is the foundation of understanding how a programming language works.
-
-We learned how to:
-
-```text
-Write Code
-   ↓
-Execute Code
-   ↓
-Python Processes the Instruction
-   ↓
-Output is Displayed
-```
-
-The most important statement from this topic is:
-
-```python
-print("Hello World")
-```
-
-This is our first step toward learning Python programming, problem solving, and eventually Data Structures and Algorithms.
-
+A strong programming foundation comes from understanding small concepts clearly and practising them consistently.
