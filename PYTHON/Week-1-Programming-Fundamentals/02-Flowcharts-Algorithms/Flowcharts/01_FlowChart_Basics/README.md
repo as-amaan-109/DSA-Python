@@ -1,498 +1,302 @@
-# Flowchart Basics
+# Flowchart Basics — Python
 
-> **Week:** 01 - Programming Fundamentals  
-> **Section:** Algorithms and Flowcharts  
-> **Topic:** Flowchart Basics  
-> **Level:** Beginner  
-> **Goal:** Understand flowcharts, their standard symbols, drawing rules, and basic examples.
+Welcome to **Flowchart Basics**, part of the Week 1 Programming Fundamentals section in the DSA-Python repository.
 
----
+This topic introduces flowcharts, common flowchart symbols, sequence, input/output, decisions, and repetition. It connects visual problem-solving with Python programming.
 
 ## Table of Contents
 
-1. Introduction
-2. What Is a Flowchart?
-3. Why Do We Use Flowcharts?
-4. Advantages of Flowcharts
-5. Limitations of Flowcharts
-6. Common Flowchart Symbols
-7. Terminal Symbol
-8. Process Symbol
-9. Input and Output Symbol
-10. Decision Symbol
-11. Flow Lines and Arrows
-12. Connector Symbols
-13. Rules for Drawing Flowcharts
-14. Example 1 - Display a Message
-15. Example 2 - Add Two Numbers
-16. Example 3 - Area of a Rectangle
-17. Flowchart vs Algorithm
-18. Flowchart vs Program
-19. Common Beginner Mistakes
-20. Important Terminology
-21. Interview Questions
-22. Practice Questions
-23. Learning Checklist
-24. What's Next?
+1. [About This Topic](#about-this-topic)
+2. [Learning Objectives](#learning-objectives)
+3. [What Is a Flowchart?](#what-is-a-flowchart)
+4. [Why Are Flowcharts Used?](#why-are-flowcharts-used)
+5. [Common Flowchart Symbols](#common-flowchart-symbols)
+6. [Types of Flow](#types-of-flow)
+7. [How to Create a Flowchart](#how-to-create-a-flowchart)
+8. [Worked Example: Sum of Two Numbers](#worked-example-sum-of-two-numbers)
+9. [Decision Example: Even or Odd](#decision-example-even-or-odd)
+10. [Dry Run](#dry-run)
+11. [Flowchart and Python Comparison](#flowchart-and-python-comparison)
+12. [How to Run the Program](#how-to-run-the-program)
+13. [Practice Questions](#practice-questions)
+14. [Common Mistakes](#common-mistakes)
+15. [Interview Questions](#interview-questions)
+16. [Learning Checklist](#learning-checklist)
 
 ---
 
-## 1. Introduction
+## About This Topic
 
-Before writing a computer program, we need to understand the logic of the problem.
+A flowchart is a graphical representation of a process or algorithm. It uses standard symbols connected by arrows to show the sequence of operations and the possible paths through a solution.
 
-An algorithm describes the solution using ordered steps. A flowchart presents those steps visually using standard symbols connected by arrows.
+Flowcharts are useful before coding because they help you plan the program, understand decisions, and spot missing steps.
 
-Flowcharts make it easier to understand how a process begins, what operations take place, and how the process finishes.
+In this topic, you will practise turning common programming problems into logical flows and implementing those solutions in Python.
 
-They are useful for learning programming, planning solutions, explaining logic, and understanding the flow of execution.
+## Learning Objectives
+
+After completing this topic, you should be able to:
+
+- Define a flowchart and explain its purpose.
+- Identify common flowchart symbols.
+- Distinguish input/output, processing, and decision operations.
+- Follow the direction of flow lines.
+- Represent a sequence of instructions.
+- Draw a simple decision-based flowchart.
+- Understand how repeated steps appear in a loop.
+- Convert a flowchart into pseudocode and Python.
+- Dry-run a solution using sample values.
+- Test normal and boundary cases.
 
 ---
 
-## 2. What Is a Flowchart?
+## What Is a Flowchart?
 
-A **flowchart** is a graphical representation of an algorithm, process, or workflow.
+A flowchart is a diagram that represents the steps used to complete a task or solve a problem.
 
-It uses standard shapes to represent different operations and arrows to show the sequence in which the steps are performed.
+A simple flowchart usually follows this general pattern:
 
-### Example
+**Start → Input → Process → Output → End**
 
-Suppose we want to display a message.
+More complex flowcharts can include decisions and loops.
 
-The flow is:
+For example, a program that adds two numbers could be represented as:
 
 ```text
-    ( START )
-        |
-        v
-  / Display Hello /
-        |
-        v
-     ( STOP )
+      ( START )
+          |
+          v
+     / Input A, B /
+          |
+          v
+     [ SUM = A + B ]
+          |
+          v
+      / Display SUM /
+          |
+          v
+       ( END )
 ```
 
-In this diagram:
+The arrows show the order in which the steps are performed.
 
-- The oval represents the beginning or end.
-- The parallelogram represents an input/output operation.
-- The arrows show the direction of execution.
+## Why Are Flowcharts Used?
 
-A flowchart helps us understand the solution without first writing the entire program.
+Flowcharts help programmers:
 
----
+- Organize ideas before writing code.
+- Explain a process visually.
+- Identify missing steps or conditions.
+- Understand alternative paths through a program.
+- Communicate an algorithm to other people.
+- Plan tests for different possible outcomes.
+- Convert an algorithm into pseudocode and code.
 
-## 3. Why Do We Use Flowcharts?
-
-Flowcharts are used to plan, explain, and understand processes.
-
-### 3.1 Visual Representation
-
-They convert a sequence of instructions into a visual structure.
-
-### 3.2 Easy to Understand
-
-Standard symbols make it easier to identify inputs, calculations, decisions, and outputs.
-
-### 3.3 Better Problem Solving
-
-Drawing a flowchart encourages us to think about the steps before implementing the program.
-
-### 3.4 Easier Communication
-
-Flowcharts can help explain an algorithm to classmates, teachers, teammates, and other developers.
-
-### 3.5 Debugging and Review
-
-A flowchart can help identify missing steps, incorrect branches, and confusing execution paths.
-
-### 3.6 Program Planning
-
-A flowchart can be prepared before writing code in Python, Java, C, C++, or another programming language.
+A flowchart does not replace testing. The logic represented by the diagram still needs to be checked against the problem requirements.
 
 ---
 
-## 4. Advantages of Flowcharts
+## Common Flowchart Symbols
 
-The main advantages include:
+| Symbol | Shape | Purpose | Example |
+|---|---|---|---|
+| Terminal | Oval or rounded terminal | Indicates the start or end | Start, End |
+| Process | Rectangle | Represents an operation or calculation | `SUM = A + B` |
+| Input/Output | Parallelogram | Reads input or displays output | Read `A`, Display `SUM` |
+| Decision | Diamond | Evaluates a condition and branches | `N % 2 == 0?` |
+| Flow line | Arrow | Shows the direction of execution | Connects two steps |
+| Connector | Small circle or labelled connector | Links separated parts of a flowchart | Continue at connector A |
 
-- They present logic visually.
-- They help organize instructions.
-- They make the order of execution easier to follow.
-- They help explain decisions and repetition.
-- They support program planning.
-- They make discussions about a solution easier.
-- They help identify missing or poorly arranged steps.
+The exact visual style may differ between drawing tools, but the purpose of the symbols should remain clear.
 
-Flowcharts are especially useful when learning basic programming concepts.
+### 1. Terminal Symbol
 
----
+The terminal symbol marks where the flowchart begins or ends.
 
-## 5. Limitations of Flowcharts
+Example labels:
 
-Although useful, flowcharts also have limitations.
+- Start
+- End
 
-### 5.1 Large Diagrams Can Become Complicated
+A flowchart should clearly indicate its entry and exit points.
 
-A large program may require many symbols and arrows, making the diagram difficult to read.
+### 2. Process Symbol
 
-### 5.2 Changes May Require Redrawing
+The process symbol represents an operation, assignment, or calculation.
 
-When the logic changes, several parts of a flowchart might need to be updated.
-
-### 5.3 Not a Replacement for Code
-
-A flowchart describes the logic but does not automatically provide a complete executable program.
-
-### 5.4 Less Convenient for Very Complex Logic
-
-For very large systems, other design and documentation techniques may be more appropriate.
-
-**Key point:** A flowchart is a planning and communication tool, while a program implements the solution.
-
----
-
-## 6. Common Flowchart Symbols
-
-Flowcharts use conventional shapes to represent different operations.
-
-The most important symbols for beginners are:
-
-| Symbol | Typical Shape | Purpose |
-|---|---|---|
-| Terminator | Oval or rounded rectangle | Start or end of a process |
-| Process | Rectangle | Calculation or instruction |
-| Input/Output | Parallelogram | Reading input or displaying output |
-| Decision | Diamond | Testing a condition |
-| Flow line | Arrow | Showing the direction of execution |
-| Connector | Small circle | Connecting different parts of a diagram |
-| Off-page connector | Commonly a pentagon | Linking to a flowchart on another page |
-
-Symbol conventions can vary slightly between diagramming standards and tools.
-
----
-
-## 7. Terminal Symbol
-
-### Shape
-
-Oval or rounded rectangle.
-
-### Purpose
-
-The terminal symbol represents the beginning or end of a flowchart.
-
-Common labels include:
-
-```text
-START
-STOP
-END
-```
-
-### Example
-
-```text
-    ( START )
-        |
-        v
-     ( STOP )
-```
-
-### Important Points
-
-- A flowchart normally has a clear starting point.
-- It should indicate where the process ends.
-- The terminal symbol is not normally used to represent an ordinary calculation.
-
-### Remember
-
-**Oval = Start or Stop**
-
----
-
-## 8. Process Symbol
-
-### Shape
-
-Rectangle.
-
-### Purpose
-
-A process symbol represents an instruction, calculation, assignment, or other operation.
-
-Examples include:
+Examples:
 
 ```text
 SUM = A + B
+AREA = LENGTH * WIDTH
+COUNT = COUNT + 1
 ```
+
+### 3. Input/Output Symbol
+
+The input/output symbol represents receiving or displaying data.
+
+Examples:
 
 ```text
-AREA = LENGTH * BREADTH
+INPUT A
+INPUT B
+OUTPUT SUM
 ```
 
-### Example
+### 4. Decision Symbol
+
+A decision symbol checks a condition. The outgoing paths should be labelled clearly, commonly with **Yes/No** or **True/False**.
+
+Example:
 
 ```text
-    ( START )
-        |
-        v
-   [ SUM = A + B ]
-        |
-        v
-     ( STOP )
+        < N % 2 == 0? >
+           /      \
+         Yes       No
+          |         |
+     [Even]      [Odd]
 ```
 
-Here, the rectangle represents the calculation.
+### 5. Flow Lines
 
-### Important Points
+Flow lines connect symbols and indicate execution order. Use arrowheads so the direction is easy to follow.
 
-A process rectangle may contain:
+### 6. Connector Symbols
 
-- Mathematical calculations.
-- Variable assignments.
-- Processing instructions.
-- Operations performed on data.
-
-### Remember
-
-**Rectangle = Process or Calculation**
+Connectors help link flowchart sections when a diagram becomes large or when connecting lines would otherwise make it confusing. Label corresponding connectors consistently.
 
 ---
 
-## 9. Input and Output Symbol
+## Types of Flow
 
-### Shape
+### 1. Sequence
 
-Parallelogram.
+In a sequence, steps execute one after another.
 
-### Purpose
-
-The input/output symbol represents reading information or producing a result.
-
-### Input Examples
+Example:
 
 ```text
-Read A
-```
-
-```text
-Read LENGTH and BREADTH
-```
-
-### Output Examples
-
-```text
+Start
+  |
+Input A, B
+  |
+SUM = A + B
+  |
 Display SUM
+  |
+End
 ```
+
+### 2. Selection or Decision
+
+Selection uses a condition to choose a path.
+
+Example:
 
 ```text
-Display AREA
+Input N
+   |
+<N is even?>
+  /       \
+Yes        No
+ |          |
+Even       Odd
+  \        /
+      End
 ```
 
-### Example
+### 3. Iteration or Loop
+
+Iteration repeats steps while a condition remains satisfied or until a stopping condition is reached.
+
+Conceptual example:
 
 ```text
-     ( START )
-         |
-         v
-   / Read A and B /
-         |
-         v
-    [ SUM = A + B ]
-         |
-         v
-     / Display SUM /
-         |
-         v
-      ( STOP )
+Start
+  |
+N = 1
+  |
+<N <= 5?>
+ /       \
+Yes       No
+ |         |
+Display N End
+ |
+N = N + 1
+ |
+ └── Return to condition
 ```
 
-### Remember
-
-**Parallelogram = Input or Output**
+When drawing a loop, ensure that the loop has a clear condition and that the intended exit can be reached.
 
 ---
 
-## 10. Decision Symbol
+## How to Create a Flowchart
 
-### Shape
+Follow these steps when solving a problem.
 
-Diamond.
+### Step 1: Understand the requirement
 
-### Purpose
+Describe the problem in one or two sentences.
 
-A decision symbol represents a condition that determines which path the flowchart follows.
+### Step 2: Identify the input
 
-A decision commonly has two branches, such as Yes and No, or True and False.
+List all required values.
 
-### Example
+### Step 3: Identify the output
 
-Consider the condition:
+State what the result should show.
 
-```text
-Is N even?
-```
+### Step 4: Determine the operations
 
-A flowchart can represent this decision as:
+Write down the calculations or actions needed.
 
-```text
-        / Is N even? \
-       /              \
-     Yes              No
-      |                |
-      v                v
- / Display Even /  / Display Odd /
-       |                |
-       +-------+--------+
-               |
-               v
-             ( STOP )
-```
+### Step 5: Identify conditions
 
-This illustrates how a decision determines the next step.
+Ask whether the solution requires choosing between alternative paths.
 
-### Important Points
+### Step 6: Identify repetition
 
-- The decision is written as a condition.
-- Each branch represents an outcome.
-- Branches should be labelled clearly.
-- The following steps depend on the outcome.
+Determine whether one or more steps need to repeat.
 
-### Remember
+### Step 7: Arrange the symbols
 
-**Diamond = Decision or Condition**
+Place the steps in logical order and connect them with flow lines.
 
-Decision-based flowcharts will be explored in detail in a later folder.
+### Step 8: Trace the diagram
+
+Follow the arrows with sample input values to check that each step is reachable and that the outcome is correct.
+
+### Step 9: Convert it to code
+
+Translate each flowchart operation into an appropriate Python instruction.
 
 ---
 
-## 11. Flow Lines and Arrows
+## Worked Example: Sum of Two Numbers
 
-### Purpose
-
-Flow lines connect symbols and show the direction in which the process moves.
-
-Arrows help readers follow the sequence of operations.
-
-### Example
-
-```text
-   ( START )
-       |
-       v
- [ Process A ]
-       |
-       v
- [ Process B ]
-       |
-       v
-    ( STOP )
-```
-
-The arrows establish the order:
-
-1. Start.
-2. Execute Process A.
-3. Execute Process B.
-4. Stop.
-
-### Important Rules
-
-- Use arrows to make the direction clear.
-- Connect the appropriate entry and exit points of symbols.
-- Avoid confusing line crossings where possible.
-- Make sure every branch leads to the intended next step or endpoint.
-
-### Remember
-
-**Arrow = Direction of Flow**
-
----
-
-## 12. Connector Symbols
-
-Connectors help join parts of a flowchart when direct lines would make the diagram difficult to read.
-
-### 12.1 On-Page Connector
-
-A small circle is commonly used to connect flow lines at different positions on the same page.
-
-Matching connector labels can help identify the continuation of the process.
-
-### 12.2 Off-Page Connector
-
-An off-page connector indicates that the flow continues on another page or section.
-
-The exact symbol and labelling conventions depend on the flowcharting standard being used.
-
-### Why Use Connectors?
-
-- To reduce long or crossing lines.
-- To connect separated sections.
-- To keep complex flowcharts organized.
-- To show where the flow continues.
-
-For small beginner flowcharts, connectors may not be necessary.
-
----
-
-## 13. Rules for Drawing Flowcharts
-
-Follow these rules when designing a flowchart.
-
-### Rule 1: Use a Clear Starting Point
-
-Use a terminal symbol labelled `START` or an equivalent term.
-
-### Rule 2: Use Appropriate Symbols
-
-Use the correct shape for calculations, inputs, outputs, and decisions.
-
-### Rule 3: Connect Steps with Arrows
-
-The order should be easy to follow.
-
-### Rule 4: Keep the Flow Logical
-
-A reader should be able to trace the process from beginning to end.
-
-### Rule 5: Label Decision Branches
-
-Use labels such as `Yes` and `No` where appropriate.
-
-### Rule 6: Avoid Unnecessary Crossing Lines
-
-Arrange symbols so the flowchart remains readable.
-
-### Rule 7: Include an Appropriate Ending
-
-Use a terminal symbol to indicate where the process ends.
-
-### Rule 8: Keep Instructions Concise
-
-Each shape should contain a clear instruction or expression rather than a long explanation.
-
-### Rule 9: Check Every Path
-
-Ensure that the flowchart represents all required outcomes and does not contain unintended dead ends.
-
-### Rule 10: Verify the Logic
-
-Trace the flowchart with sample values before implementing it in code.
-
----
-
-## 14. Example 1 - Display a Message
-
-### Problem
-
-Display the message `Hello, Python!`.
+**Problem:** Read two numbers and display their sum.
 
 ### Algorithm
 
 1. Start.
-2. Display the message.
-3. Stop.
+2. Read the first number, `A`.
+3. Read the second number, `B`.
+4. Calculate `SUM = A + B`.
+5. Display `SUM`.
+6. End.
+
+### Pseudocode
+
+```text
+START
+INPUT A
+INPUT B
+SUM = A + B
+OUTPUT SUM
+END
+```
 
 ### Flowchart
 
@@ -500,435 +304,308 @@ Display the message `Hello, Python!`.
        ( START )
            |
            v
-  / Display Hello, Python! /
+      / Input A /
            |
            v
-        ( STOP )
+      / Input B /
+           |
+           v
+     [ SUM = A + B ]
+           |
+           v
+      / Output SUM /
+           |
+           v
+        ( END )
 ```
 
-### Python Implementation
+### Python implementation
 
 ```python
-print("Hello, Python!")
-```
-
-### Output
-
-```text
-Hello, Python!
-```
-
-### Symbol Explanation
-
-| Step | Symbol | Purpose |
-|---|---|---|
-| Start | Terminator | Begins the process |
-| Display message | Input/Output | Displays the message |
-| Stop | Terminator | Ends the process |
-
-### Learning Outcome
-
-Understand how a basic sequence can be represented using flowchart symbols.
-
----
-
-## 15. Example 2 - Add Two Numbers
-
-### Problem
-
-Calculate the sum of two numbers and display the result.
-
-### Algorithm
-
-1. Start.
-2. Read A and B.
-3. Calculate `SUM = A + B`.
-4. Display SUM.
-5. Stop.
-
-### Flowchart
-
-```text
-        ( START )
-            |
-            v
-     / Read A and B /
-            |
-            v
-      [ SUM = A + B ]
-            |
-            v
-       / Display SUM /
-            |
-            v
-         ( STOP )
-```
-
-### Sample Input
-
-```text
-A = 10
-B = 20
-```
-
-### Calculation
-
-```text
-SUM = 10 + 20
-SUM = 30
-```
-
-### Python Implementation
-
-```python
-a = 10
-b = 20
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
 
 total = a + b
 
 print("Sum:", total)
 ```
 
-### Output
+### Expected output
 
 ```text
-Sum: 30
+Enter first number: 4
+Enter second number: 5
+Sum: 9
 ```
 
-### Symbol Explanation
+### Explanation
 
-- Start and Stop use terminator symbols.
-- Reading A and B uses an input/output symbol.
-- Adding the values uses a process symbol.
-- Displaying the sum uses an input/output symbol.
-- Arrows indicate the order of execution.
+- The terminal symbol starts the flow.
+- The input steps collect `A` and `B`.
+- The process step adds the values.
+- The output step displays the result.
+- The terminal symbol marks the end.
 
-### Learning Outcome
+### Complexity
 
-Understand how a calculation is represented in both a flowchart and Python code.
+For fixed-size integer inputs, the solution uses a fixed number of basic operations:
+
+- Time: `O(1)`.
+- Auxiliary space: `O(1)`.
 
 ---
 
-## 16. Example 3 - Area of a Rectangle
+## Decision Example: Even or Odd
 
-### Problem
+**Problem:** Determine whether an integer is even or odd.
 
-Calculate the area of a rectangle using its length and breadth.
+### Logic
 
-### Formula
-
-```text
-Area = Length × Breadth
-```
-
-### Algorithm
-
-1. Start.
-2. Read LENGTH and BREADTH.
-3. Calculate `AREA = LENGTH × BREADTH`.
-4. Display AREA.
-5. Stop.
-
-### Flowchart
+An integer is even when its remainder after division by 2 is zero.
 
 ```text
-         ( START )
-             |
-             v
- / Read LENGTH and BREADTH /
-             |
-             v
- [ AREA = LENGTH * BREADTH ]
-             |
-             v
-       / Display AREA /
-             |
-             v
-          ( STOP )
+           ( START )
+               |
+               v
+          / Input N /
+               |
+               v
+        < N % 2 == 0? >
+            /       \
+          Yes        No
+           |          |
+      / Output /  / Output /
+        "Even"      "Odd"
+           \          /
+            \        /
+               v
+             ( END )
 ```
 
-### Sample Values
-
-```text
-Length = 8
-Breadth = 4
-```
-
-### Calculation
-
-```text
-Area = 8 × 4
-Area = 32
-```
-
-### Python Implementation
+### Python implementation
 
 ```python
-length = 8
-breadth = 4
+number = int(input("Enter an integer: "))
 
-area = length * breadth
-
-print("Area:", area)
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
 ```
 
-### Output
+### Dry run
+
+For `N = 8`:
+
+1. Read `N = 8`.
+2. Evaluate `8 % 2 == 0`.
+3. The condition is true.
+4. Follow the Yes path.
+5. Display `Even`.
+
+For `N = 7`, the condition is false, so the No path displays `Odd`.
+
+This example demonstrates why decision symbols need clearly labelled branches.
+
+---
+
+## Dry Run
+
+A dry run is the manual execution of an algorithm using specific sample values.
+
+Consider the sum example with `A = 4` and `B = 5`.
+
+| Step | Operation | Value |
+|---|---|---:|
+| 1 | Read A | 4 |
+| 2 | Read B | 5 |
+| 3 | Calculate A + B | 9 |
+| 4 | Display the total | 9 |
+
+Dry-running a flowchart helps find logic errors before coding.
+
+Try at least one normal case, one boundary case, and any case that follows a different decision branch.
+
+---
+
+## Flowchart and Python Comparison
+
+| Flowchart concept | Typical Python equivalent |
+|---|---|
+| Start and End | Program entry and termination |
+| Input/Output | `input()` and `print()` |
+| Process | Assignment and expressions |
+| Decision | `if`, `elif`, `else` |
+| Repetition | `for` and `while` |
+| Flow line | Program control flow |
+| Connector | Logical continuation of a diagram |
+
+These are conceptual equivalents. Python does not require a separate terminal or connector statement.
+
+---
+
+## How to Run the Program
+
+Open PowerShell in the root directory of your `DSA-Python` repository.
+
+Run:
+
+```powershell
+python "PYTHON\Week-1-Programming-Fundamentals\02-Flowcharts-Algorithms\Flowcharts\01_FlowChart_Basics\01_flowchart_basics.py"
+```
+
+The program displays an interactive menu:
 
 ```text
-Area: 32
+FLOWCHART BASICS - PYTHON PRACTICE
+1. Run examples
+2. Run solved practice questions
+3. Show unsolved practice questions
+0. Exit
 ```
 
-### Learning Outcome
+Select an option and follow the prompts. Enter `0` in a question menu to return to the main menu.
 
-Understand how input, processing, and output can be represented with standard flowchart symbols.
-
----
-
-## 17. Flowchart vs Algorithm
-
-An algorithm and a flowchart describe a solution using different representations.
-
-| Algorithm | Flowchart |
-|---|---|
-| Describes a solution as ordered steps | Presents the solution visually |
-| Often written using numbered instructions | Uses symbols connected by arrows |
-| Easy to write in text | Useful for seeing the overall flow |
-| Focuses on the logical steps | Shows how the steps connect |
-| Does not require drawing | Uses a visual diagram |
-
-### Example: Addition
-
-Algorithm:
-
-```text
-1. Start.
-2. Read A and B.
-3. Calculate SUM = A + B.
-4. Display SUM.
-5. Stop.
-```
-
-The flowchart uses symbols to represent the same sequence.
+If your repository currently stores the Python file directly inside `Flowcharts/`, use the existing folder structure or create the topic folder before using the command above.
 
 ---
 
-## 18. Flowchart vs Program
+## Practice Questions
 
-| Flowchart | Program |
-|---|---|
-| Visually describes process logic | Implements instructions in code |
-| Uses shapes and arrows | Uses programming language syntax |
-| Helps plan a solution | Can execute the solution |
-| Can be created before coding | Is written to implement the required behavior |
+The Python file includes three practice categories.
 
-For example, the flowchart for adding two numbers can be implemented using Python:
+### 12 Examples
 
-```python
-a = 10
-b = 20
+These cover:
 
-total = a + b
+1. Flowchart symbols.
+2. Start, process, and end.
+3. Input and output.
+4. Sequential calculations.
+5. Rectangle area.
+6. Even/odd decisions.
+7. Number classification.
+8. Comparing two values.
+9. Pass/fail decisions.
+10. Temperature conversion.
+11. Repetition and summation.
+12. Grade calculation.
 
-print(total)
-```
+### 12 Solved Questions
 
-Output:
+The file also contains implementations for:
 
-```text
-30
-```
+1. Area of a square.
+2. Perimeter of a rectangle.
+3. Largest of three numbers.
+4. Voting eligibility example.
+5. Discount calculation.
+6. Fahrenheit-to-Celsius conversion.
+7. Leap-year check.
+8. Divisibility by 5 and 11.
+9. Smallest of three numbers.
+10. Average of three values.
+11. Sum from 1 to N.
+12. Factorial calculation.
 
-The flowchart plans the logic; the Python program executes it.
+For every solved question, try to draw the flowchart before reading the Python implementation.
 
----
+### 5 Unsolved Questions
 
-## 19. Common Beginner Mistakes
+Attempt these independently:
 
-### Mistake 1: Using a Rectangle for Every Operation
+1. Design a flowchart to check whether an integer is a palindrome.
+2. Design a flowchart to find the second-largest of three numbers.
+3. Design a flowchart to calculate the sum of even integers from 1 to N.
+4. Design a flowchart to determine whether a number is prime.
+5. Design a flowchart for calculating electricity charges using clearly documented slab rates of your choice.
 
-Different operations have different conventional symbols.
-
-**Solution:** Use terminators for start and stop, rectangles for processes, parallelograms for input/output, and diamonds for decisions.
-
-### Mistake 2: Missing Arrows
-
-Without flow lines, the execution order may be unclear.
-
-**Solution:** Connect the steps using arrows.
-
-### Mistake 3: Missing an Ending
-
-A diagram should show where the process finishes when it is intended to be a complete flowchart.
-
-**Solution:** Include an appropriate terminal symbol.
-
-### Mistake 4: Unclear Decision Branches
-
-A decision can lead to different paths.
-
-**Solution:** Label the outgoing branches clearly.
-
-### Mistake 5: Putting Too Much Text Inside Symbols
-
-Long instructions make flowcharts difficult to read.
-
-**Solution:** Use concise operations and keep extra explanations outside the diagram.
-
-### Mistake 6: Drawing Without Checking the Logic
-
-A visually attractive diagram can still contain mistakes.
-
-**Solution:** Trace the flow with sample values and verify that the sequence is correct.
+For each question, write the algorithm, draw the flowchart, test it manually, and then implement it.
 
 ---
 
-## 20. Important Terminology
+## Common Mistakes
 
-| Term | Meaning |
-|---|---|
-| Flowchart | Visual representation of a process or algorithm |
-| Terminator | Symbol indicating start or stop |
-| Process | Calculation or operation |
-| Input/Output | Reading data or displaying results |
-| Decision | Condition that selects a path |
-| Flow line | Line or arrow showing direction |
-| Connector | Symbol that links separate parts of a flowchart |
-| Algorithm | Ordered steps for solving a problem |
-| Branch | One of the possible paths from a decision |
-| Execution flow | The order in which steps are performed |
+- Forgetting to indicate the start or end.
+- Using a process symbol for every type of operation instead of distinguishing input/output and decisions.
+- Leaving decision branches without Yes/No or True/False labels.
+- Drawing arrows in an unclear direction.
+- Forgetting to reconnect a loop to its condition.
+- Creating a loop without a valid stopping condition.
+- Displaying output before calculating it.
+- Ignoring edge cases such as zero, equal values, or invalid input.
+- Drawing a diagram that does not match the actual Python logic.
+- Testing only one path instead of tracing every branch.
 
 ---
 
-## 21. Interview Questions
+## Interview Questions
 
-### Q1. What is a flowchart?
+**1. What is a flowchart?**
 
-A flowchart is a graphical representation of an algorithm or process using standard symbols and arrows.
+A flowchart is a diagram that represents a process or algorithm using symbols and connecting arrows.
 
-### Q2. Why do programmers use flowcharts?
+**2. What is the purpose of a terminal symbol?**
 
-They help visualize the logic, plan a solution, communicate the process, and identify missing or confusing steps.
+It indicates the beginning or end of a flowchart.
 
-### Q3. What is a terminator symbol?
+**3. Which symbol represents a processing step?**
 
-It is generally represented by an oval or rounded rectangle and indicates the beginning or end of a process.
+A rectangle commonly represents a processing operation or calculation.
 
-### Q4. Which symbol represents a process?
+**4. Which symbol is used for a decision?**
 
-A rectangle represents an operation or calculation.
+A diamond commonly represents a condition that may lead to different paths.
 
-### Q5. Which symbol represents input and output?
+**5. Which symbol represents input and output?**
 
-A parallelogram is commonly used to represent input and output operations.
+A parallelogram commonly represents input/output operations.
 
-### Q6. Which symbol represents a decision?
+**6. What is the purpose of a flow line?**
 
-A diamond represents a decision or conditional test.
+A flow line shows the direction and sequence of execution.
 
-### Q7. What is the purpose of flow lines?
+**7. What is sequence in a flowchart?**
 
-Flow lines and arrows show the direction and sequence of execution.
+Sequence means performing steps in order, one after another.
 
-### Q8. What is the difference between an algorithm and a flowchart?
+**8. What is selection?**
 
-An algorithm expresses the solution using ordered steps, while a flowchart expresses the solution visually with symbols and arrows.
+Selection chooses a path based on a condition.
 
-### Q9. Can a flowchart be created before writing code?
+**9. What is iteration?**
 
-Yes. It can be used to plan and review the logic before implementing a program.
+Iteration repeats a set of steps according to a loop condition.
 
-### Q10. What are the limitations of flowcharts?
+**10. Why should a flowchart be checked before programming?**
 
-Large flowcharts can become difficult to manage, and changes may require rearranging or redrawing parts of the diagram.
+Checking the diagram helps detect missing steps, incorrect conditions, and unintended paths before code is written.
 
----
+**11. What is a dry run?**
 
-## 22. Practice Questions
+A dry run manually traces an algorithm with sample data.
 
-Try drawing each flowchart yourself before checking the examples above.
+**12. What is the difference between a flowchart and an algorithm?**
 
-### Beginner Level
-
-**Question 1:** Draw a flowchart to display your name.
-
-**Question 2:** Draw a flowchart to display `Welcome to Python`.
-
-**Question 3:** Draw a flowchart to add two numbers.
-
-**Question 4:** Draw a flowchart to calculate the square of a number.
-
-**Question 5:** Draw a flowchart to calculate the area of a rectangle.
-
-### Intermediate Level
-
-**Question 6:** Draw a flowchart to calculate the average of three numbers.
-
-**Question 7:** Draw a flowchart to convert Celsius into Fahrenheit.
-
-**Question 8:** Draw a flowchart that calculates the perimeter of a rectangle.
-
-**Question 9:** Identify the appropriate symbols for reading input, performing multiplication, displaying output, and ending a process.
-
-**Question 10:** Convert an existing algorithm from your Algorithms-Basics folder into a flowchart.
-
-### Challenge
-
-Choose one mathematical problem and complete the following:
-
-1. Write the algorithm.
-2. Draw the flowchart.
-3. Implement the solution in Python.
-4. Test it using sample values.
-5. Check that the flowchart and the code follow the same logic.
+An algorithm describes the solution steps, while a flowchart represents those steps visually.
 
 ---
 
-## 23. Learning Checklist
+## Learning Checklist
 
-- [ ] Understand what a flowchart is.
-- [ ] Explain why flowcharts are useful.
-- [ ] Identify the terminator symbol.
-- [ ] Identify the process symbol.
-- [ ] Identify the input/output symbol.
-- [ ] Identify the decision symbol.
-- [ ] Understand flow lines and arrows.
-- [ ] Understand connector symbols.
-- [ ] Follow basic flowchart drawing rules.
-- [ ] Draw a flowchart to display a message.
-- [ ] Draw a flowchart to add two numbers.
-- [ ] Draw a flowchart to calculate an area.
-- [ ] Convert a flowchart into Python code.
-- [ ] Solve the practice questions.
+- [ ] I understand what a flowchart represents.
+- [ ] I can identify terminal, process, input/output, and decision symbols.
+- [ ] I can draw a sequence-based flowchart.
+- [ ] I can draw a decision-based flowchart with labelled branches.
+- [ ] I understand how a loop is represented.
+- [ ] I can dry-run a flowchart.
+- [ ] I can convert a simple flowchart into Python.
+- [ ] I have run the examples.
+- [ ] I have studied the solved questions.
+- [ ] I have attempted all five unsolved questions.
 
 ---
 
-## 24. What's Next?
+## Next Topic
 
-Continue with:
-
-**02 - Input Output Flowchart**
-
-In the next topic, we will focus on representing data input, calculations, and output operations in flowcharts.
-
----
-
-## Files in This Folder
-
-| File | Purpose |
-|---|---|
-| `01_flowchart_basics.py` | Python examples that demonstrate basic flowchart logic |
-| `README.md` | Detailed notes, symbol reference, diagrams, examples, interview questions, and practice problems |
-
----
-
-## Conclusion
-
-Flowcharts help us understand a solution before converting it into code.
-
-Learn the common symbols, keep the flow logical, connect the steps clearly, and verify the diagram with sample values.
-
-Remember the basic sequence:
-
-**Start → Input → Process → Output → Stop**
-
-This sequence is a useful starting point for designing simple flowcharts. More complex problems may require decisions, loops, and additional paths, which will be covered in the following topics.
+After completing Flowchart Basics, move to **Input/Output Flowcharts**, where you will practise designing flows for reading data, performing calculations, and displaying results.

@@ -1,342 +1,230 @@
-# Decision Flowcharts
+# Decision Flowcharts — Python
 
-> **Week:** 01 - Programming Fundamentals  
-> **Section:** Algorithms and Flowcharts  
-> **Topic:** Decision Flowcharts  
-> **Level:** Beginner  
-> **Goal:** Understand conditional logic and represent decisions using flowcharts.
+Welcome to **Decision Flowcharts**, part of Week 1: Programming Fundamentals in the DSA-Python repository.
 
----
+This topic explains how flowcharts represent conditions, alternative paths, and decisions. You will practise converting decision-based problems into algorithms and Python programs.
 
 ## Table of Contents
 
-1. Introduction
-2. What Is a Decision Flowchart?
-3. The Decision Symbol
-4. Why Are Decisions Required?
-5. The `if` Statement
-6. The `if-else` Statement
-7. The `if-elif-else` Statement
-8. Comparison Operators
-9. Logical Operators
-10. Example: Positive, Negative, or Zero
-11. Example: Even or Odd
-12. Example: Larger of Two Numbers
-13. Example: Largest of Three Numbers
-14. Example: Pass or Fail
-15. Example: Voting Eligibility
-16. Example: Leap Year
-17. Nested Decisions
-18. Dry Run
-19. Rules for Decision Flowcharts
-20. Common Beginner Mistakes
-21. Important Terminology
-22. Interview Questions
-23. Practice Questions
-24. Learning Checklist
-25. What's Next?
+1. [About This Topic](#about-this-topic)
+2. [Learning Objectives](#learning-objectives)
+3. [What Is a Decision Flowchart?](#what-is-a-decision-flowchart)
+4. [Decision Symbol](#decision-symbol)
+5. [Types of Decision Structures](#types-of-decision-structures)
+6. [Comparison and Logical Operators](#comparison-and-logical-operators)
+7. [Worked Example: Even or Odd](#worked-example-even-or-odd)
+8. [Worked Example: Largest of Three Numbers](#worked-example-largest-of-three-numbers)
+9. [Worked Example: Grade Calculator](#worked-example-grade-calculator)
+10. [Nested Decisions](#nested-decisions)
+11. [Common Decision-Based Problems](#common-decision-based-problems)
+12. [Dry Runs and Testing](#dry-runs-and-testing)
+13. [Common Mistakes](#common-mistakes)
+14. [Folder Structure](#folder-structure)
+15. [How to Run the Program](#how-to-run-the-program)
+16. [Practice Questions](#practice-questions)
+17. [Interview Questions](#interview-questions)
+18. [Learning Checklist](#learning-checklist)
 
 ---
 
-## 1. Introduction
+## About This Topic
 
-In programming, some operations must be performed only when a condition is satisfied.
+A **decision flowchart** represents a process where the next step depends on a condition. It is commonly used for problems involving comparisons, eligibility, classifications, calculations with different rules, and validation.
 
-For example:
+Examples include:
 
-- If a number is even, display "Even".
-- If marks are at least the passing mark, display "Pass".
-- If a number is greater than another number, display the larger number.
-- If a year satisfies the leap-year rules, identify it as a leap year.
+- Checking whether a number is even or odd.
+- Finding the largest of multiple values.
+- Checking pass or fail.
+- Assigning grades based on marks.
+- Determining whether a year is a leap year.
+- Choosing a calculation in a simple calculator.
 
-These problems require **decision-making**.
+A decision flowchart helps you understand which path is taken for different inputs before implementing the logic in Python.
 
-A decision flowchart represents this logic visually. It uses a diamond-shaped decision symbol and arrows to show the possible paths.
+## Learning Objectives
 
-In Python, these decisions are implemented using statements such as `if`, `if-else`, and `if-elif-else`.
+After completing this topic, you should be able to:
+
+- Explain the purpose of decision flowcharts.
+- Identify the decision diamond.
+- Label branches with meaningful outcomes such as Yes/No or True/False.
+- Use comparison operators to define conditions.
+- Understand `if`, `if-else`, and `if-elif-else`.
+- Understand nested decisions.
+- Combine conditions using logical operators.
+- Convert a decision flowchart into Python code.
+- Trace each possible branch manually.
+- Test normal, boundary, and invalid inputs.
 
 ---
 
-## 2. What Is a Decision Flowchart?
+## What Is a Decision Flowchart?
 
-A decision flowchart is a flowchart in which a condition determines the next step of execution.
+A decision flowchart shows how a condition changes the direction of a solution.
 
-A decision commonly produces two outcomes:
+For example, checking whether a number is even or odd requires a condition:
 
-- Yes or True
-- No or False
+`N % 2 == 0`
 
-The flowchart follows the branch corresponding to the result of the condition.
-
-### Example: Check Whether a Number Is Positive
+If the condition is true, the Even path is followed. Otherwise, the Odd path is followed.
 
 ```text
-       ( START )
-           |
-           v
-      / Read N /
-           |
-           v
-       < N > 0? >
-       /       \
-     Yes        No
-      |          |
-      v          v
- / Positive /  / Not Positive /
-      |          |
-      +----+-----+
-           |
-           v
-        ( STOP )
+          ( START )
+              |
+              v
+         / Input N /
+              |
+              v
+       < N % 2 == 0? >
+           /       \
+         Yes        No
+          |          |
+          v          v
+     / Output /  / Output /
+       "Even"      "Odd"
+          \          /
+           \        /
+              v
+            ( END )
 ```
 
-The diamond represents the condition `N > 0`.
+A good decision flowchart makes each possible outcome clear and ensures that the required paths are represented.
 
-If the answer is Yes, the algorithm displays Positive. Otherwise, it displays Not Positive.
+## Decision Symbol
 
----
+A **diamond** is commonly used to represent a decision.
 
-## 3. The Decision Symbol
+The symbol evaluates a condition, and the outgoing arrows represent the possible results.
 
-### Shape
-
-Diamond.
-
-### Purpose
-
-The decision symbol represents a condition that determines which path the flowchart follows.
-
-### Example
+For a binary decision, use two clearly labelled branches:
 
 ```text
-       < N % 2 == 0? >
+        < Condition? >
           /       \
         Yes        No
          |          |
-         v          v
-      / Even /   / Odd /
+      [Action A] [Action B]
 ```
 
-Here, the condition checks whether the remainder of `N` divided by 2 is zero.
+For example:
 
-### Important Rules
+- Condition: `marks >= 40`
+- True path: Display `PASS`
+- False path: Display `FAIL`
 
-- Write a clear condition inside the diamond.
-- Label the outgoing branches.
-- Ensure that each branch leads to the correct action.
-- If the branches merge later, show where the flow continues.
-
-**Remember:** Diamond = Decision or Condition.
+A decision symbol should not have ambiguous branches. The diagram should clearly show what happens for each possible result.
 
 ---
 
-## 4. Why Are Decisions Required?
+## Types of Decision Structures
 
-Decisions allow an algorithm to choose between different actions.
+### 1. Simple `if`
 
-Without conditional logic, a program would not be able to select an output based on the values it receives.
+An action is performed only when a condition is true.
 
-### Examples
-
-| Problem | Condition |
-|---|---|
-| Positive or negative | `number > 0` |
-| Even or odd | `number % 2 == 0` |
-| Find the larger number | `a > b` |
-| Pass or fail | `marks >= passing_marks` |
-| Voting-age check | `age >= 18` |
-| Leap-year check | A combination of divisibility conditions |
-
-The next step depends on whether the condition evaluates to True or False.
-
----
-
-## 5. The `if` Statement
-
-The `if` statement executes a block of code when its condition is True.
-
-### Syntax
+Python:
 
 ```python
-if condition:
-    # Statements executed when the condition is True
-```
-
-### Example
-
-```python
-number = 10
-
 if number > 0:
-    print("Positive number")
+    print("Positive")
 ```
 
-Output:
+Flow:
 
 ```text
-Positive number
+       < Number > 0? >
+          /       \
+        Yes        No
+         |          |
+    [Display    [Continue
+    Positive]   without action]
 ```
 
-### Flowchart
+### 2. `if-else`
 
-```text
-       ( START )
-           |
-           v
-      / Read N /
-           |
-           v
-       < N > 0? >
-       /       \
-     Yes        No
-      |          |
-      v          |
- / Positive /    |
-      |          |
-      +----+-----+
-           |
-           v
-        ( STOP )
-```
+One of two paths is selected.
 
-The No branch skips the display operation.
-
-### Important Point
-
-Python uses indentation to define the body of the `if` statement.
-
----
-
-## 6. The `if-else` Statement
-
-The `if-else` statement selects between two alternatives.
-
-If the condition is True, the `if` block executes. Otherwise, the `else` block executes.
-
-### Syntax
+Python:
 
 ```python
-if condition:
-    # True branch
-else:
-    # False branch
-```
-
-### Example: Even or Odd
-
-```python
-number = 7
-
 if number % 2 == 0:
     print("Even")
 else:
     print("Odd")
 ```
 
-Output:
+Flow:
 
 ```text
-Odd
+        < Is even? >
+          /      \
+        Yes       No
+         |         |
+      [Even]      [Odd]
+          \        /
+              End
 ```
 
-### Flowchart
+### 3. `if-elif-else`
 
-```text
-         ( START )
-             |
-             v
-        / Read N /
-             |
-             v
-       < N % 2 == 0? >
-          /       \
-        Yes        No
-         |          |
-         v          v
-     / Even /    / Odd /
-         |          |
-         +----+-----+
-              |
-              v
-           ( STOP )
-```
+Multiple conditions are checked in order. The first condition that evaluates to true determines the selected branch.
 
-Both branches eventually reach the end of the process.
-
----
-
-## 7. The `if-elif-else` Statement
-
-When a problem has more than two possible outcomes, we can use `if-elif-else`.
-
-Python evaluates the conditions in order. The first True branch executes. If no condition is True, the `else` branch executes when one is provided.
-
-### Syntax
+Python:
 
 ```python
-if condition_1:
-    # First condition is True
-elif condition_2:
-    # First condition is False, second is True
+if marks >= 90:
+    grade = "A"
+elif marks >= 75:
+    grade = "B"
+elif marks >= 60:
+    grade = "C"
 else:
-    # No preceding condition is True
+    grade = "F"
+
+print(grade)
 ```
 
-### Example: Positive, Negative, or Zero
+The order matters because later conditions are evaluated only when earlier conditions are false.
+
+### 4. Nested decisions
+
+A decision is placed inside another decision's branch.
+
+Python:
 
 ```python
-number = -5
-
-if number > 0:
-    print("Positive")
-elif number < 0:
+if number >= 0:
+    if number == 0:
+        print("Zero")
+    else:
+        print("Positive")
+else:
     print("Negative")
+```
+
+Nested decisions are useful when the second condition matters only after the first condition has been satisfied.
+
+### 5. Combined conditions
+
+Multiple conditions can be combined with `and`, `or`, and `not`.
+
+Example:
+
+```python
+if attendance >= 75 and marks >= 40:
+    print("Eligible under the example rules")
 else:
-    print("Zero")
+    print("Not eligible under the example rules")
 ```
 
-Output:
-
-```text
-Negative
-```
-
-### Flowchart
-
-```text
-       ( START )
-           |
-           v
-       / Read N /
-           |
-           v
-       < N > 0? >
-       /       \
-     Yes        No
-      |          |
-      v          v
- / Positive /  < N < 0? >
-                /       \
-              Yes        No
-               |          |
-               v          v
-          / Negative /  / Zero /
-               |          |
-               +----+-----+
-                    |
-                    v
-                 ( STOP )
-```
-
-### Important Point
-
-The order and meaning of conditions matter. Check that the conditions cover the required cases.
+Here, both conditions must be true.
 
 ---
 
-## 8. Comparison Operators
+## Comparison and Logical Operators
 
-Comparison operators compare two values and produce a Boolean result: `True` or `False`.
+### Comparison operators
 
 | Operator | Meaning | Example |
 |---|---|---|
@@ -344,250 +232,61 @@ Comparison operators compare two values and produce a Boolean result: `True` or 
 | `!=` | Not equal to | `a != b` |
 | `>` | Greater than | `a > b` |
 | `<` | Less than | `a < b` |
-| `>=` | Greater than or equal to | `a >= b` |
-| `<=` | Less than or equal to | `a <= b` |
+| `>=` | Greater than or equal to | `marks >= 40` |
+| `<=` | Less than or equal to | `age <= 12` |
 
-### Example
+A comparison generally evaluates to either `True` or `False`.
 
-```python
-a = 10
-b = 20
+### Logical operators
 
-print(a == b)
-print(a != b)
-print(a < b)
-print(a > b)
-```
+| Operator | Meaning | Example |
+|---|---|---|
+| `and` | Both conditions must be true | `age >= 18 and has_id` |
+| `or` | At least one condition must be true | `a == 0 or b == 0` |
+| `not` | Reverses a Boolean result | `not valid` |
 
-Output:
-
-```text
-False
-True
-True
-False
-```
-
-### Important Difference Between `=` and `==`
-
-- `=` assigns a value to a variable.
-- `==` compares two values for equality.
+Parentheses can help make complex conditions easier to read.
 
 Example:
 
 ```python
-number = 10
-
-if number == 10:
-    print("The number is 10")
+if (marks >= 40) and (attendance >= 75):
+    print("Meets both example conditions")
 ```
 
-Output:
-
-```text
-The number is 10
-```
+**Important:** Use conditions that match the problem's exact requirements. Eligibility thresholds and grading rules can vary by institution, company, or policy.
 
 ---
 
-## 9. Logical Operators
+## Worked Example: Even or Odd
 
-Logical operators allow conditions to be combined or reversed.
-
-Python provides three main logical operators: `and`, `or`, and `not`.
-
-### 9.1 The `and` Operator
-
-The result is True only when both conditions are True.
-
-```python
-age = 20
-
-if age >= 18 and age <= 60:
-    print("Age is within the specified range")
-```
-
-Output:
-
-```text
-Age is within the specified range
-```
-
-### 9.2 The `or` Operator
-
-The result is True when at least one condition is True.
-
-```python
-number = -5
-
-if number < 0 or number == 0:
-    print("Number is zero or negative")
-```
-
-Output:
-
-```text
-Number is zero or negative
-```
-
-### 9.3 The `not` Operator
-
-The `not` operator reverses a Boolean result.
-
-```python
-is_raining = False
-
-if not is_raining:
-    print("It is not raining")
-```
-
-Output:
-
-```text
-It is not raining
-```
-
-### Truth Table
-
-| A | B | `A and B` | `A or B` |
-|---|---|---|---|
-| True | True | True | True |
-| True | False | False | True |
-| False | True | False | True |
-| False | False | False | False |
-
-For `not`:
-
-| A | `not A` |
-|---|---|
-| True | False |
-| False | True |
-
-Logical operators are useful in decisions involving multiple conditions.
-
----
-
-## 10. Example: Positive, Negative, or Zero
-
-### Problem
-
-Determine whether a number is positive, negative, or zero.
+**Problem:** Read an integer and determine whether it is even or odd.
 
 ### Algorithm
 
 1. Start.
-2. Read N.
-3. If N is greater than zero, display Positive.
-4. Otherwise, if N is less than zero, display Negative.
-5. Otherwise, display Zero.
-6. Stop.
-
-### Flowchart
-
-```text
-       ( START )
-           |
-           v
-       / Read N /
-           |
-           v
-       < N > 0? >
-       /       \
-     Yes        No
-      |          |
-      v          v
- / Positive /  < N < 0? >
-                /       \
-              Yes        No
-               |          |
-               v          v
-          / Negative /  / Zero /
-               |          |
-               +----+-----+
-                    |
-                    v
-                 ( STOP )
-```
-
-### Python Code
-
-```python
-number = int(input("Enter a number: "))
-
-if number > 0:
-    print("Positive")
-elif number < 0:
-    print("Negative")
-else:
-    print("Zero")
-```
-
-### Sample Input
-
-```text
-Enter a number: -8
-```
-
-### Output
-
-```text
-Negative
-```
-
-### Edge Cases
-
-| Input | Output |
-|---:|---|
-| `10` | Positive |
-| `-8` | Negative |
-| `0` | Zero |
-
----
-
-## 11. Example: Even or Odd
-
-### Problem
-
-Determine whether an integer is even or odd.
-
-### Concept
-
-The modulo operator `%` returns the remainder of a division.
-
-If an integer is divisible by 2, its remainder is zero.
-
-### Algorithm
-
-1. Start.
-2. Read N.
+2. Read integer `N`.
 3. Check whether `N % 2 == 0`.
-4. If True, display Even.
-5. Otherwise, display Odd.
-6. Stop.
+4. If true, display `Even`.
+5. Otherwise, display `Odd`.
+6. End.
 
-### Flowchart
+### Pseudocode
 
 ```text
-         ( START )
-             |
-             v
-        / Read N /
-             |
-             v
-       < N % 2 == 0? >
-          /       \
-        Yes        No
-         |          |
-         v          v
-     / Even /    / Odd /
-         |          |
-         +----+-----+
-              |
-              v
-           ( STOP )
+START
+INPUT N
+
+IF N MOD 2 = 0
+    OUTPUT "Even"
+ELSE
+    OUTPUT "Odd"
+END IF
+
+END
 ```
 
-### Python Code
+### Python implementation
 
 ```python
 number = int(input("Enter an integer: "))
@@ -598,93 +297,71 @@ else:
     print("Odd")
 ```
 
-### Sample Input
+### Dry run
 
-```text
-Enter an integer: 14
-```
+| Input | Condition | Output |
+|---:|---|---|
+| 8 | `8 % 2 == 0` is true | Even |
+| 7 | `7 % 2 == 0` is false | Odd |
+| 0 | `0 % 2 == 0` is true | Even |
+| -4 | `-4 % 2 == 0` is true | Even |
 
-### Output
+### Complexity
 
-```text
-Even
-```
+The algorithm uses a fixed number of operations for a fixed-size integer model.
 
-This algorithm works for positive and negative integers, including zero.
-
----
-
-## 12. Example: Larger of Two Numbers
-
-### Problem
-
-Find the larger of two numbers. If the values are equal, report that they are equal.
-
-### Algorithm
-
-1. Start.
-2. Read A and B.
-3. If A is greater than B, display A.
-4. Otherwise, if B is greater than A, display B.
-5. Otherwise, display that both are equal.
-6. Stop.
-
-### Python Code
-
-```python
-a = int(input("Enter first number: "))
-b = int(input("Enter second number: "))
-
-if a > b:
-    print("Larger:", a)
-elif b > a:
-    print("Larger:", b)
-else:
-    print("Both numbers are equal")
-```
-
-### Sample Input
-
-```text
-Enter first number: 25
-Enter second number: 15
-```
-
-### Output
-
-```text
-Larger: 25
-```
-
-### Why Is the Final `else` Important?
-
-It handles the case in which neither number is greater than the other. For numeric values, that means they are equal.
+- Time: `O(1)`
+- Auxiliary space: `O(1)`
 
 ---
 
-## 13. Example: Largest of Three Numbers
+## Worked Example: Largest of Three Numbers
 
-### Problem
-
-Find a largest value among three numbers.
+**Problem:** Read three numbers and display the largest one.
 
 ### Algorithm
 
-1. Start.
-2. Read A, B, and C.
-3. If A is greater than or equal to B and C, select A.
-4. Otherwise, if B is greater than or equal to A and C, select B.
-5. Otherwise, select C.
-6. Display the largest value.
-7. Stop.
+1. Read `A`, `B`, and `C`.
+2. If `A >= B` and `A >= C`, select `A`.
+3. Otherwise, if `B >= A` and `B >= C`, select `B`.
+4. Otherwise, select `C`.
+5. Display the selected value.
 
-### Python Code
+### Flowchart
+
+```text
+             ( START )
+                 |
+                 v
+          / Input A, B, C /
+                 |
+                 v
+       < A >= B AND A >= C? >
+             /          \
+           Yes           No
+            |             |
+        [Largest=A]       v
+                   < B >= A AND B >= C? >
+                         /           \
+                       Yes            No
+                        |              |
+                   [Largest=B]   [Largest=C]
+                        \             /
+                         \           /
+                          v         v
+                         / Display /
+                           Largest
+                              |
+                              v
+                            ( END )
+```
+
+### Python implementation
 
 ```python
-a, b, c = map(
-    int,
-    input("Enter three numbers separated by spaces: ").split()
-)
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+c = float(input("Enter third number: "))
 
 if a >= b and a >= c:
     largest = a
@@ -696,471 +373,327 @@ else:
 print("Largest:", largest)
 ```
 
-### Sample Input
+### Dry run
 
-```text
-Enter three numbers separated by spaces: 12 45 30
-```
+Suppose `A = 12`, `B = 25`, and `C = 17`.
 
-### Output
+- The first condition is false.
+- The second condition is true.
+- `B` is selected.
+- The output is `25`.
 
-```text
-Largest: 45
-```
-
-The code handles equal values as well, although it returns only the largest value rather than identifying every variable that has that value.
+Using `>=` allows the algorithm to handle equal values correctly as well.
 
 ---
 
-## 14. Example: Pass or Fail
+## Worked Example: Grade Calculator
 
-### Problem
+**Problem:** Assign an example grade according to a percentage.
 
-Determine whether a student passes or fails based on marks.
+The thresholds below are illustrative for programming practice, not a universal grading policy.
 
-For this example, assume the marks are between 0 and 100 and the passing threshold is 40.
+| Percentage | Example grade |
+|---|---|
+| 90–100 | A |
+| 75–less than 90 | B |
+| 60–less than 75 | C |
+| 40–less than 60 | D |
+| 0–less than 40 | F |
 
-### Algorithm
-
-1. Start.
-2. Read marks.
-3. If marks are outside the valid range, display Invalid.
-4. Otherwise, if marks are at least 40, display Pass.
-5. Otherwise, display Fail.
-6. Stop.
-
-### Python Code
+### Python implementation
 
 ```python
-marks = float(input("Enter marks from 0 to 100: "))
+percentage = float(input("Enter percentage (0-100): "))
 
-if marks < 0 or marks > 100:
-    print("Invalid marks")
-elif marks >= 40:
-    print("Pass")
+if not 0 <= percentage <= 100:
+    print("Invalid percentage.")
+elif percentage >= 90:
+    print("Grade A")
+elif percentage >= 75:
+    print("Grade B")
+elif percentage >= 60:
+    print("Grade C")
+elif percentage >= 40:
+    print("Grade D")
 else:
-    print("Fail")
+    print("Grade F")
 ```
 
-### Sample Input
+### Why the order matters
 
-```text
-Enter marks from 0 to 100: 65
-```
+The highest threshold is checked first. If `percentage` is `92`, the first grade condition is satisfied and later branches are skipped.
 
-### Output
+A common mistake is checking a broad condition before a narrower one. For example, placing `percentage >= 40` before `percentage >= 90` would cause a score of `92` to receive the first matching grade rather than the intended grade.
 
-```text
-Pass
-```
+### Boundary tests
 
-### Important Point
-
-The passing threshold in this example is an assumption for learning conditional logic. Actual grading rules depend on the relevant institution or assessment.
-
----
-
-## 15. Example: Voting Eligibility
-
-### Problem
-
-Determine whether a person meets the age threshold of 18 for this example.
-
-### Algorithm
-
-1. Start.
-2. Read age.
-3. If age is negative, display Invalid.
-4. Otherwise, if age is at least 18, display Eligible by age.
-5. Otherwise, display Not eligible by age.
-6. Stop.
-
-### Python Code
-
-```python
-age = int(input("Enter your age: "))
-
-if age < 0:
-    print("Invalid age")
-elif age >= 18:
-    print("Eligible by age")
-else:
-    print("Not eligible by age")
-```
-
-### Sample Input
-
-```text
-Enter your age: 20
-```
-
-### Output
-
-```text
-Eligible by age
-```
-
-The example only checks age. It does not determine whether someone satisfies all legal requirements for voting.
-
----
-
-## 16. Example: Leap Year
-
-### Problem
-
-Determine whether a year is a leap year under the Gregorian calendar rules.
-
-### Rules
-
-A year is a leap year if:
-
-- It is divisible by 400; or
-- It is divisible by 4 but not divisible by 100.
-
-### Algorithm
-
-1. Start.
-2. Read the year.
-3. If the year is divisible by 400, it is a leap year.
-4. Otherwise, if it is divisible by 4 and not by 100, it is a leap year.
-5. Otherwise, it is not a leap year.
-6. Stop.
-
-### Python Code
-
-```python
-year = int(input("Enter a year: "))
-
-if year <= 0:
-    print("Enter a positive year")
-elif year % 400 == 0 or (
-    year % 4 == 0 and year % 100 != 0
-):
-    print("Leap Year")
-else:
-    print("Not a Leap Year")
-```
-
-### Example Results
-
-| Year | Result |
+| Percentage | Expected example grade |
 |---:|---|
-| 2024 | Leap Year |
-| 1900 | Not a Leap Year |
-| 2000 | Leap Year |
-| 2025 | Not a Leap Year |
+| 100 | A |
+| 90 | A |
+| 89.9 | B |
+| 75 | B |
+| 60 | C |
+| 40 | D |
+| 39.9 | F |
+| -1 | Invalid percentage |
+| 101 | Invalid percentage |
 
-### Explanation
-
-The year 1900 is divisible by 100 but not by 400, so it is not a leap year.
-
-The year 2000 is divisible by 400, so it is a leap year.
-
-This example demonstrates why a decision may require multiple conditions combined using `and` and `or`.
+Boundary tests are especially useful when conditions contain `>=` or `<=`.
 
 ---
 
-## 17. Nested Decisions
+## Nested Decisions
 
-A nested decision is a conditional statement placed inside another conditional block.
+A nested decision is a decision placed inside another branch.
 
-### Example: Positive and Even
+Example: classify a value as positive, negative, or zero.
 
 ```python
-number = 8
+number = float(input("Enter a number: "))
 
-if number > 0:
-    print("Positive")
-
-    if number % 2 == 0:
-        print("Even")
+if number >= 0:
+    if number == 0:
+        print("Zero")
     else:
-        print("Odd")
+        print("Positive")
 else:
-    print("Not Positive")
+    print("Negative")
 ```
 
-Output:
+The outer decision separates non-negative and negative values. The inner decision distinguishes zero from positive values.
+
+Nested decisions can express complex logic, but too many levels can make programs harder to read. When possible, use clear `if-elif-else` structures or extract logic into a function.
+
+---
+
+## Common Decision-Based Problems
+
+Decision flowcharts are helpful for problems involving:
+
+- Number classification.
+- Comparisons between two or more values.
+- Pass/fail and grade assignment.
+- Age-based examples.
+- Leap-year checks.
+- Divisibility.
+- Character classification.
+- Calculator operator selection.
+- Eligibility based on multiple conditions.
+- Range-based pricing.
+- Validation of inputs.
+- Classification of triangle side lengths.
+
+For range-based problems, define each threshold explicitly and check the boundary values carefully.
+
+For example, the Gregorian leap-year rule is:
+
+1. A year divisible by 400 is a leap year.
+2. Otherwise, a year divisible by 100 is not a leap year.
+3. Otherwise, a year divisible by 4 is a leap year.
+4. All other years are not leap years.
+
+This ordered set of rules makes a good exercise in multi-branch decision logic.
+
+---
+
+## Dry Runs and Testing
+
+A dry run follows the algorithm step by step using a known input. It helps verify which branch should execute.
+
+For every decision program, test:
+
+1. A normal input.
+2. Each possible decision path.
+3. Values exactly at a threshold.
+4. Values immediately above and below a threshold.
+5. Invalid values if the program accepts user input.
+
+### Example: Pass or fail
+
+Assume the practice threshold is 40 marks out of 100.
+
+| Input marks | Decision | Expected output |
+|---:|---|---|
+| 80 | `80 >= 40` | PASS |
+| 40 | `40 >= 40` | PASS |
+| 39 | `39 >= 40` is false | FAIL |
+| 101 | Outside valid range | Invalid input |
+
+### Test the diagram, not just the code
+
+For every branch in the flowchart, ensure that there is a clear route to the appropriate action. Also check that no condition accidentally excludes valid inputs or assigns them to the wrong path.
+
+---
+
+## Common Mistakes
+
+- Forgetting to label a decision's branches.
+- Writing a condition that does not match the stated requirement.
+- Checking conditions in the wrong order.
+- Confusing `=` with `==` in Python.
+- Forgetting to handle equality when comparing values.
+- Missing the boundary value in a range.
+- Using `and` when `or` is intended, or the reverse.
+- Forgetting to validate percentages and other restricted values.
+- Creating overlapping ranges without a deliberate rule.
+- Drawing a flowchart that does not match the code.
+- Testing only one path.
+- Using real-world eligibility thresholds without verifying the applicable policy.
+
+---
+
+## Folder Structure
 
 ```text
-Positive
-Even
+03_Decision_FlowChart/
+│
+├── README.md
+└── 03_decision_flowchart.py
 ```
 
-### Explanation
-
-The outer `if` checks whether the number is positive.
-
-Only if this condition is True does the program check the inner even-or-odd condition.
-
-### When Are Nested Decisions Useful?
-
-They can be useful when a second decision is meaningful only after the first condition has been satisfied.
-
-However, nested conditions are not always necessary. Sometimes combining conditions or arranging `if-elif-else` branches makes the code easier to read.
+The Python file provides runnable examples and practice programs. This README contains the theory, flowchart patterns, worked examples, testing guidance, and interview questions.
 
 ---
 
-## 18. Dry Run
+## How to Run the Program
 
-A dry run means tracing an algorithm manually using sample input values.
+Open PowerShell in the root folder of your `DSA-Python` repository.
 
-Consider this code:
+Run:
 
-```python
-number = 7
-
-if number % 2 == 0:
-    print("Even")
-else:
-    print("Odd")
+```powershell
+python "PYTHON\Week-1-Programming-Fundamentals\02-Flowcharts-Algorithms\Flowcharts\03_Decision_FlowChart\03_decision_flowchart.py"
 ```
 
-### Dry-Run Table
+The menu provides:
 
-| Step | Operation | Result |
-|---|---|---|
-| 1 | Set `number = 7` | 7 |
-| 2 | Calculate `7 % 2` | 1 |
-| 3 | Check whether the remainder equals zero | False |
-| 4 | Execute the `else` block | Display Odd |
+1. Run examples.
+2. Run solved practice questions.
+3. Show unsolved practice questions.
+0. Exit.
 
-Output:
+Select an option and follow the input prompts. Choose `0` inside a sub-menu to return to the main menu.
 
-```text
-Odd
-```
-
-The dry run shows exactly why the program follows the False branch.
+If the `python` command is not recognized, verify that Python is installed. The Windows `py` command may also work.
 
 ---
 
-## 19. Rules for Decision Flowcharts
+## Practice Questions
 
-1. Use a diamond to represent a decision.
-2. Write a clear condition inside the diamond.
-3. Label branches such as Yes and No, or True and False.
-4. Use arrows to show the direction of execution.
-5. Ensure that each branch leads to the correct operation.
-6. Include all important outcomes.
-7. Rejoin branches when the paths continue through common steps.
-8. Keep the flowchart readable.
-9. Trace the flowchart using sample inputs.
-10. Verify that the flowchart and its Python implementation follow the same logic.
+The Python file contains 12 examples, 12 solved questions, and 5 unsolved questions.
 
----
+### 12 Examples
 
-## 20. Common Beginner Mistakes
+1. Even or odd.
+2. Positive, negative, or zero.
+3. Largest of two numbers.
+4. Largest of three numbers.
+5. Voting eligibility example.
+6. Pass or fail.
+7. Grade calculator.
+8. Leap-year check.
+9. Divisibility by 5 and 11.
+10. Character classification.
+11. Simple calculator.
+12. Triangle classification.
 
-### Mistake 1: Using `=` Instead of `==`
+### 12 Solved Questions
 
-Incorrect:
+1. Smallest of three numbers.
+2. Age-category example.
+3. Discount by purchase amount.
+4. Scholarship-eligibility example.
+5. BMI-category demonstration.
+6. Divisibility by 3 and 5.
+7. Exam-eligibility example.
+8. Character classification.
+9. Weekday name.
+10. Largest of four numbers.
+11. Classification of quadratic roots.
+12. Electricity-bill example using practice rates.
 
-```python
-if number = 10:
-    print("Ten")
-```
+The eligibility rules, discount thresholds, and utility rates in the examples are illustrative. They should not be treated as official policies or tariffs.
 
-Correct:
+### 5 Unsolved Questions
 
-```python
-if number == 10:
-    print("Ten")
-```
+1. Design a calculator flowchart with operator validation and safe division.
+2. Validate a date, including February during leap years.
+3. Calculate an example income tax using clearly documented practice slabs.
+4. Decide admission eligibility using marks and another specified condition.
+5. Calculate a ticket price using age groups and an optional concession.
 
-`=` is used for assignment. `==` is used for comparison.
-
-### Mistake 2: Incorrect Indentation
-
-Python uses indentation to define conditional blocks.
-
-Correct:
-
-```python
-if number > 0:
-    print("Positive")
-```
-
-### Mistake 3: Ignoring Equal Values
-
-When finding the larger of two numbers, the algorithm should handle equality if it is possible.
-
-### Mistake 4: Incorrect Condition Order
-
-Conditions in an `if-elif-else` statement are evaluated in order. A broad earlier condition can prevent later branches from executing.
-
-### Mistake 5: Forgetting Branch Labels
-
-A decision diamond should have clearly identified outcomes so the flowchart can be followed correctly.
-
-### Mistake 6: Forgetting Parentheses in Compound Logic
-
-Parentheses make complex conditions easier to understand and help express the intended grouping of `and` and `or`.
-
-### Mistake 7: Testing Only One Input
-
-Test positive, negative, zero, equal values, and boundary cases as appropriate for the problem.
+For each question, write the conditions first, draw the diagram, test every branch, then implement the solution in Python.
 
 ---
 
-## 21. Important Terminology
+## Interview Questions
 
-| Term | Meaning |
-|---|---|
-| Decision flowchart | A flowchart that represents conditional branching |
-| Decision symbol | Diamond-shaped symbol for a condition |
-| Condition | Expression evaluated as True or False |
-| `if` | Executes a block if its condition is True |
-| `else` | Executes when the preceding `if` condition is False |
-| `elif` | Checks an additional condition |
-| Nested decision | A conditional block inside another conditional block |
-| Comparison operator | Operator used to compare values |
-| Logical operator | Operator used to combine or reverse conditions |
-| Branch | One possible path from a decision |
-| Dry run | Manually tracing an algorithm using sample values |
+**1. What is a decision flowchart?**
 
----
+It is a flowchart that uses conditions to choose between alternative paths.
 
-## 22. Interview Questions
+**2. Which symbol represents a decision?**
 
-### Q1. What is a decision flowchart?
+A diamond is commonly used for a decision.
 
-It is a flowchart that uses a decision symbol to select a path based on a condition.
+**3. What is the difference between `if` and `if-else`?**
 
-### Q2. Which flowchart symbol represents a decision?
+An `if` statement performs an action when its condition is true. An `if-else` statement selects between two paths.
 
-A diamond.
+**4. What is `if-elif-else` used for?**
 
-### Q3. What is the difference between `if` and `if-else`?
+It checks multiple conditions in order and executes the first matching branch.
 
-`if` executes a block when its condition is True. `if-else` selects between a True branch and a False branch.
+**5. What is a nested decision?**
 
-### Q4. What is `if-elif-else` used for?
+A nested decision places one decision inside another decision's branch.
 
-It is used when a program must choose between multiple possible conditions or outcomes.
+**6. What is the difference between `and` and `or`?**
 
-### Q5. What is a nested decision?
+`and` requires both conditions to be true. `or` requires at least one condition to be true.
 
-It is a conditional statement placed inside another conditional block.
+**7. Why does the order of conditions matter?**
 
-### Q6. What is the difference between `=` and `==`?
+In an `if-elif-else` structure, the first true condition is executed and later branches are skipped.
 
-`=` assigns a value; `==` compares two values for equality.
+**8. How do you test a decision flowchart?**
 
-### Q7. What does the `and` operator do?
+Trace every branch with representative input values, including boundary and invalid cases.
 
-It evaluates to True when both operand conditions are True.
+**9. What is a boundary test?**
 
-### Q8. What does the `or` operator do?
+It tests a value at or near a threshold, such as 39, 40, and 41 for an example pass mark of 40.
 
-It evaluates to True when at least one operand condition is True.
+**10. How do a decision flowchart and Python `if` statements relate?**
 
-### Q9. How do you check whether a number is even?
+The decision diamond represents a condition, while the branches correspond to the possible outcomes of the Python conditional statement.
 
-Check whether `number % 2 == 0`.
+**11. Why should user input be validated?**
 
-### Q10. How do you check whether a year is a leap year?
+Validation prevents values outside the problem's allowed range from being processed as if they were valid.
 
-A year is a leap year if it is divisible by 400, or if it is divisible by 4 but not by 100.
+**12. What should be checked when designing a multi-branch decision?**
 
-### Q11. Why should a decision flowchart label its branches?
-
-Branch labels make it clear which path to follow for each outcome.
-
-### Q12. How can you test a decision algorithm?
-
-Use sample values that cause each branch to execute, including relevant boundary and edge cases.
+Check condition order, branch labels, boundary values, coverage of all intended cases, and whether every path reaches the correct result.
 
 ---
 
-## 23. Practice Questions
+## Learning Checklist
 
-Try drawing the flowchart first and then writing the Python program.
-
-### Beginner Level
-
-**Question 1:** Check whether a number is positive, negative, or zero.
-
-**Question 2:** Check whether a number is even or odd.
-
-**Question 3:** Find the larger of two numbers.
-
-**Question 4:** Find the smaller of two numbers, including the equality case.
-
-**Question 5:** Check whether a student passes or fails using a specified passing threshold.
-
-### Intermediate Level
-
-**Question 6:** Find the largest of three numbers.
-
-**Question 7:** Check whether a number is divisible by both 3 and 5.
-
-**Question 8:** Check whether a year is a leap year.
-
-**Question 9:** Check whether a person meets a specified age threshold.
-
-**Question 10:** Classify marks as invalid, fail, pass, or distinction using clearly defined ranges.
-
-### Challenge
-
-Choose two problems and complete each of these tasks:
-
-1. Write the algorithm.
-2. Draw the decision flowchart.
-3. Implement the solution in Python.
-4. Test every branch with sample values.
-5. Include appropriate boundary and edge cases.
-6. Explain the conditions used in the decision diamonds.
+- [ ] I understand the purpose of a decision flowchart.
+- [ ] I can draw and label a decision diamond.
+- [ ] I understand simple `if` and `if-else`.
+- [ ] I understand `if-elif-else` and nested decisions.
+- [ ] I can use comparison and logical operators.
+- [ ] I can convert a decision flowchart into Python.
+- [ ] I can dry-run each possible branch.
+- [ ] I have tested boundary values.
+- [ ] I have run the examples and solved questions.
+- [ ] I have attempted all five unsolved questions.
 
 ---
 
-## 24. Learning Checklist
+## Next Topic
 
-- [ ] Understand the decision symbol.
-- [ ] Understand conditional branching.
-- [ ] Use `if` statements.
-- [ ] Use `if-else` statements.
-- [ ] Use `if-elif-else` statements.
-- [ ] Understand comparison operators.
-- [ ] Understand `and`, `or`, and `not`.
-- [ ] Draw positive/negative/zero flowcharts.
-- [ ] Draw even/odd flowcharts.
-- [ ] Compare two and three numbers.
-- [ ] Design a pass/fail decision flowchart.
-- [ ] Understand nested decisions.
-- [ ] Perform a dry run.
-- [ ] Test every decision branch.
-- [ ] Solve the practice questions.
-
----
-
-## 25. What's Next?
-
-Continue with:
-
-**04 - Loop Flowchart**
-
-In the next topic, learn how flowcharts represent repetition, loop conditions, and repeated execution.
-
----
-
-## Files in This Folder
-
-| File | Purpose |
-|---|---|
-| `03_decision_flowchart.py` | Practical conditional examples and decision logic |
-| `README.md` | Detailed notes, flowchart diagrams, code examples, dry runs, interview questions, and practice problems |
-
----
-
-## Conclusion
-
-Decision flowcharts help us represent how a program chooses between different execution paths.
-
-Use a diamond to represent the condition, label the outcomes, and verify the logic with sample inputs.
-
-Remember:
-
-**Start → Input → Decision → Appropriate Branch → Output → Stop**
-
-Practise converting conditional problems into flowcharts and Python code to build a strong foundation for programming and DSA.
+After completing Decision Flowcharts, continue to **Loop Flowcharts** to learn how repeated steps, loop conditions, and termination paths are represented visually.

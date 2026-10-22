@@ -1,228 +1,229 @@
-# Flowcharts
+# Flowcharts — Python Programming
 
-> **Week:** 01 - Programming Fundamentals  
-> **Section:** Algorithms and Flowcharts  
-> **Level:** Beginner  
-> **Language:** Python  
-> **Purpose:** Learn to represent algorithms visually using standard flowchart symbols and implement their logic in Python.
+Welcome to the **Flowcharts** section of the DSA-Python repository.
+
+This section focuses on representing algorithms visually using standard flowchart symbols, decision branches, and loop structures. It helps you understand program logic before translating it into pseudocode and Python code.
+
+The goal is to develop a structured problem-solving approach that will support your future Data Structures and Algorithms (DSA) practice.
 
 ---
 
-## 1. Introduction
+## Table of Contents
 
-A flowchart is a graphical representation of an algorithm or process. It uses standard symbols connected by arrows to show the sequence of operations, decisions, and repeated steps.
+1. [About This Section](#about-this-section)
+2. [Learning Objectives](#learning-objectives)
+3. [Why Are Flowcharts Important?](#why-are-flowcharts-important)
+4. [Common Flowchart Symbols](#common-flowchart-symbols)
+5. [Types of Control Flow](#types-of-control-flow)
+6. [Folder Structure](#folder-structure)
+7. [Topics Covered](#topics-covered)
+8. [How to Design a Flowchart](#how-to-design-a-flowchart)
+9. [Worked Example: Sum of Two Numbers](#worked-example-sum-of-two-numbers)
+10. [Flowchart to Python Conversion](#flowchart-to-python-conversion)
+11. [Testing and Dry Runs](#testing-and-dry-runs)
+12. [Common Mistakes](#common-mistakes)
+13. [How to Run the Programs](#how-to-run-the-programs)
+14. [Recommended Learning Order](#recommended-learning-order)
+15. [Practice Guidelines](#practice-guidelines)
+16. [Interview Questions](#interview-questions)
+17. [Learning Checklist](#learning-checklist)
+18. [Next Section](#next-section)
 
-Flowcharts help us understand a problem visually before writing the actual program.
+---
 
-In this section, we will learn how to draw basic flowcharts, represent input and output operations, use decisions, represent loops, and solve practical problems by combining these concepts.
+## About This Section
 
-## 2. Learning Objectives
+A **flowchart** is a graphical representation of an algorithm or process. It uses standard symbols connected by arrows to show the order of operations and the possible paths through a solution.
 
-After completing all five topics, you should be able to:
+A simple flowchart may follow this pattern:
 
-- Understand the purpose of flowcharts.
-- Identify standard flowchart symbols.
+```text
+        ( START )
+            |
+            v
+       / Input Data /
+            |
+            v
+        [ Process ]
+            |
+            v
+      / Display Result /
+            |
+            v
+         ( END )
+```
+
+More advanced flowcharts can include decisions and loops.
+
+For example, a flowchart can show how a program checks whether a number is even or odd, calculates a factorial, searches for a value, or processes a series of inputs.
+
+This section contains five topic folders, progressing from basic symbols to combined flowchart problems.
+
+## Learning Objectives
+
+After completing this section, you should be able to:
+
+- Explain what a flowchart is and why it is used.
+- Identify commonly used flowchart symbols.
 - Represent input, processing, and output operations.
-- Draw decision-based flowcharts.
-- Represent repeated operations using loops.
-- Convert flowcharts into Python programs.
-- Trace the execution of a flowchart using sample inputs.
-- Identify logical mistakes and missing paths.
-- Solve basic programming problems using flowcharts.
-- Build a foundation for algorithm design and DSA.
+- Design flowcharts using sequence and decisions.
+- Represent loops and repetition visually.
+- Convert problem statements into algorithms and flowcharts.
+- Translate flowchart logic into Python code.
+- Perform dry runs using sample inputs.
+- Identify missing steps and incorrect branches.
+- Test normal cases, boundary cases, and invalid inputs.
+- Explain the basic time and auxiliary-space complexity of simple algorithms.
 
 ---
 
-## 3. Topics Covered
+## Why Are Flowcharts Important?
 
-### 01. Flowchart Basics
+Flowcharts help programmers organize their thoughts before implementing a solution.
 
-**Folder:** `01_FlowChart_Basics/`
+### 1. Better problem understanding
 
-This topic introduces flowcharts and their standard symbols.
+A diagram makes the sequence of operations easier to follow.
 
-**What you will learn:**
+### 2. Clear decision-making
 
-- Definition and purpose of a flowchart.
-- Advantages and limitations of flowcharts.
-- Terminator symbol for Start and Stop.
-- Process symbol for calculations.
-- Input/Output symbol.
-- Decision symbol.
-- Flow lines and arrows.
-- Connector symbols.
-- Basic rules for drawing flowcharts.
-- Difference between an algorithm, flowchart, and program.
+Decision symbols show how different conditions lead to different outcomes.
 
-**Practical examples:**
+### 3. Easier debugging
 
-- Display a message.
-- Add two numbers.
-- Calculate the area of a rectangle.
+Tracing arrows through a diagram can help reveal missing operations or incorrect branches.
 
-**Learning outcome:** Understand the basic symbols and learn to represent simple algorithms visually.
+### 4. Improved communication
 
-### 02. Input/Output Flowcharts
+A flowchart can explain the logic of a program to classmates, teachers, teammates, or interviewers.
 
-**Folder:** `02_Input_Output_FlowChart/`
+### 5. Preparation for programming
 
-This topic focuses on representing data input, processing, and output operations.
+Flowcharts provide an intermediate step between understanding a problem and writing code.
 
-**What you will learn:**
+### 6. Stronger DSA foundations
 
-- Meaning of input and output.
-- Input/Output flowchart symbol.
-- Reading values from a user.
-- Displaying results.
-- Representing calculations in flowcharts.
-- Python `input()` and `print()` functions.
-- Type conversion using `int()` and `float()`.
-- Reading multiple values.
-- Dry runs for input/output problems.
-
-**Practical examples:**
-
-- Read a name and display a welcome message.
-- Add two numbers.
-- Calculate an average.
-- Calculate the area of a rectangle.
-- Convert Celsius to Fahrenheit.
-
-**Learning outcome:** Represent input, processing, and output operations in a flowchart and implement them using Python.
-
-### 03. Decision Flowcharts
-
-**Folder:** `03_Decision_FlowChart/`
-
-This topic explains how flowcharts represent conditions and alternative execution paths.
-
-**What you will learn:**
-
-- Decision symbol and branching.
-- `if` statements.
-- `if-else` statements.
-- `if-elif-else` statements.
-- Comparison operators.
-- Logical operators: `and`, `or`, and `not`.
-- Nested decisions.
-- Testing different decision branches.
-- Handling boundary and edge cases.
-
-**Practical examples:**
-
-- Positive, negative, or zero.
-- Even or odd.
-- Find the larger of two numbers.
-- Find the largest of three numbers.
-- Pass or fail.
-- Voting-age check.
-- Leap-year check.
-
-**Learning outcome:** Draw flowcharts that represent conditional logic and implement the same logic using Python decision statements.
-
-### 04. Loop Flowcharts
-
-**Folder:** `04_Loop_FlowChart/`
-
-This topic explains how flowcharts represent repeated execution.
-
-**What you will learn:**
-
-- Definition and purpose of loops.
-- Loop conditions.
-- Initialization, loop body, and updates.
-- `for` loops.
-- `while` loops.
-- Loop-back arrows.
-- Counter-controlled loops.
-- Accumulators.
-- Nested loops.
-- `break` and `continue`.
-- Infinite loops and off-by-one errors.
-- Dry runs of loops.
-
-**Practical examples:**
-
-- Print numbers from 1 to 5.
-- Calculate the sum from 1 to N.
-- Display a multiplication table.
-- Calculate factorial.
-- Count the digits of an integer.
-- Count even numbers in a list.
-- Print a pattern using nested loops.
-
-**Learning outcome:** Represent repeated operations visually and understand how loop conditions control execution.
-
-### 05. Practice Flowcharts
-
-**Folder:** `05_Practice_FlowChart/`
-
-This is the final topic in the Flowcharts section. It combines the concepts learned in the previous four folders.
-
-**What you will practise:**
-
-- Input and output operations.
-- Conditional decisions.
-- Loop-based calculations.
-- Combining decisions and loops.
-- Writing algorithms before coding.
-- Drawing flowcharts for complete problems.
-- Implementing flowcharts in Python.
-- Performing dry runs.
-- Testing edge cases.
-- Understanding basic time and auxiliary space complexity.
-
-**Practical examples:**
-
-- Welcome message.
-- Addition of two numbers.
-- Positive, negative, or zero.
-- Largest of three numbers.
-- Sum from 1 to N.
-- Multiplication table.
-- Factorial.
-- Count digits.
-- Linear search.
-- Count even and odd numbers.
-- Divisibility checks.
-- Nested-loop patterns.
-
-**Learning outcome:** Apply flowchart concepts to complete programming problems and verify the solutions using Python.
+Learning to represent loops, decisions, and repeated operations visually helps build algorithmic thinking.
 
 ---
 
-## 4. Recommended Learning Order
+## Common Flowchart Symbols
 
-Complete the five topics in this sequence:
+| Symbol | Shape | Purpose | Example |
+|---|---|---|---|
+| Terminal | Oval or rounded terminal | Indicates start or end | Start, End |
+| Process | Rectangle | Represents an operation or calculation | `SUM = A + B` |
+| Input/Output | Parallelogram | Reads or displays data | Input A, Display SUM |
+| Decision | Diamond | Checks a condition and selects a path | `N % 2 == 0?` |
+| Flow line | Arrow | Shows the direction of execution | Connects two steps |
+| Connector | Small circle or labelled connector | Links different parts of a diagram | Continue at connector A |
 
-1. **Flowchart Basics** — Learn the standard symbols and drawing rules.
-2. **Input/Output Flowcharts** — Represent data input, calculations, and output.
-3. **Decision Flowcharts** — Represent conditions and branching.
-4. **Loop Flowcharts** — Represent repetition and loop termination.
-5. **Practice Flowcharts** — Combine all the concepts to solve problems.
+### Terminal symbol
 
-Each topic builds on the previous one. Complete the examples and practice questions before moving to the next folder.
+Used to identify the beginning and end of a flowchart.
+
+### Process symbol
+
+Represents calculations, assignments, and other processing operations.
+
+Examples:
+
+```text
+SUM = A + B
+AREA = LENGTH * WIDTH
+COUNT = COUNT + 1
+```
+
+### Input/Output symbol
+
+Represents reading input or displaying results.
+
+Examples:
+
+```text
+INPUT A
+INPUT B
+OUTPUT SUM
+```
+
+### Decision symbol
+
+Evaluates a condition and directs the flow along an appropriate branch.
+
+Example:
+
+```text
+       < N % 2 == 0? >
+          /       \
+        Yes        No
+         |          |
+       [Even]      [Odd]
+```
+
+Every decision branch should be labelled clearly so that the flowchart can be followed without ambiguity.
 
 ---
 
-## 5. Standard Flowchart Symbols
+## Types of Control Flow
 
-The following table provides a quick reference for the symbols used throughout this section.
+Flowcharts commonly represent three fundamental control structures.
 
-| Symbol | Common Shape | Purpose |
-|---|---|---|
-| Terminator | Oval or rounded rectangle | Start or Stop |
-| Process | Rectangle | Calculation or operation |
-| Input/Output | Parallelogram | Read input or display output |
-| Decision | Diamond | Check a condition |
-| Flow line | Arrow | Show execution direction |
-| Connector | Circle or other standard connector shape | Connect separate parts of a flowchart |
+### 1. Sequence
 
-Use the appropriate symbols and connect them in a logical order. Label decision branches clearly wherever applicable.
+Instructions execute one after another.
+
+```text
+Start
+  |
+Input A, B
+  |
+SUM = A + B
+  |
+Display SUM
+  |
+End
+```
+
+Typical use: addition, rectangle area, average, and unit conversions.
+
+### 2. Selection or Decision
+
+The next operation depends on a condition.
+
+```text
+        < Marks >= 40? >
+           /       \
+         Yes        No
+          |          |
+       [PASS]      [FAIL]
+```
+
+Typical use: even/odd checks, largest-number problems, grade calculation, and eligibility examples.
+
+### 3. Iteration or Loop
+
+Instructions repeat while a condition allows another iteration.
+
+```text
+       [N = 1]
+           |
+           v
+       < N <= 5? >
+         /      \
+       Yes       No
+        |         |
+   [Display N]  [End]
+        |
+    [N = N + 1]
+        |
+        └────> Return to condition
+```
+
+Typical use: summation, factorial, multiplication tables, number sequences, and searching.
 
 ---
 
-## 6. Repository Structure
+## Folder Structure
 
 ```text
 Flowcharts/
@@ -230,102 +231,403 @@ Flowcharts/
 ├── README.md
 │
 ├── 01_FlowChart_Basics/
-│   ├── 01_flowchart_basics.py
-│   └── README.md
+│   ├── README.md
+│   └── 01_flowchart_basics.py
 │
 ├── 02_Input_Output_FlowChart/
-│   ├── 02_input_output_flowchart.py
-│   └── README.md
+│   ├── README.md
+│   └── 02_input_output_flowchart.py
 │
 ├── 03_Decision_FlowChart/
-│   ├── 03_decision_flowchart.py
-│   └── README.md
+│   ├── README.md
+│   └── 03_decision_flowchart.py
 │
 ├── 04_Loop_FlowChart/
-│   ├── 04_loop_flowchart.py
-│   └── README.md
+│   ├── README.md
+│   └── 04_loop_flowchart.py
 │
 └── 05_Practice_FlowChart/
-    ├── 05_practice_flowcharts.py
-    └── README.md
+    ├── README.md
+    └── 05_practice_flowcharts.py
 ```
 
-### Purpose of the Files
-
-**Python files (`.py`)**
-
-Contain practical examples and Python implementations that demonstrate the logic of each flowchart topic.
-
-**README files (`.md`)**
-
-Contain detailed theory, flowchart diagrams, explanations, algorithm steps, code examples, outputs, dry runs, interview questions, and practice problems.
-
-The parent `README.md` provides an overview of the whole Flowcharts section. Each subfolder's `README.md` contains the detailed notes for that topic.
+**Note:** Folder and filename capitalization should match the actual names used in your local repository.
 
 ---
 
-## 7. How to Study Each Topic
+## Topics Covered
 
-Follow this learning process for each folder:
+### 1. Flowchart Basics
 
-1. Read the topic's `README.md`.
-2. Understand the flowchart symbols and their purposes.
-3. Study the algorithm steps.
-4. Trace the flowchart using sample values.
-5. Open the corresponding `.py` file.
-6. Run the Python examples.
-7. Compare the program's output with the expected result.
-8. Solve the practice questions independently.
-9. Test boundary cases and identify logical mistakes.
+**Folder:** `01_FlowChart_Basics/`
 
-Do not memorize diagrams without understanding the execution path. Try to explain why each symbol is used and where each arrow leads.
+Learn the purpose of flowcharts and identify their main symbols.
 
----
+Key concepts:
 
-## 8. Prerequisites
+- Flowchart definition and uses.
+- Terminal, process, input/output, and decision symbols.
+- Flow lines and connectors.
+- Sequence of operations.
+- Basic flowchart design.
+- Connecting algorithms with Python programs.
 
-Before starting this section, it is helpful to understand basic Python concepts:
+### 2. Input/Output Flowcharts
 
-- The `print()` function.
-- The `input()` function.
-- Variables and data types.
-- Arithmetic operators.
+**Folder:** `02_Input_Output_FlowChart/`
+
+Learn how to represent reading values, processing data, and displaying results.
+
+Key concepts:
+
+- Input and output operations.
+- The Input–Process–Output (IPO) model.
+- Reading text, integers, and decimal numbers.
+- Arithmetic calculations.
+- Area, averages, percentages, and conversions.
+- Input validation.
+- Dry runs and expected outputs.
+
+### 3. Decision Flowcharts
+
+**Folder:** `03_Decision_FlowChart/`
+
+Learn how to represent conditions and alternative execution paths.
+
+Key concepts:
+
+- Decision diamonds.
+- Yes/No and True/False branches.
 - Comparison operators.
-- Type conversion.
-- Conditional statements.
-- `for` and `while` loops.
-- Basic lists and functions.
+- Logical operators such as `and`, `or`, and `not`.
+- `if`, `if-else`, and `if-elif-else`.
+- Nested decisions.
+- Number classification, grade calculation, and leap-year logic.
 
-These concepts will help you translate flowcharts into working Python programs.
+### 4. Loop Flowcharts
+
+**Folder:** `04_Loop_FlowChart/`
+
+Learn to represent repetition and termination conditions.
+
+Key concepts:
+
+- Initialization, condition, loop body, and update.
+- `for` loops and `while` loops.
+- Loop conditions and exit paths.
+- Counter-controlled and sentinel-controlled loops.
+- Summation and factorial.
+- Fibonacci sequences.
+- Digit operations.
+- Nested loops.
+- `break` and `continue`.
+- Identifying unintended infinite loops.
+
+### 5. Practice Flowcharts
+
+**Folder:** `05_Practice_FlowChart/`
+
+Apply sequence, selection, and iteration together.
+
+Key concepts:
+
+- Basic calculations and comparisons.
+- Number properties.
+- Factorial and Fibonacci.
+- Prime-number checks.
+- GCD and LCM.
+- Searching and duplicate removal.
+- Dry runs and test cases.
+- Integrated problem-solving exercises.
 
 ---
 
-## 9. Overall Learning Outcome
+## How to Design a Flowchart
 
-After completing all five topics, you should understand how to design and interpret flowcharts for basic programming problems.
+Follow this process for each programming problem.
 
-You should be able to represent a solution using the appropriate symbols, follow its execution path, implement the same logic in Python, and test the results.
+### Step 1: Understand the problem
 
-This knowledge supports further study of algorithms, problem-solving, Data Structures and Algorithms (DSA), and programming interview questions.
+Read the statement carefully and identify what must be solved.
+
+### Step 2: Identify the inputs
+
+List the values required to solve the problem.
+
+### Step 3: Identify the outputs
+
+Determine what result the program should produce.
+
+### Step 4: Plan the operations
+
+Identify formulas, assignments, comparisons, and repeated operations.
+
+### Step 5: Write the algorithm
+
+Describe the solution as a series of clear steps.
+
+### Step 6: Select the symbols
+
+Use the appropriate symbols for start/end, input/output, processing, and decisions.
+
+### Step 7: Connect the symbols
+
+Use arrows to show the direction of execution.
+
+### Step 8: Include all paths
+
+Make sure every decision branch and loop exit is clear.
+
+### Step 9: Perform a dry run
+
+Trace the flowchart manually using sample values.
+
+### Step 10: Implement in Python
+
+Translate the verified logic into code and test the program.
 
 ---
 
-## 10. Completion Checklist
+## Worked Example: Sum of Two Numbers
 
-- [ ] 01 — Flowchart Basics
-- [ ] 02 — Input/Output Flowcharts
-- [ ] 03 — Decision Flowcharts
-- [ ] 04 — Loop Flowcharts
-- [ ] 05 — Practice Flowcharts
+**Problem:** Read two integers and display their sum.
+
+### Algorithm
+
+1. Start.
+2. Read the first integer A.
+3. Read the second integer B.
+4. Calculate `SUM = A + B`.
+5. Display SUM.
+6. End.
+
+### Flowchart
+
+```text
+        ( START )
+            |
+            v
+       / Input A /
+            |
+            v
+       / Input B /
+            |
+            v
+       [ SUM = A + B ]
+            |
+            v
+       / Output SUM /
+            |
+            v
+         ( END )
+```
+
+### Pseudocode
+
+```text
+START
+INPUT A
+INPUT B
+SUM = A + B
+OUTPUT SUM
+END
+```
+
+### Python implementation
+
+```python
+a = int(input("Enter first integer: "))
+b = int(input("Enter second integer: "))
+
+total = a + b
+
+print("Sum:", total)
+```
+
+### Dry run
+
+Suppose `A = 10` and `B = 15`.
+
+| Step | Operation | Result |
+|---|---|---:|
+| 1 | Read A | 10 |
+| 2 | Read B | 15 |
+| 3 | Calculate A + B | 25 |
+| 4 | Display the sum | 25 |
+
+Expected output:
+
+```text
+Enter first integer: 10
+Enter second integer: 15
+Sum: 25
+```
+
+For fixed-size integer inputs, this algorithm performs a constant number of basic operations, so its time complexity is `O(1)` and its auxiliary space is `O(1)` under the usual introductory model.
 
 ---
 
-## Conclusion
+## Flowchart to Python Conversion
 
-Flowcharts provide a visual way to plan, explain, and test the logic of a program.
+| Flowchart element | Common Python equivalent |
+|---|---|
+| Start | Program entry |
+| Input | `input()` |
+| Process | Assignment or calculation |
+| Output | `print()` |
+| Decision | `if`, `elif`, `else` |
+| Repetition | `for` or `while` |
+| End | Program termination or function return |
+| Flow line | Execution order |
 
-Start with the basic symbols, learn input and output operations, understand decisions and loops, and then combine these concepts in practical problems.
+These are conceptual equivalents. Python does not require a separate statement for every flowchart symbol.
 
-**Understand the Problem → Write the Algorithm → Draw the Flowchart → Implement in Python → Test the Solution**
+---
 
-Complete these five topics to build a strong foundation in flowchart design and introductory programming.
+## Testing and Dry Runs
+
+A dry run manually follows the flowchart and records the values at each step.
+
+When testing a flowchart:
+
+- Try at least one normal input.
+- Test every decision branch.
+- Check important boundary values.
+- Verify the loop's first and last iterations.
+- Test invalid inputs where validation is required.
+- Ensure the output matches the problem requirement.
+
+For example, when testing an even/odd flowchart, use an even number, an odd number, zero, and a negative integer.
+
+Testing multiple paths helps reveal errors that might not appear with a single sample value.
+
+---
+
+## Common Mistakes
+
+- Forgetting to include a Start or End symbol.
+- Using the wrong symbol for an operation.
+- Leaving decision branches unlabelled.
+- Connecting arrows in an unclear direction.
+- Forgetting to show the exit path of a loop.
+- Creating a loop without an understandable termination condition.
+- Placing a calculation before the required input is available.
+- Ignoring boundary and invalid inputs.
+- Designing a flowchart that does not match the Python implementation.
+- Testing only one possible outcome.
+
+---
+
+## How to Run the Programs
+
+Open PowerShell in the root directory of the `DSA-Python` repository.
+
+Example command for the Flowchart Basics program:
+
+```powershell
+python "PYTHON\Week-1-Programming-Fundamentals\02-Flowcharts-Algorithms\Flowcharts\01_FlowChart_Basics\01_flowchart_basics.py"
+```
+
+Each topic folder contains its own Python file. Run the relevant file to access its examples and practice menu.
+
+If the `python` command is not recognized, check that Python is installed and available on your PATH. On Windows, the `py` command may work instead.
+
+---
+
+## Recommended Learning Order
+
+Complete the folders in this order:
+
+1. `01_FlowChart_Basics`
+2. `02_Input_Output_FlowChart`
+3. `03_Decision_FlowChart`
+4. `04_Loop_FlowChart`
+5. `05_Practice_FlowChart`
+
+This progression starts with the basic symbols, moves to inputs and outputs, introduces decisions and repetition, and finishes with integrated problems.
+
+---
+
+## Practice Guidelines
+
+For every problem, follow the same approach:
+
+1. Understand the problem statement.
+2. Identify inputs and outputs.
+3. Write an algorithm in ordered steps.
+4. Draw the flowchart.
+5. Write pseudocode.
+6. Perform a dry run.
+7. Implement the solution in Python.
+8. Test normal and boundary cases.
+9. Explain the logic and complexity.
+
+Each topic's Python file contains **12 examples, 12 solved practice questions, and 5 unsolved practice questions**. Attempt the unsolved questions independently before checking other solutions.
+
+---
+
+## Interview Questions
+
+**1. What is a flowchart?**
+
+A flowchart is a graphical representation of an algorithm or process.
+
+**2. What are the main flowchart symbols?**
+
+Common symbols include the terminal, process, input/output, decision, flow line, and connector.
+
+**3. Which symbol represents input and output?**
+
+A parallelogram is commonly used for input/output operations.
+
+**4. Which symbol represents a decision?**
+
+A diamond represents a decision or condition.
+
+**5. What is the difference between sequence and selection?**
+
+Sequence executes instructions in order, while selection chooses a path based on a condition.
+
+**6. What is iteration?**
+
+Iteration repeats a set of steps according to a condition or sequence.
+
+**7. What is a dry run?**
+
+A dry run manually traces an algorithm using sample input values.
+
+**8. How do you convert a flowchart into Python?**
+
+Translate input/output symbols into input and print operations, process symbols into calculations, decision symbols into conditional statements, and loops into iteration statements.
+
+**9. Why are flowcharts useful before programming?**
+
+They make the logical flow easier to understand and help identify missing steps before coding.
+
+**10. Why should boundary cases be tested?**
+
+Boundary testing can identify incorrect conditions, range errors, and loop termination issues.
+
+---
+
+## Learning Checklist
+
+- [ ] I understand the purpose of flowcharts.
+- [ ] I can identify common flowchart symbols.
+- [ ] I can represent input, processing, and output.
+- [ ] I can draw sequence-based flowcharts.
+- [ ] I can represent decisions and multiple paths.
+- [ ] I can draw loops with valid exit paths.
+- [ ] I can convert a flowchart into pseudocode.
+- [ ] I can implement the logic in Python.
+- [ ] I can perform dry runs and test edge cases.
+- [ ] I have completed all five topic folders.
+- [ ] I have attempted the unsolved practice questions.
+
+---
+
+## Next Section
+
+After completing Flowcharts, proceed to **Pseudocode and Problem-Solving**.
+
+This section builds on visual algorithms by teaching you to express logic using structured, language-independent instructions before converting it into Python code.

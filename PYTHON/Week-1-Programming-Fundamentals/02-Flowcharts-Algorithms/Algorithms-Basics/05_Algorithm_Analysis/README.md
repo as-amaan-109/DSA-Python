@@ -1,1260 +1,877 @@
 # Algorithm Analysis
 
-> **Week:** 01 - Programming Fundamentals  
-> **Section:** Algorithms and Flowcharts  
-> **Topic:** Algorithm Analysis  
-> **Level:** Beginner  
-> **Goal:** Understand time complexity, space complexity, Big O notation, and algorithm performance.
+Welcome to **Algorithm Analysis**, the fifth topic in the Algorithms Basics section of Python Programming Fundamentals.
+
+Algorithm analysis helps us understand how much computational work and memory an algorithm requires as the input size grows. It also helps us compare different solutions to the same problem.
+
+In this topic, you will learn time complexity, space complexity, asymptotic notation, operation counting, and the analysis of common algorithms such as linear search, binary search, and selection sort.
 
 ---
 
-## Table of Contents
+## 1. About This Topic
 
-1. Introduction
-2. What Is Algorithm Analysis?
-3. Why Is Algorithm Analysis Important?
-4. Input Size: n
-5. Time Complexity
-6. Space Complexity
-7. Big O Notation
-8. Constant Time - O(1)
-9. Logarithmic Time - O(log n)
-10. Linear Time - O(n)
-11. Linearithmic Time - O(n log n)
-12. Quadratic Time - O(n²)
-13. Exponential Time - O(2ⁿ)
-14. Factorial Time - O(n!)
-15. Complexity Comparison Table
-16. Linear Search Analysis
-17. Binary Search Analysis
-18. Best, Average, and Worst Cases
-19. Time Complexity vs Space Complexity
-20. Auxiliary Space
-21. How to Analyze a Loop
-22. Common Beginner Mistakes
-23. Important Terminology
-24. Interview Questions
-25. Practice Questions
-26. Learning Checklist
-27. What's Next?
+- **Week:** 1 – Programming Fundamentals
+- **Section:** 02 – Flowcharts and Algorithms
+- **Subsection:** Algorithms Basics
+- **Topic:** Algorithm Analysis
+- **Level:** Beginner to Intermediate
+- **Language:** Python
+- **Practical File:** `05_algorithm_analysis.py`
 
----
+### Learning Objectives
 
-## 1. Introduction
+After completing this topic, you should be able to:
 
-When solving a programming problem, there may be multiple ways to produce the correct answer.
-
-For example, we might search for a number in a list using linear search or binary search.
-
-Both algorithms can find a target, but their performance can differ significantly when the list becomes large.
-
-Algorithm analysis helps us understand these differences.
-
-We mainly study two resources:
-
-1. **Time complexity:** How the amount of computational work grows with input size.
-2. **Space complexity:** How memory requirements grow with input size.
-
-Understanding these concepts is an important foundation for Data Structures and Algorithms (DSA).
+- Explain why algorithms are analysed.
+- Distinguish time complexity from space complexity.
+- Understand the purpose of Big O notation.
+- Understand Big Omega and Big Theta notation.
+- Recognise constant, logarithmic, linear, and quadratic growth.
+- Compare best, average, and worst cases.
+- Count basic operations in loops.
+- Analyse linear search, binary search, and selection sort.
+- Understand auxiliary space.
+- Compare different approaches to the same problem.
+- Perform a dry run and verify operation counts.
+- Interpret complexity estimates without confusing them with exact execution time.
 
 ---
 
 ## 2. What Is Algorithm Analysis?
 
-Algorithm analysis is the study of the computational resources required by an algorithm.
+Algorithm analysis is the study of an algorithm's resource requirements, especially computational work and memory.
 
-The two most commonly discussed resources are execution time and memory.
+Suppose two algorithms solve the same task. One might perform a single calculation, while another processes every element in a large collection. Both may be correct, but their performance can differ greatly as the input grows.
 
-### Example
+Algorithm analysis helps answer questions such as:
 
-Suppose an algorithm processes every element in a list containing `n` elements.
+- How does the amount of work change when the input doubles?
+- Does the algorithm need to examine every element?
+- How many comparisons does it perform?
+- Does it create a new collection proportional to the input size?
+- Is there a more efficient algorithm for the same problem?
 
-If it visits each element once, the amount of work generally grows proportionally to `n`.
-
-Its time complexity is:
-
-`O(n)`
-
-Another algorithm that repeatedly halves the remaining problem size may have:
-
-`O(log n)`
-
-These notations help describe how an algorithm scales as the input grows.
-
-### Important Point
-
-Algorithm analysis generally focuses on how computational work changes with input size rather than measuring the execution time of one particular run.
-
-Actual runtime also depends on the hardware, programming language, implementation, and other factors.
+The goal is to understand growth and trade-offs, not just the time taken by a single run.
 
 ---
 
-## 3. Why Is Algorithm Analysis Important?
+## 3. What Is Input Size?
 
-Algorithm analysis helps us choose suitable solutions for programming problems.
+Complexity is generally expressed as a function of an input-size parameter.
 
-### 3.1 Compare Different Algorithms
+The parameter depends on the problem:
 
-Two algorithms may produce the same result but require different amounts of work.
-
-### 3.2 Handle Large Inputs
-
-A method that works well for 100 elements might become impractical for millions of elements.
-
-### 3.3 Prepare for DSA Interviews
-
-Time and space complexity are common subjects in technical interviews.
-
-### 3.4 Improve Code
-
-Analysis helps identify unnecessary repeated work or excessive memory usage.
-
-### 3.5 Understand Trade-offs
-
-An algorithm may use additional memory to reduce its running time, or use less memory at the cost of extra computation.
-
----
-
-## 4. Input Size: n
-
-In algorithm analysis, `n` usually represents the size of the input.
-
-The meaning of `n` depends on the problem.
-
-Examples:
-
-- For a list, `n` may be the number of elements.
-- For a string, `n` may be the number of characters.
-- For a matrix, the input size may be represented using the number of rows and columns.
-- For a numeric problem, `n` may represent the magnitude or number of digits of a value, depending on the algorithm.
-
-### Example
-
-Consider this list:
-
-```python
-numbers = [10, 20, 30, 40, 50]
-```
-
-The list contains five elements, so:
-
-```text
-n = 5
-```
-
-If the list contains 100 elements:
-
-```text
-n = 100
-```
-
-When analyzing an algorithm, we ask how its work changes as `n` increases.
-
----
-
-## 5. Time Complexity
-
-### Definition
-
-**Time complexity** describes how the amount of computational work performed by an algorithm grows with input size.
-
-It is commonly expressed using asymptotic notation such as Big O.
-
-### Example: One Operation
-
-```python
-a = 10
-b = 20
-
-total = a + b
-
-print(total)
-```
-
-The algorithm performs a fixed number of operations, independent of the size of an external collection.
-
-For this kind of fixed-size computation, the time complexity is:
-
-`O(1)`
-
-### Example: One Loop
-
-```python
-numbers = [10, 20, 30, 40, 50]
-
-for number in numbers:
-    print(number)
-```
-
-The loop processes each of the `n` elements.
-
-Its time complexity is:
-
-`O(n)`
-
-### Example: Nested Loops
-
-```python
-numbers = [1, 2, 3, 4]
-
-for first in numbers:
-    for second in numbers:
-        print(first, second)
-```
-
-For `n` elements, the inner loop executes `n` times for each of the `n` outer-loop iterations.
-
-The total number of pairs is:
-
-`n × n = n²`
-
-Its time complexity is:
-
-`O(n²)`
-
-**Key point:** Time complexity describes how work grows, not an exact number of seconds.
-
----
-
-## 6. Space Complexity
-
-### Definition
-
-**Space complexity** describes how the memory requirements of an algorithm grow with input size.
-
-When discussing space complexity, it is important to distinguish between total memory and additional memory used by the algorithm.
-
-In many introductory DSA discussions, we focus on auxiliary space: the extra memory required beyond the input itself.
-
-### Example: Constant Auxiliary Space
-
-```python
-numbers = [10, 20, 30, 40, 50]
-
-total = 0
-
-for number in numbers:
-    total = total + number
-
-print(total)
-```
-
-The algorithm uses a fixed number of additional variables, such as `total` and `number`.
-
-The auxiliary space complexity is:
-
-`O(1)`
-
-The loop processes more items as the list grows, but it does not create a new list proportional to the input size.
-
-### Example: Linear Auxiliary Space
-
-```python
-numbers = [1, 2, 3, 4, 5]
-
-squares = [number * number for number in numbers]
-
-print(squares)
-```
-
-The new `squares` list contains one result for every input element.
-
-For `n` input elements, the new list stores `n` results.
-
-The auxiliary space complexity is:
-
-`O(n)`
-
-### Important Point
-
-Always check whether the analysis counts the input data itself or only additional memory. State the convention when it matters.
-
----
-
-## 7. Big O Notation
-
-### Definition
-
-**Big O notation** describes an asymptotic upper bound on how an algorithm's resource usage grows with input size.
-
-In introductory DSA, Big O is commonly used to communicate worst-case time complexity, although Big O notation is not limited to worst-case analysis.
-
-### Why Do We Use Big O?
-
-Suppose one algorithm performs approximately `3n + 5` basic operations.
-
-Another performs approximately `n² + 2n + 10`.
-
-As `n` becomes large, the quadratic term becomes much more significant.
-
-For these growth rates:
-
-- `3n + 5` is `O(n)`.
-- `n² + 2n + 10` is `O(n²)`.
-
-Big O focuses on the growth rate rather than exact constants and lower-order terms.
-
-### Example
-
-```python
-for number in numbers:
-    print(number)
-```
-
-If the loop processes `n` elements once, its time complexity is `O(n)`.
-
-### Simplifying Complexity
-
-When deriving a Big O upper bound for common polynomial expressions, we typically focus on the dominant growth term.
-
-Examples:
-
-| Expression | Common Big O upper bound |
+| Problem | Possible input-size parameter |
 |---|---|
-| `5` | `O(1)` |
-| `3n + 5` | `O(n)` |
-| `n² + 2n + 10` | `O(n²)` |
-| `4n² + 3n + 1` | `O(n²)` |
+| Search a list | Number of list elements, `N` |
+| Sort a list | Number of elements, `N` |
+| Process an integer's digits | Number of digits, `D` |
+| Print numbers up to a limit | Numeric limit, `N` |
+| Multiply two large integers | Number of digits in the operands |
 
-Big O is an upper-bound notation; in algorithm analysis, we often use a tight bound such as `Θ(n)` when we want to describe growth more precisely.
+It is important to distinguish the size of an input from its numerical value. For example, a large integer has many digits, but the number of digits grows approximately with the logarithm of its value.
+
+The appropriate size parameter should reflect what controls the algorithm's work.
 
 ---
 
-## 8. Constant Time - O(1)
+## 4. Time Complexity
 
-### Definition
+Time complexity describes how an algorithm's computational work grows as the input size grows.
 
-An operation has `O(1)` time complexity when its work remains bounded independently of the input size.
+In introductory analysis, we usually count important operations rather than measuring actual seconds. This avoids depending too heavily on a particular computer, operating system, or programming-language runtime.
 
-### Example: List Indexing
-
-```python
-numbers = [10, 20, 30, 40, 50]
-
-print(numbers[0])
-```
-
-Output:
-
-```text
-10
-```
-
-Accessing a Python list element by index is an O(1) operation in the usual complexity model.
-
-### Another Example
+### Example: Constant number of operations
 
 ```python
 a = 10
 b = 20
 
 total = a + b
+print(total)
+```
+
+For this fixed sequence of operations, the amount of algorithmic work does not grow with an input collection.
+
+Its time complexity is O(1) under the usual fixed-size operation-count model.
+
+### Example: Loop over N elements
+
+```python
+n = int(input("Enter N: "))
+
+total = 0
+
+for i in range(1, n + 1):
+    total += i
 
 print(total)
 ```
 
-The number of arithmetic statements does not grow with the number of items in an unrelated collection.
+The loop body executes N times for a non-negative N. The number of iterations grows proportionally with N.
 
-### Common Examples of O(1)
+Its time complexity is O(N).
 
-- Reading a value from a fixed variable.
-- Accessing a list element by index in the standard Python list model.
-- Performing a fixed number of arithmetic operations on fixed-size numeric values.
-
-### Important Note
-
-O(1) does not mean that an operation literally takes zero seconds. It means its modeled work does not grow with `n`.
+**Important:** Complexity describes the growth of computational work. It does not mean O(1) always takes one second, or that O(N) always takes N seconds.
 
 ---
 
-## 9. Logarithmic Time - O(log n)
+## 5. Space Complexity
 
-### Definition
+Space complexity describes how memory requirements grow as the input size grows.
 
-An algorithm has logarithmic time complexity when each step reduces the remaining problem size by a constant factor, such as dividing it by 2.
+When comparing algorithms, it is useful to distinguish auxiliary space from the memory needed to hold the input itself.
 
-### Example: Repeatedly Divide by Two
+### Auxiliary space
 
-```python
-size = 32
-steps = 0
+Auxiliary space refers to additional working memory used by the algorithm, beyond its input storage and any exclusions specified by the analysis convention.
 
-while size > 1:
-    size = size // 2
-    steps = steps + 1
-    print("Current size:", size)
-
-print("Number of divisions:", steps)
-```
-
-Output:
-
-```text
-Current size: 16
-Current size: 8
-Current size: 4
-Current size: 2
-Current size: 1
-Number of divisions: 5
-```
-
-The sequence is:
-
-```text
-32 → 16 → 8 → 4 → 2 → 1
-```
-
-Only five divisions are needed to reduce 32 to 1.
-
-For a starting size `n`, the number of repeated halvings grows proportionally to `log₂(n)`.
-
-Therefore, the time complexity is:
-
-`O(log n)`
-
-### Common Example
-
-Binary search repeatedly eliminates approximately half of the remaining sorted search range.
-
-Its worst-case time complexity is `O(log n)`.
-
----
-
-## 10. Linear Time - O(n)
-
-### Definition
-
-An algorithm has linear time complexity when its work grows proportionally to the input size.
-
-### Example: Sum All Elements
+### Example: Constant auxiliary space
 
 ```python
-numbers = [10, 20, 30, 40, 50]
+values = [10, 20, 30, 40]
 
 total = 0
 
-for number in numbers:
-    total = total + number
+for value in values:
+    total += value
 
-print("Sum:", total)
+print(total)
 ```
 
-Output:
+The algorithm uses a running total and a loop variable rather than creating another collection that grows with the input.
 
-```text
-Sum: 150
-```
+Its auxiliary space is O(1), excluding the input list and fixed runtime overhead.
 
-The loop visits each element once.
-
-If the list contains:
-
-- 5 elements, it performs 5 loop iterations.
-- 100 elements, it performs 100 loop iterations.
-- `n` elements, it performs `n` loop iterations.
-
-Time complexity:
-
-`O(n)`
-
-Auxiliary space complexity:
-
-`O(1)`
-
-The algorithm uses a running total rather than a new data structure that grows with the list.
-
-### Common Examples of O(n)
-
-- Finding the sum of a list.
-- Scanning a list for a target using linear search.
-- Finding the largest value in an unsorted list.
-- Counting occurrences of a value in a list.
-
----
-
-## 11. Linearithmic Time - O(n log n)
-
-### Definition
-
-`O(n log n)` growth combines a linear factor with a logarithmic factor.
-
-It commonly appears in efficient comparison-based sorting algorithms.
-
-Examples of algorithms with `O(n log n)` worst-case time bounds include merge sort and heapsort.
-
-### Intuition
-
-Imagine an algorithm that processes `n` items at each of approximately `log n` stages.
-
-The total work is proportional to:
-
-`n × log n`
-
-Therefore, the time complexity is:
-
-`O(n log n)`
-
-### When Is It Useful?
-
-This complexity is common in sorting and some divide-and-conquer algorithms.
-
-Python's built-in sorting algorithm, Timsort, has an O(n log n) worst-case time bound, while it can perform better on certain already-structured inputs.
-
-For this beginner topic, remember the growth pattern. Detailed sorting algorithms will be studied later.
-
----
-
-## 12. Quadratic Time - O(n²)
-
-### Definition
-
-An algorithm has quadratic time complexity when its work grows proportionally to the square of the input size.
-
-This commonly occurs with two nested loops, each performing `n` iterations.
-
-### Example
+### Example: Additional list
 
 ```python
-numbers = [1, 2, 3, 4]
-pair_count = 0
+values = [10, 20, 30, 40]
 
-for first in numbers:
-    for second in numbers:
-        pair_count = pair_count + 1
+doubled = [value * 2 for value in values]
 
-print("Number of pairs:", pair_count)
+print(doubled)
 ```
 
-Output:
+The new list contains one result for each input element. Its additional space grows with N, giving O(N) auxiliary space.
 
-```text
-Number of pairs: 16
-```
+### Time vs space complexity
 
-### Explanation
-
-For four elements:
-
-- The outer loop runs 4 times.
-- The inner loop runs 4 times for every outer-loop iteration.
-- Total iterations = `4 × 4 = 16`.
-
-For `n` elements, the total iterations are:
-
-`n × n = n²`
-
-Time complexity:
-
-`O(n²)`
-
-### Common Examples
-
-- Comparing every pair of elements.
-- Generating every ordered pair in a collection.
-- Some simple sorting algorithms, such as bubble sort, in the worst case.
-
-### Important Note
-
-Not every nested loop automatically means `O(n²)`. The actual complexity depends on how many times each loop executes.
-
----
-
-## 13. Exponential Time - O(2ⁿ)
-
-### Definition
-
-Exponential complexity occurs when the computational work grows approximately as an exponential function of the input size.
-
-A common example is an algorithm that explores all possible combinations of `n` binary choices.
-
-Each choice has two possibilities.
-
-The number of combinations is:
-
-`2ⁿ`
-
-### Example
-
-For three binary choices, the possibilities are:
-
-```text
-000
-001
-010
-011
-100
-101
-110
-111
-```
-
-There are:
-
-`2³ = 8`
-
-possible combinations.
-
-For 10 binary choices, there are:
-
-`2¹⁰ = 1024`
-
-possible combinations.
-
-For much larger input sizes, this growth becomes very expensive.
-
-### Where Can It Appear?
-
-Exponential time can arise in brute-force solutions to certain combinatorial problems and in some recursive algorithms that repeatedly explore multiple branches.
-
-**Important:** Not every recursive algorithm is exponential. The complexity depends on the recurrence and amount of repeated work.
-
----
-
-## 14. Factorial Time - O(n!)
-
-### Definition
-
-Factorial-time growth is associated with algorithms that examine all permutations of `n` distinct items.
-
-The number of permutations is:
-
-`n! = n × (n - 1) × (n - 2) × ... × 1`
-
-### Example
-
-For three distinct items A, B, and C, the permutations are:
-
-```text
-ABC
-ACB
-BAC
-BCA
-CAB
-CBA
-```
-
-There are:
-
-`3! = 6`
-
-permutations.
-
-For five distinct items:
-
-`5! = 120`
-
-permutations.
-
-The number of permutations grows very rapidly as `n` increases.
-
-### Where Can It Appear?
-
-A brute-force algorithm that examines every possible ordering may have factorial-time behavior.
-
-Such approaches are often practical only for small input sizes unless additional optimization or pruning is used.
-
----
-
-## 15. Complexity Comparison Table
-
-The following table shows common growth rates, from generally slower growth to faster growth as the input becomes large.
-
-| Complexity | Name | Example |
+| Feature | Time complexity | Space complexity |
 |---|---|---|
-| `O(1)` | Constant | List indexing |
-| `O(log n)` | Logarithmic | Binary search |
-| `O(n)` | Linear | Sum every element |
-| `O(n log n)` | Linearithmic | Merge sort |
-| `O(n²)` | Quadratic | Visit every ordered pair |
-| `O(2ⁿ)` | Exponential | Enumerate all binary combinations |
-| `O(n!)` | Factorial | Enumerate all permutations |
+| Measures | Growth in computational work | Growth in memory requirements |
+| Typical unit | Operation count | Memory units or stored items |
+| Main question | How does work grow? | How does memory grow? |
+| Example | Linear search takes O(N) worst-case time | Copying a list requires O(N) additional space |
 
-For sufficiently large inputs, these growth rates usually become increasingly expensive as we move down the table.
-
-Actual performance also depends on constants, implementation details, and the size of the input.
+An algorithm can be efficient in time but require more memory, or use little extra memory while performing more work.
 
 ---
 
-## 16. Linear Search Analysis
+## 6. Asymptotic Notation
 
-Linear search checks items one at a time until it finds the target or reaches the end.
+Asymptotic notation describes growth rates as input size becomes large.
 
-### Python Implementation
+It deliberately ignores many details, including constant factors and lower-order terms.
+
+### 6.1 Big O — O(f(N))
+
+Big O gives an asymptotic upper bound on growth.
+
+For example, if an algorithm's work grows proportionally with N, it is O(N).
+
+In beginner courses, Big O is often used to describe worst-case complexity, but the notation itself is not limited to worst-case analysis. It describes an upper bound on whichever function or case is being analysed.
+
+### 6.2 Big Omega — Ω(f(N))
+
+Big Omega gives an asymptotic lower bound on growth.
+
+For example, an algorithm that always performs at least a number of operations proportional to N has an Ω(N) lower bound.
+
+### 6.3 Big Theta — Θ(f(N))
+
+Big Theta describes a tight asymptotic bound: the growth is bounded both above and below by constant multiples of the same function for sufficiently large inputs.
+
+For example, a loop that performs exactly N iterations with constant work per iteration is Θ(N).
+
+### Example
+
+The following loop performs N increments:
 
 ```python
-def linear_search(numbers, target):
-    for index, value in enumerate(numbers):
-        if value == target:
-            return index
+n = int(input("Enter N: "))
+count = 0
 
-    return -1
+for _ in range(n):
+    count += 1
 
-
-numbers = [10, 20, 30, 40, 50]
-
-print(linear_search(numbers, 10))
-print(linear_search(numbers, 40))
-print(linear_search(numbers, 99))
+print(count)
 ```
 
-Output:
-
-```text
-0
-3
--1
-```
-
-The function returns `-1` when the target is not found.
-
-### Best Case
-
-The target is the first element.
-
-Only one comparison is required.
-
-Time complexity:
-
-`O(1)`
-
-### Average Case
-
-Under common assumptions about the target's position, a successful search may examine a number of elements proportional to `n`.
-
-Time complexity:
-
-`O(n)`
-
-### Worst Case
-
-The target is the last element, or the target does not exist.
-
-The algorithm may examine every element.
-
-Time complexity:
-
-`O(n)`
+Under a standard operation-count model, the loop work is Θ(N) for non-negative N, and therefore it is also O(N) and Ω(N).
 
 ### Summary
 
-| Case | Time Complexity |
+| Notation | Main interpretation |
 |---|---|
-| Best | `O(1)` |
-| Average | `O(n)` |
-| Worst | `O(n)` |
+| O(f(N)) | Asymptotic upper bound |
+| Ω(f(N)) | Asymptotic lower bound |
+| Θ(f(N)) | Asymptotically tight bound |
 
-Linear search works with both sorted and unsorted lists.
+These notations describe mathematical growth. They are not exact execution-time measurements.
 
 ---
 
-## 17. Binary Search Analysis
+## 7. Common Time Complexity Classes
 
-Binary search is an efficient search algorithm for a sorted collection.
+The following classes are commonly encountered in introductory algorithm analysis.
 
-It repeatedly compares the target with the middle element and discards the half that cannot contain the target.
+| Complexity | Name | Common example |
+|---|---|---|
+| O(1) | Constant | Accessing an element by index in a list |
+| O(log N) | Logarithmic | Binary search on sorted data |
+| O(N) | Linear | Linear search |
+| O(N log N) | Linearithmic | Merge sort |
+| O(N²) | Quadratic | Selection sort, nested pair comparisons |
+| O(N³) | Cubic | Three nested loops each growing with N |
+| O(2ⁿ) | Exponential | Naive recursive Fibonacci time growth |
+| O(N!) | Factorial | Generating every permutation in a brute-force approach |
 
-### Requirement
+These are typical classifications, not guarantees for every algorithm in a category. The actual analysis depends on the code and its input conditions.
 
-**The list must be sorted** for the ordinary binary search algorithm to work correctly.
+---
+
+## 8. Understanding Constant Time — O(1)
+
+An algorithm has constant-time complexity when its computational work is bounded independently of the input size under the chosen operation-count model.
+
+Example:
+
+```python
+a = 5
+b = 8
+
+print(a + b)
+```
+
+The number of stated arithmetic operations does not grow with an input collection.
+
+However, operations on arbitrary-precision integers may themselves require more work as the operands gain digits. O(1) claims in beginner analysis generally assume fixed-size values or treat individual arithmetic operations as constant cost.
+
+---
+
+## 9. Understanding Linear Time — O(N)
+
+Linear-time algorithms perform work proportional to the number of elements or iterations.
+
+Example:
+
+```python
+values = [10, 20, 30, 40, 50]
+
+for value in values:
+    print(value)
+```
+
+The loop processes each element once.
+
+For N elements, it performs N iterations, giving Θ(N) time for the iteration work.
+
+If the input size doubles, the iteration count also doubles.
+
+Common linear-time algorithms include:
+
+- Traversing a list.
+- Counting matching items.
+- Finding a minimum or maximum in one pass.
+- Linear search in the worst case.
+
+---
+
+## 10. Understanding Quadratic Time — O(N²)
+
+Quadratic-time algorithms often contain two nested loops that each grow with the input size.
+
+Example:
+
+```python
+n = 4
+
+for i in range(n):
+    for j in range(n):
+        print(i, j)
+```
+
+The outer loop runs N times, and for each outer iteration the inner loop runs N times.
+
+Total inner operations:
+
+\[
+N \times N = N^2
+\]
+
+For N = 4, the inner operation executes 16 times.
+
+A loop containing another loop is not automatically quadratic. The loop bounds and their relationship to the input size determine the complexity.
+
+---
+
+## 11. Understanding Logarithmic Time — O(log N)
+
+Logarithmic growth occurs when the problem size is repeatedly reduced by a constant factor, such as dividing it by two.
+
+Example:
+
+```python
+n = int(input("Enter a positive integer: "))
+iterations = 0
+
+while n > 1:
+    n //= 2
+    iterations += 1
+
+print("Iterations:", iterations)
+```
+
+At each step, the value becomes approximately half of its previous value.
+
+After k halvings, the value is approximately N / 2ᵏ. The loop stops when this quantity reaches at most 1, requiring a number of iterations proportional to log₂ N.
+
+This gives O(log N) time.
+
+Binary search uses the same broad principle: each unsuccessful comparison discards roughly half of the remaining search range.
+
+---
+
+## 12. Best, Average, and Worst Cases
+
+The number of operations can differ depending on the input, even for the same algorithm.
+
+### Best case
+
+The minimum work required among inputs of a given size.
+
+### Average case
+
+The expected work under a specified distribution of inputs. An average-case statement is meaningful only when the input distribution or probability assumptions are defined.
+
+### Worst case
+
+The maximum work required among inputs of a given size.
+
+### Example: Linear Search
+
+Linear search checks items one by one until it finds the target or reaches the end.
+
+| Case | Example | Comparisons |
+|---|---|---:|
+| Best | Target at the first index | 1 |
+| Average | Target at a typical interior position under an assumed distribution | Proportional to N |
+| Worst | Target is last or absent | Up to N |
+
+For N elements, linear search has O(N) worst-case time complexity.
+
+Its best-case running time is Θ(1), because it can stop after a single comparison. If we account for the entire implementation's fixed setup and list storage conventions, we should state clearly which operations are included in the analysis.
+
+---
+
+## 13. Example: Linear Search
+
+### Problem
+
+Find the index of a target value in a list.
+
+### Algorithm
+
+1. Start from the first element.
+2. Compare the current element with the target.
+3. If they match, return the index.
+4. Otherwise, move to the next element.
+5. If the list ends without a match, report not found.
 
 ### Python Implementation
 
 ```python
-def binary_search(numbers, target):
-    left = 0
-    right = len(numbers) - 1
+values = [10, 20, 30, 40, 50]
+target = 40
 
-    while left <= right:
-        middle = (left + right) // 2
+position = -1
+comparisons = 0
 
-        if numbers[middle] == target:
-            return middle
+for index, value in enumerate(values):
+    comparisons += 1
 
-        elif numbers[middle] < target:
-            left = middle + 1
+    if value == target:
+        position = index
+        break
 
-        else:
-            right = middle - 1
-
-    return -1
-
-
-numbers = [3, 7, 11, 15, 19, 23, 27, 31, 35]
-
-print(binary_search(numbers, 23))
-print(binary_search(numbers, 7))
-print(binary_search(numbers, 99))
+print("Index:", position)
+print("Comparisons:", comparisons)
 ```
 
 Output:
 
 ```text
-5
-1
--1
+Index: 3
+Comparisons: 4
 ```
 
-### Dry Run
+### Complexity
 
-Find `23` in:
+- Best-case time: Θ(1).
+- Worst-case time: Θ(N).
+- Auxiliary space: O(1).
+
+The index is zero-based, so the first element has index 0.
+
+---
+
+## 14. Example: Binary Search
+
+Binary search requires a sorted collection.
+
+### Algorithm
+
+1. Set the left and right boundaries.
+2. Find the middle index.
+3. Compare the middle element with the target.
+4. If they match, return the index.
+5. If the target is smaller, continue in the left half.
+6. Otherwise, continue in the right half.
+7. Repeat until found or the range becomes empty.
+
+### Python Implementation
+
+```python
+values = [10, 20, 30, 40, 50, 60, 70]
+target = 50
+
+left = 0
+right = len(values) - 1
+
+while left <= right:
+    mid = (left + right) // 2
+
+    if values[mid] == target:
+        print("Index:", mid)
+        break
+    elif target < values[mid]:
+        right = mid - 1
+    else:
+        left = mid + 1
+else:
+    print("Target not found.")
+```
+
+### Complexity
+
+- Worst-case time: O(log N).
+- Auxiliary space: O(1) for the iterative version.
+- Precondition: the collection is sorted according to the search order.
+
+Checking whether the list is sorted before searching takes O(N) time. Therefore, a program that performs this validation every time has O(N) total time for validation plus binary search. The O(log N) search bound refers to the binary-search operation itself when its sorted-input precondition already holds.
+
+---
+
+## 15. Example: Selection Sort
+
+Selection sort repeatedly selects the smallest element from the unsorted suffix and places it at the next position.
+
+### Algorithm
+
+1. Set the current position to the beginning of the list.
+2. Find the smallest element from the current position to the end.
+3. Swap it with the element at the current position.
+4. Advance to the next position.
+5. Repeat until the list has been processed.
+
+### Python Implementation
+
+```python
+values = [64, 25, 12, 22, 11]
+n = len(values)
+comparisons = 0
+
+for i in range(n):
+    smallest_index = i
+
+    for j in range(i + 1, n):
+        comparisons += 1
+
+        if values[j] < values[smallest_index]:
+            smallest_index = j
+
+    values[i], values[smallest_index] = (
+        values[smallest_index],
+        values[i],
+    )
+
+print("Sorted list:", values)
+print("Comparisons:", comparisons)
+```
+
+Output:
 
 ```text
-[3, 7, 11, 15, 19, 23, 27, 31, 35]
+Sorted list: [11, 12, 22, 25, 64]
+Comparisons: 10
 ```
 
-**Step 1:** The middle element is `19`.
+### Complexity
 
-Since `23 > 19`, continue searching the right half.
+- Best-case time: Θ(N²).
+- Average-case time: Θ(N²).
+- Worst-case time: Θ(N²).
+- Auxiliary space: O(1) for the in-place version.
 
-```text
-[23, 27, 31, 35]
+Selection sort performs N(N − 1) / 2 element comparisons regardless of the input ordering, though the specific swap behaviour can differ.
+
+---
+
+## 16. Counting Operations
+
+Counting operations is a useful way to derive complexity.
+
+### One loop
+
+```python
+count = 0
+
+for _ in range(n):
+    count += 1
 ```
 
-**Step 2:** The middle of the remaining search range is `27`.
+The body executes N times, so its repeated work is Θ(N).
 
-Since `23 < 27`, continue searching the left part.
+### Two nested loops
 
-```text
-[23]
+```python
+count = 0
+
+for _ in range(n):
+    for _ in range(n):
+        count += 1
 ```
 
-**Step 3:** The middle element is `23`.
+The increment occurs N² times, so the repeated work is Θ(N²).
 
-The target is found.
+### Triangular nested loop
 
-### Time Complexity
+```python
+count = 0
 
-- Best case: `O(1)`, when the middle element is the target.
-- Worst case: `O(log n)`.
-- Iterative auxiliary space: `O(1)`.
+for i in range(n):
+    for _ in range(i):
+        count += 1
+```
 
-### Linear Search vs Binary Search
+The inner loop executes:
 
-| Feature | Linear Search | Binary Search |
+\[
+0 + 1 + 2 + \cdots + (N-1)
+\]
+
+Its total is:
+
+\[
+\frac{N(N-1)}{2}
+\]
+
+The growth is Θ(N²).
+
+### Important note
+
+When describing an algorithm's complexity, count how the work grows rather than just counting the lines of source code. A single line inside a loop can execute thousands of times.
+
+---
+
+## 17. Comparing Algorithms
+
+Two algorithms can solve the same problem but have different growth rates.
+
+Consider the sum of integers from 1 to N.
+
+### Loop-based approach
+
+```python
+total = 0
+
+for value in range(1, n + 1):
+    total += value
+```
+
+The loop performs N iterations. The time complexity is Θ(N), and the auxiliary space is O(1).
+
+### Formula-based approach
+
+```python
+total = n * (n + 1) // 2
+```
+
+It performs a fixed number of arithmetic operations. Under the standard fixed-size operation-count model, this approach takes O(1) time and O(1) auxiliary space.
+
+The formula is valid for non-negative integers when the sum is defined from 1 through N. For large arbitrary-precision integers, actual arithmetic costs grow with the number of digits, so the simplified constant-time label is a model rather than a statement about exact machine work.
+
+### Comparison table
+
+| Factor | Loop | Formula |
 |---|---|---|
-| Requires sorted input | No | Yes |
-| Worst-case time | `O(n)` | `O(log n)` |
-| Basic approach | Check each item | Repeatedly halve the search range |
-| Extra space for iterative version | `O(1)` | `O(1)` |
-
-Binary search is not automatically the better choice for every collection. The data must satisfy its requirements, and the cost of obtaining or maintaining sorted data may also matter.
-
----
-
-## 18. Best, Average, and Worst Cases
-
-Algorithm analysis can consider different cases depending on the input.
-
-### Best Case
-
-The most favorable input for the algorithm.
-
-For linear search, the target is the first element.
-
-### Average Case
-
-The expected behavior under a stated or assumed distribution of inputs.
-
-For linear search with a uniformly positioned successful target, the average number of comparisons grows proportionally to `n`.
-
-### Worst Case
-
-The most demanding input under the problem's assumptions.
-
-For linear search, the target is last or missing.
-
-### Comparison
-
-| Case | Meaning | Linear Search Example |
-|---|---|---|
-| Best | Most favorable input | Target is first |
-| Average | Typical expected behavior under assumptions | Target is at an average position |
-| Worst | Most demanding input | Target is last or missing |
-
-**Interview tip:** When someone asks for the complexity of an algorithm, clarify whether they want best-case, average-case, or worst-case complexity when it is relevant.
+| Logic | Repeated addition | Direct calculation |
+| Iterations | N | No input-dependent loop |
+| Simplified time complexity | Θ(N) | O(1) |
+| Auxiliary space | O(1) | O(1) |
+| Best use | Understanding accumulation | Computing the sum efficiently |
 
 ---
 
-## 19. Time Complexity vs Space Complexity
+## 18. Understanding Space Complexity with Lists
 
-These two concepts measure different resources.
+Suppose an algorithm processes a list with N elements.
 
-| Time Complexity | Space Complexity |
-|---|---|
-| Measures growth in computational work | Measures growth in memory requirements |
-| Often analyzed by counting operations | Often analyzed by counting stored elements or extra variables |
-| Example: scanning a list once is `O(n)` time | Example: creating a second list of `n` values uses `O(n)` auxiliary space |
-| Helps evaluate speed as input grows | Helps evaluate memory usage as input grows |
+### In-place processing
 
-An algorithm can have linear time and constant auxiliary space.
+A loop that updates a fixed number of variables uses O(1) auxiliary space, excluding the original input.
 
-For example, summing the elements of a list takes `O(n)` time but only `O(1)` auxiliary space when using a running total.
+### Creating a second list
 
-An algorithm can also use additional memory to achieve a desired runtime. The correct analysis depends on the implementation.
-
----
-
-## 20. Auxiliary Space
-
-Auxiliary space is the additional memory used by the algorithm, beyond the input data itself, under a stated accounting model.
-
-### Example 1: Constant Auxiliary Space
+A list comprehension such as:
 
 ```python
-def calculate_sum(numbers):
-    total = 0
-
-    for number in numbers:
-        total += number
-
-    return total
+doubled = [value * 2 for value in values]
 ```
 
-The algorithm uses a fixed number of extra variables.
+creates a new collection with one element per input element. The additional storage grows proportionally with N, so its auxiliary space is O(N).
 
-Auxiliary space:
+### Recursive calls
 
-`O(1)`
+Recursive algorithms may use call-stack memory proportional to their recursion depth. For example, a recursive algorithm with depth N generally requires O(N) stack space, even if it does not build a separate list.
 
-### Example 2: Linear Auxiliary Space
-
-```python
-def calculate_squares(numbers):
-    result = []
-
-    for number in numbers:
-        result.append(number * number)
-
-    return result
-```
-
-The result list grows with the number of input elements.
-
-Auxiliary space:
-
-`O(n)`
-
-### Important Point
-
-When comparing space complexity, specify whether you are counting only auxiliary memory or total memory, including the input.
+Space analysis should state what is counted, especially whether input storage and returned output are included.
 
 ---
 
-## 21. How to Analyze a Loop
+## 19. Overview of the 12 Examples
 
-Counting loop iterations is one of the easiest ways to begin estimating time complexity.
+The Python file `05_algorithm_analysis.py` includes:
 
-### Example 1: One Loop
+| No. | Example | Main concept |
+|---:|---|---|
+| 1 | Constant-Time Operations | O(1) |
+| 2 | Linear-Time Loop | O(N) |
+| 3 | Quadratic Nested Loops | O(N²) |
+| 4 | Logarithmic Halving Loop | O(log N) |
+| 5 | Linear Search | Best and worst cases |
+| 6 | Binary Search | Logarithmic search |
+| 7 | Selection Sort | Quadratic sorting |
+| 8 | Minimum and Maximum | One-pass analysis |
+| 9 | Triangular Nested Loop | Counting operations |
+| 10 | Auxiliary Space with a New List | O(N) additional memory |
+| 11 | Loop versus Formula | Comparing approaches |
+| 12 | Fibonacci with Constant Auxiliary Space | Time and auxiliary space |
 
-```python
-for i in range(n):
-    print(i)
+For every example, predict the number of operations, run the code, and compare the observed count with the expected formula.
+
+---
+
+## 20. Twelve Solved Practice Questions
+
+The Python file also contains these solved exercises:
+
+1. Constant-Time Calculation
+2. Count Linear Iterations
+3. Count N-Squared Operations
+4. Count Triangular Operations
+5. Count Logarithmic Halvings
+6. Linear Search Comparisons
+7. Binary Search Comparisons
+8. Selection Sort Comparisons
+9. Minimum Search Comparisons
+10. Count Positive Values
+11. Compare Two Sum Methods
+12. Copy a List
+
+These exercises help connect operation counts and memory allocation with asymptotic complexity.
+
+---
+
+## 21. Five Independent Practice Questions
+
+The following questions do not include solution code.
+
+### Question 1: Analyse Bubble Sort
+
+Implement bubble sort, count comparisons and swaps, and describe best-case and worst-case time complexity for your chosen implementation.
+
+### Question 2: Compare Linear and Binary Search
+
+Test both algorithms on suitable data. Count comparisons and explain why binary search requires sorted input.
+
+### Question 3: Compare Two Two-Sum Approaches
+
+Compare a nested-loop approach to finding two values that sum to a target with an approach that uses a set. Explain expected time and additional-space trade-offs.
+
+### Question 4: Analyse List-Copy Space
+
+Create lists of different lengths and reason about how additional space changes as the input grows. Distinguish element count from the exact number of bytes used by the runtime.
+
+### Question 5: Compare Fibonacci Algorithms
+
+Compare naive recursive Fibonacci with an iterative version. Explain their time and space complexity and test small N.
+
+For each task, state your assumptions, estimate the complexity, implement the algorithm, and use test cases to verify its behaviour.
+
+---
+
+## 22. Common Complexity Mistakes
+
+### Mistake 1: Confusing Big O with exact runtime
+
+O(N) does not mean exactly N seconds or N instructions.
+
+**Improvement:** Explain the growth in the relevant operation count.
+
+### Mistake 2: Counting only the number of code lines
+
+A short statement inside nested loops may execute far more times than several statements outside the loops.
+
+**Improvement:** Count iterations and operations based on the loop bounds.
+
+### Mistake 3: Assuming every nested loop is O(N²)
+
+The inner loop may run a fixed number of times, or its bound may depend on the outer loop.
+
+**Improvement:** Analyse the actual number of executions.
+
+### Mistake 4: Ignoring input validation overhead
+
+A validation pass may increase the total runtime even when the core algorithm is faster.
+
+**Improvement:** State whether you are analysing just the algorithmic operation or the entire program, including validation.
+
+### Mistake 5: Ignoring auxiliary space
+
+Creating new lists or using recursive calls can increase memory requirements.
+
+**Improvement:** Identify all storage that grows with input size.
+
+### Mistake 6: Treating Big O as always worst-case complexity
+
+Big O is an upper-bound notation. It can describe worst-case, average-case, or another specified growth function.
+
+**Improvement:** State the case being analysed as well as the notation.
+
+---
+
+## 23. Interview Questions and Answers
+
+**Q1. What is algorithm analysis?**
+
+It is the study of an algorithm's resource requirements, especially computational work and memory, as input size grows.
+
+**Q2. What is time complexity?**
+
+It describes how an algorithm's computational work grows with input size.
+
+**Q3. What is space complexity?**
+
+It describes how an algorithm's memory requirements grow with input size.
+
+**Q4. What does O(1) mean?**
+
+It means the quantity being analysed is bounded independently of the input size under the chosen operation-count model.
+
+**Q5. What does O(N) mean?**
+
+It means the amount of work has an asymptotic upper bound proportional to N.
+
+**Q6. What is O(N²)?**
+
+It is a quadratic growth class. It commonly appears when two loops each scale with the input size.
+
+**Q7. What is O(log N)?**
+
+It is logarithmic growth, often arising when the problem size is repeatedly reduced by a constant factor.
+
+**Q8. What is the difference between Big O, Big Omega, and Big Theta?**
+
+Big O gives an asymptotic upper bound, Big Omega a lower bound, and Big Theta a tight bound.
+
+**Q9. What is worst-case complexity?**
+
+It describes the maximum work over inputs of a given size.
+
+**Q10. What is average-case complexity?**
+
+It describes expected work under a specified input distribution or probability model.
+
+**Q11. What is the worst-case time complexity of linear search?**
+
+O(N), because all elements may need to be checked.
+
+**Q12. What is the worst-case time complexity of binary search?**
+
+O(log N) for the search operation on already-sorted data.
+
+**Q13. What is the time complexity of selection sort?**
+
+Θ(N²) for its comparisons in best, average, and worst cases.
+
+**Q14. What is auxiliary space?**
+
+It is the additional working memory used by an algorithm beyond the inputs, subject to the chosen analysis convention.
+
+**Q15. Why is complexity analysis useful?**
+
+It helps compare algorithmic growth rates and reason about how solutions behave as their inputs grow.
+
+---
+
+## 24. How to Run the Python File
+
+From the repository root, run:
+
+```powershell
+python "PYTHON\Week-1-Programming-Fundamentals\02-Flowcharts-Algorithms\Algorithms-Basics\05_Algorithm_Analysis\05_algorithm_analysis.py"
 ```
 
-The loop performs `n` iterations.
+The menu provides three options:
 
-Time complexity:
+1. Run the 12 examples.
+2. Run the 12 solved practice questions.
+3. View the 5 questions without answers.
 
-`O(n)`
-
-### Example 2: Two Independent Loops
-
-```python
-for i in range(n):
-    print(i)
-
-for j in range(n):
-    print(j)
-```
-
-Each loop performs `n` iterations.
-
-Total iterations:
-
-`n + n = 2n`
-
-The Big O time complexity is:
-
-`O(n)`
-
-Constant factors are ignored when expressing this upper-bound growth rate.
-
-### Example 3: Two Nested Loops
-
-```python
-for i in range(n):
-    for j in range(n):
-        print(i, j)
-```
-
-Total iterations:
-
-`n × n = n²`
-
-Time complexity:
-
-`O(n²)`
-
-### Example 4: Repeated Halving
-
-```python
-size = n
-
-while size > 1:
-    size = size // 2
-```
-
-The size decreases by a constant factor each time.
-
-Time complexity:
-
-`O(log n)`
-
-### Important Warning
-
-Do not identify complexity from indentation alone. Inspect how often each loop runs and whether the inner loop's work depends on the outer loop or on another value.
+For searching and sorting exercises, use different input sizes and input arrangements. Note the number of comparisons or iterations reported by the program.
 
 ---
 
-## 22. Common Beginner Mistakes
+## ✅ Completion Checklist
 
-### Mistake 1: Thinking Big O Gives Exact Seconds
-
-`O(n)` does not tell you the exact execution time.
-
-It describes how the algorithm's work grows with input size.
-
-### Mistake 2: Assuming Every Nested Loop Is O(n²)
-
-Two nested loops often lead to quadratic time, but not always. Their actual iteration counts determine the complexity.
-
-### Mistake 3: Confusing Time and Space Complexity
-
-An algorithm that takes `O(n)` time may use `O(1)` auxiliary space.
-
-These resources must be analyzed separately.
-
-### Mistake 4: Using Binary Search on Unsorted Data
-
-Ordinary binary search relies on sorted input.
-
-Sorting a list may itself require time and memory, depending on the algorithm and requirements.
-
-### Mistake 5: Assuming O(1) Means Zero Time
-
-Constant time means the work does not grow with the input size under the analysis model. It still takes time to execute.
-
-### Mistake 6: Confusing Big O with Worst Case
-
-Big O is an upper-bound notation. In introductory DSA, worst-case time is often expressed using Big O, but those are not identical concepts.
-
-### Mistake 7: Counting Only the Main Loop
-
-Nested operations, function calls, and temporary data structures can also affect time or memory requirements.
+- [ ] Understand time complexity.
+- [ ] Understand space and auxiliary space.
+- [ ] Understand Big O, Big Omega, and Big Theta.
+- [ ] Identify O(1), O(log N), O(N), and O(N²) patterns.
+- [ ] Distinguish best, average, and worst cases.
+- [ ] Count loop iterations and comparisons.
+- [ ] Analyse linear and binary search.
+- [ ] Analyse selection sort.
+- [ ] Compare a loop with a formula.
+- [ ] Run all 12 examples.
+- [ ] Complete the 12 solved practice questions.
+- [ ] Attempt all 5 independent practice questions.
+- [ ] Explain the complexity of each solution in your own words.
 
 ---
 
-## 23. Important Terminology
+## 🚀 Learning Outcome
 
-| Term | Meaning |
-|---|---|
-| Algorithm analysis | Study of computational resource usage |
-| Input size | Size of the data processed by an algorithm |
-| Time complexity | Growth of computational work with input size |
-| Space complexity | Growth of memory requirements |
-| Auxiliary space | Additional memory used by the algorithm |
-| Big O | Asymptotic upper-bound notation |
-| O(1) | Constant time growth |
-| O(log n) | Logarithmic time growth |
-| O(n) | Linear time growth |
-| O(n log n) | Linearithmic time growth |
-| O(n²) | Quadratic time growth |
-| O(2ⁿ) | Exponential time growth |
-| O(n!) | Factorial time growth |
-| Linear search | Checks elements one by one |
-| Binary search | Searches a sorted range by repeatedly halving it |
-| Dry run | Manual tracing of an algorithm using sample data |
+After completing this topic, you should be able to estimate how an algorithm's computational work and memory use grow with input size. You should also be able to explain common complexity classes and compare alternative solutions to the same problem.
+
+These skills will be important when studying data structures, sorting algorithms, searching strategies, and interview-style DSA problems.
 
 ---
 
-## 24. Interview Questions
+## 📌 Final Note
 
-### Q1. What is algorithm analysis?
+**Do not judge an algorithm only by how quickly it runs on one small input. Analyse how its work and memory requirements grow as the input becomes larger.**
 
-It is the study of how an algorithm's computational resource usage grows with the size of its input.
-
-### Q2. What is time complexity?
-
-Time complexity describes how computational work grows as the input size increases.
-
-### Q3. What is space complexity?
-
-Space complexity describes how memory requirements grow with input size.
-
-### Q4. What is Big O notation?
-
-Big O describes an asymptotic upper bound on an algorithm's growth rate.
-
-### Q5. What is O(1)?
-
-O(1) is constant-time growth: the modeled work does not grow with input size.
-
-### Q6. What is O(n)?
-
-O(n) is linear growth. The amount of work grows proportionally to the input size.
-
-### Q7. What is O(log n)?
-
-O(log n) is logarithmic growth. It commonly appears when an algorithm repeatedly halves the remaining problem size.
-
-### Q8. What is O(n²)?
-
-O(n²) is quadratic growth. A common example is visiting all pairs in a collection using two loops of length `n`.
-
-### Q9. What is the worst-case time complexity of linear search?
-
-O(n), because the algorithm may examine every element.
-
-### Q10. What is the worst-case time complexity of binary search?
-
-O(log n), provided the input is sorted and the standard binary search algorithm is used.
-
-### Q11. Why does binary search require sorted input?
-
-It uses the ordering to determine which half cannot contain the target. Without sorted input, that decision may discard the target.
-
-### Q12. Can an algorithm have O(n) time and O(1) auxiliary space?
-
-Yes. Summing a list in one pass using a running total is a common example.
-
-### Q13. What is the difference between best case and worst case?
-
-The best case describes the most favorable input, while the worst case describes the most demanding input under the problem's assumptions.
-
-### Q14. Is O(1) always faster than O(n) in real code?
-
-Not necessarily for every small input and implementation. Big O describes growth as input size increases, not every constant overhead or timing detail.
-
-### Q15. Why is algorithm analysis important in DSA?
-
-It helps us compare solutions, select appropriate algorithms, and understand how a solution behaves as the input grows.
-
----
-
-## 25. Practice Questions
-
-Try to solve these questions before checking the examples above.
-
-### Beginner Level
-
-**Question 1:** What is algorithm analysis?
-
-**Question 2:** Explain time complexity and space complexity with examples.
-
-**Question 3:** What does `n` represent in algorithm analysis?
-
-**Question 4:** Identify the time complexity:
-
-```python
-print("Hello")
-```
-
-**Question 5:** Identify the time complexity:
-
-```python
-for i in range(n):
-    print(i)
-```
-
-### Intermediate Level
-
-**Question 6:** Find the complexity of this code:
-
-```python
-for i in range(n):
-    for j in range(n):
-        print(i, j)
-```
-
-**Question 7:** What is the time complexity of summing all the elements in a list?
-
-**Question 8:** Explain why binary search is O(log n) in the worst case.
-
-**Question 9:** Write a function that finds the largest element in a non-empty list. Explain its time complexity and auxiliary space complexity.
-
-**Question 10:** Explain the difference between linear search and binary search.
-
-### Challenge Questions
-
-**Question 11:** Write code that creates a new list containing the squares of all the elements in an input list. Analyze its time and auxiliary space complexities.
-
-**Question 12:** Compare the best and worst cases of linear search.
-
-**Question 13:** Explain the difference between O(n) and O(n²) with example loops.
-
-**Question 14:** Write an iterative binary search and explain why the sorted-input requirement matters.
-
-**Question 15:** For a function that uses one loop to scan a list and a second independent loop to scan it again, determine its overall time complexity and explain your answer.
-
----
-
-## 26. Learning Checklist
-
-- [ ] Understand algorithm analysis.
-- [ ] Understand input size `n`.
-- [ ] Explain time complexity.
-- [ ] Explain space complexity.
-- [ ] Understand Big O notation.
-- [ ] Recognize O(1).
-- [ ] Recognize O(log n).
-- [ ] Recognize O(n).
-- [ ] Recognize O(n log n).
-- [ ] Recognize O(n²).
-- [ ] Understand exponential and factorial growth.
-- [ ] Analyze single loops.
-- [ ] Analyze nested loops.
-- [ ] Understand linear search complexity.
-- [ ] Understand binary search complexity.
-- [ ] Distinguish time complexity from auxiliary space.
-- [ ] Solve the practice questions.
-
----
-
-## 27. What's Next?
-
-Continue with:
-
-**06 - Practice Algorithms**
-
-Use the concepts from the Algorithm Basics, Algorithm Steps, Algorithm Examples, Algorithm Characteristics, and Algorithm Analysis topics to solve practice problems.
-
----
-
-## Files in This Folder
-
-| File | Purpose |
-|---|---|
-| `05_algorithm_analysis.py` | Practical examples of complexity and search algorithms |
-| `README.md` | Detailed notes, complexity tables, dry runs, and interview questions |
-
----
-
-## Conclusion
-
-Algorithm analysis helps us understand how a solution behaves as the size of the problem grows.
-
-Remember the most common complexity classes:
-
-- `O(1)` — constant
-- `O(log n)` — logarithmic
-- `O(n)` — linear
-- `O(n log n)` — linearithmic
-- `O(n²)` — quadratic
-- `O(2ⁿ)` — exponential
-- `O(n!)` — factorial
-
-Also remember that time complexity and space complexity describe different resources.
-
-**Understand the problem → Analyze the algorithm → Implement the solution → Test the result.**
-
-These concepts form an important foundation for DSA and coding interviews.
+Understand the assumptions, count the operations, and compare algorithms on the same problem.

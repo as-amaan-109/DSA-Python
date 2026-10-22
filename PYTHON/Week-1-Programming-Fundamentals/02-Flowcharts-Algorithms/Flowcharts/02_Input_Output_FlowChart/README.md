@@ -1,259 +1,54 @@
-# Input and Output Flowcharts
+# Input/Output Flowcharts — Python
 
-> **Week:** 01 - Programming Fundamentals  
-> **Section:** Algorithms and Flowcharts  
-> **Topic:** Input and Output Flowcharts  
-> **Level:** Beginner  
-> **Goal:** Understand how input, processing, and output operations are represented using flowcharts and implemented in Python.
+Welcome to **Input/Output Flowcharts**, part of Week 1: Programming Fundamentals in the DSA-Python repository.
 
----
+This topic focuses on reading input, processing values, and displaying results. You will learn how to represent these operations in flowcharts and convert them into Python programs.
 
 ## Table of Contents
 
-1. Introduction
-2. What Is Input?
-3. What Is Output?
-4. The Input/Output Flowchart Symbol
-5. Understanding Input, Process, and Output
-6. Example 1 - Display a Message
-7. Example 2 - Take a Name as Input
-8. Example 3 - Double a Number
-9. Example 4 - Add Two Numbers
-10. Example 5 - Read Multiple Values
-11. Example 6 - Calculate an Average
-12. Example 7 - Area of a Rectangle
-13. Example 8 - Celsius to Fahrenheit
-14. Python `input()` and `print()`
-15. Type Conversion
-16. Dry Run
-17. Rules for Input/Output Flowcharts
-18. Common Beginner Mistakes
-19. Important Terminology
-20. Interview Questions
-21. Practice Questions
-22. Learning Checklist
-23. What's Next?
+1. [About This Topic](#about-this-topic)
+2. [Learning Objectives](#learning-objectives)
+3. [What Is Input and Output?](#what-is-input-and-output)
+4. [Input/Output Flowchart Symbols](#inputoutput-flowchart-symbols)
+5. [The IPO Model](#the-ipo-model)
+6. [Designing an Input/Output Flowchart](#designing-an-inputoutput-flowchart)
+7. [Worked Example: Sum of Two Numbers](#worked-example-sum-of-two-numbers)
+8. [Worked Example: Rectangle Area](#worked-example-rectangle-area)
+9. [Worked Example: Simple Interest](#worked-example-simple-interest)
+10. [Input Types and Validation](#input-types-and-validation)
+11. [Dry Run and Testing](#dry-run-and-testing)
+12. [Time and Space Complexity](#time-and-space-complexity)
+13. [Folder Structure](#folder-structure)
+14. [How to Run the Program](#how-to-run-the-program)
+15. [Practice Questions](#practice-questions)
+16. [Common Mistakes](#common-mistakes)
+17. [Interview Questions](#interview-questions)
+18. [Learning Checklist](#learning-checklist)
 
 ---
 
-## 1. Introduction
+## About This Topic
 
-Input and output are fundamental operations in programming.
+Input and output are essential parts of most programs.
 
-**Input** provides data to a program, while **output** presents the result produced by the program.
+**Input** is the data supplied to a program. It can come from the keyboard, a file, a device, or another program.
 
-A flowchart helps us represent these operations visually using standard symbols.
+**Processing** means performing calculations or operations on the input.
 
-For example, a program that adds two numbers needs to:
+**Output** is the result produced by the program, such as a displayed message or calculated value.
 
-1. Read the first number.
-2. Read the second number.
-3. Calculate their sum.
-4. Display the result.
+For beginner flowcharts, input and output are commonly represented using a **parallelogram**.
 
-The corresponding flowchart connects these steps in the correct order.
-
----
-
-## 2. What Is Input?
-
-Input is the information supplied to a program or algorithm.
-
-Input may come from:
-
-- A user entering information through a keyboard.
-- A file.
-- A database.
-- Another program or service.
-- A sensor or other device.
-
-In beginner Python programs, input is often provided through the `input()` function.
-
-### Example
-
-```python
-name = input("Enter your name: ")
-```
-
-If the user enters:
-
-```text
-Amaan
-```
-
-The variable `name` stores the text `"Amaan"`.
-
-### Flowchart Representation
-
-An input operation is commonly represented using a parallelogram.
-
-```text
-     ( START )
-         |
-         v
-    / Read Name /
-         |
-         v
-      ( STOP )
-```
-
-This simple flowchart represents a program that receives a name.
-
----
-
-## 3. What Is Output?
-
-Output is the information produced by a program or algorithm.
-
-Examples include:
-
-- Displaying a message.
-- Showing the result of a calculation.
-- Printing a student's details.
-- Writing information to a file.
-
-In Python, the `print()` function is commonly used to display output.
-
-### Example
-
-```python
-print("Hello, Python!")
-```
-
-Output:
-
-```text
-Hello, Python!
-```
-
-### Flowchart Representation
-
-Output is also commonly represented using a parallelogram.
-
-```text
-     ( START )
-         |
-         v
- / Display Hello /
-         |
-         v
-      ( STOP )
-```
-
-**Important:** Input and output commonly use the same flowchart symbol, although the instruction inside the symbol identifies the operation.
-
----
-
-## 4. The Input/Output Flowchart Symbol
-
-### Shape
-
-Parallelogram.
-
-### Purpose
-
-The parallelogram represents an input or output operation.
-
-### Input examples
-
-```text
-Read A
-```
-
-```text
-Read Name
-```
-
-```text
-Read Length and Breadth
-```
-
-### Output examples
-
-```text
-Display SUM
-```
-
-```text
-Print Area
-```
-
-```text
-Display Student Details
-```
-
-### Example: Addition
+Example:
 
 ```text
        ( START )
            |
            v
-    / Read A and B /
+      / Input A /
            |
            v
-     [ SUM = A + B ]
-           |
-           v
-      / Display SUM /
-           |
-           v
-        ( STOP )
-```
-
-In this diagram:
-
-- `START` uses a terminator.
-- Reading A and B uses an input/output symbol.
-- Calculating SUM uses a process rectangle.
-- Displaying SUM uses an input/output symbol.
-- `STOP` uses a terminator.
-
----
-
-## 5. Understanding Input, Process, and Output
-
-A basic computational problem can often be divided into three parts.
-
-### 5.1 Input
-
-Receive the values required for the task.
-
-Example:
-
-```text
-A = 10
-B = 20
-```
-
-### 5.2 Process
-
-Perform the required operation.
-
-Example:
-
-```text
-SUM = A + B
-SUM = 10 + 20
-SUM = 30
-```
-
-### 5.3 Output
-
-Display or return the result.
-
-Example:
-
-```text
-Sum = 30
-```
-
-### Combined Flowchart
-
-```text
-       ( START )
-           |
-           v
-    / Read A and B /
+      / Input B /
            |
            v
       [ SUM = A + B ]
@@ -262,199 +57,211 @@ Sum = 30
       / Display SUM /
            |
            v
-        ( STOP )
+        ( END )
 ```
 
-### Why Is This Structure Important?
+This flowchart accepts two inputs, calculates their sum, and displays the result.
 
-It helps us separate the data a problem needs, the operation performed on that data, and the result produced.
+## Learning Objectives
 
-This makes programs easier to design and understand.
+After completing this topic, you should be able to:
+
+- Explain input, processing, and output.
+- Identify the input/output symbol in a flowchart.
+- Design a flowchart for simple calculations.
+- Distinguish integer, decimal, and text input.
+- Convert an input/output flowchart into Python code.
+- Use formulas for sums, averages, percentages, and conversions.
+- Validate input where necessary.
+- Prevent simple errors such as division by zero.
+- Perform a dry run with sample values.
+- Test a program using normal and boundary inputs.
 
 ---
 
-## 6. Example 1 - Display a Message
+## What Is Input and Output?
 
-### Problem
+### 1. Input
 
-Display the message `Hello, Python!`.
+Input provides the values required to solve a problem.
 
-### Algorithm
+Examples:
 
-1. Start.
-2. Display `Hello, Python!`.
-3. Stop.
+- Enter a student's name.
+- Enter two numbers.
+- Enter the dimensions of a rectangle.
+- Enter marks for five subjects.
+- Enter distance and time.
 
-### Flowchart
-
-```text
-       ( START )
-           |
-           v
- / Display Hello, Python! /
-           |
-           v
-        ( STOP )
-```
-
-### Python Code
-
-```python
-print("Hello, Python!")
-```
-
-### Output
+In pseudocode, input may be represented as:
 
 ```text
-Hello, Python!
+INPUT name
+INPUT A
+INPUT B
 ```
 
-### Explanation
-
-No external input is required because the message is already specified in the program.
-
-The output operation displays the message.
-
----
-
-## 7. Example 2 - Take a Name as Input
-
-### Problem
-
-Ask the user for a name and display a welcome message.
-
-### Algorithm
-
-1. Start.
-2. Read the name.
-3. Display a welcome message containing the name.
-4. Stop.
-
-### Flowchart
-
-```text
-       ( START )
-           |
-           v
-     / Read Name /
-           |
-           v
- / Display Welcome Message /
-           |
-           v
-        ( STOP )
-```
-
-### Python Code
+In Python:
 
 ```python
 name = input("Enter your name: ")
-
-print("Welcome,", name)
+a = int(input("Enter first integer: "))
+b = int(input("Enter second integer: "))
 ```
 
-### Sample Input
+### 2. Processing
+
+Processing performs an operation on the supplied values.
+
+Examples:
 
 ```text
-Enter your name: Amaan
+SUM = A + B
+AREA = LENGTH * WIDTH
+AVERAGE = TOTAL / COUNT
 ```
 
-### Output
-
-```text
-Welcome, Amaan
-```
-
-### Explanation
-
-The `input()` function reads the text entered by the user.
-
-The value is stored in the variable `name`.
-
-The `print()` function then displays the welcome message.
-
----
-
-## 8. Example 3 - Double a Number
-
-### Problem
-
-Read an integer and display twice its value.
-
-### Formula
-
-```text
-Double = Number × 2
-```
-
-### Algorithm
-
-1. Start.
-2. Read an integer N.
-3. Calculate `DOUBLE = N × 2`.
-4. Display DOUBLE.
-5. Stop.
-
-### Flowchart
-
-```text
-       ( START )
-           |
-           v
-      / Read N /
-           |
-           v
-    [ DOUBLE = N * 2 ]
-           |
-           v
-    / Display DOUBLE /
-           |
-           v
-        ( STOP )
-```
-
-### Python Code
+Python equivalent:
 
 ```python
-number = int(input("Enter an integer: "))
-
-double = number * 2
-
-print("Double:", double)
+total = a + b
 ```
 
-### Sample Input
+### 3. Output
+
+Output communicates the result to the user.
+
+Pseudocode:
 
 ```text
-Enter an integer: 7
+OUTPUT SUM
 ```
 
-### Output
+Python:
 
-```text
-Double: 14
+```python
+print("Sum:", total)
 ```
-
-### Explanation
-
-`input()` initially returns a string, so `int()` converts the value into an integer before multiplication.
 
 ---
 
-## 9. Example 4 - Add Two Numbers
+## Input/Output Flowchart Symbols
 
-### Problem
+| Symbol | Shape | Purpose | Example |
+|---|---|---|---|
+| Terminal | Oval or rounded terminal | Start or finish the flow | Start, End |
+| Input/Output | Parallelogram | Read or display information | Input A, Display SUM |
+| Process | Rectangle | Perform calculations or assignments | `SUM = A + B` |
+| Flow line | Arrow | Connect steps in order | Shows direction |
 
-Read two integers and display their sum.
+### Example of a complete flow
+
+```text
+        ( START )
+            |
+            v
+       / Input A /
+            |
+            v
+       / Input B /
+            |
+            v
+       [ SUM = A + B ]
+            |
+            v
+       / Output SUM /
+            |
+            v
+         ( END )
+```
+
+The input/output symbols collect and display the values. The rectangle performs the calculation.
+
+---
+
+## The IPO Model
+
+IPO stands for **Input, Process, Output**. It is a simple method for planning a solution before drawing its flowchart or writing the code.
+
+### Example: Calculate an average
+
+**Problem:** Read three numbers and calculate their average.
+
+| Stage | Description |
+|---|---|
+| Input | Three numbers: A, B, C |
+| Process | `AVERAGE = (A + B + C) / 3` |
+| Output | Display the average |
+
+### Why use the IPO model?
+
+The IPO model helps identify missing requirements before programming. It also makes it easier to create the required flowchart symbols in the correct order.
+
+Before coding, write down the required inputs, operations, and expected output.
+
+---
+
+## Designing an Input/Output Flowchart
+
+Follow these steps when designing a diagram.
+
+### Step 1: Understand the problem
+
+Determine what result is required.
+
+### Step 2: List the inputs
+
+Identify every value that must be supplied.
+
+### Step 3: Define the processing
+
+Choose the required formula or operation.
+
+### Step 4: Decide the output
+
+Specify what should be displayed.
+
+### Step 5: Arrange the symbols
+
+Begin with Start, place inputs before the calculation, place the output after processing, and finish with End.
+
+### Step 6: Connect the steps
+
+Use arrows to indicate the order of execution.
+
+### Step 7: Dry-run the diagram
+
+Use sample data and verify every calculation manually.
+
+### Step 8: Implement in Python
+
+Convert each input symbol into an appropriate input statement, each process into code, and each output symbol into a display statement.
+
+---
+
+## Worked Example: Sum of Two Numbers
+
+**Problem:** Read two integers and display their sum.
 
 ### Algorithm
 
 1. Start.
-2. Read A.
-3. Read B.
+2. Read integer A.
+3. Read integer B.
 4. Calculate `SUM = A + B`.
 5. Display SUM.
-6. Stop.
+6. End.
+
+### Pseudocode
+
+```text
+START
+INPUT A
+INPUT B
+SUM = A + B
+OUTPUT SUM
+END
+```
 
 ### Flowchart
 
@@ -462,93 +269,67 @@ Read two integers and display their sum.
         ( START )
             |
             v
-     / Read A and B /
+       / Input A /
+            |
+            v
+       / Input B /
             |
             v
        [ SUM = A + B ]
             |
             v
-       / Display SUM /
+       / Output SUM /
             |
             v
-         ( STOP )
+         ( END )
 ```
 
-### Python Code
+### Python implementation
 
 ```python
-a = int(input("Enter the first number: "))
-b = int(input("Enter the second number: "))
+a = int(input("Enter first integer: "))
+b = int(input("Enter second integer: "))
 
 total = a + b
 
 print("Sum:", total)
 ```
 
-### Sample Input
+### Dry run
+
+Suppose A is `12` and B is `8`.
+
+| Step | Operation | Result |
+|---|---|---:|
+| 1 | Read A | 12 |
+| 2 | Read B | 8 |
+| 3 | Calculate A + B | 20 |
+| 4 | Display SUM | 20 |
+
+Expected result:
 
 ```text
-Enter the first number: 10
-Enter the second number: 20
+Enter first integer: 12
+Enter second integer: 8
+Sum: 20
 ```
 
-### Output
+### Complexity
 
-```text
-Sum: 30
-```
+For fixed-size integer values, the calculation uses a constant number of basic operations.
 
-### Dry Run
-
-| Step | Operation | A | B | SUM |
-|---|---|---:|---:|---:|
-| 1 | Read A | 10 | — | — |
-| 2 | Read B | 10 | 20 | — |
-| 3 | Calculate A + B | 10 | 20 | 30 |
-| 4 | Display SUM | 10 | 20 | 30 |
+- Time complexity: `O(1)`.
+- Auxiliary space: `O(1)`.
 
 ---
 
-## 10. Example 5 - Read Multiple Values
+## Worked Example: Rectangle Area
 
-Sometimes we want a user to enter several values in a single line.
+**Problem:** Read the length and width of a rectangle and calculate its area.
 
-Python's `split()` method separates a string into parts using whitespace by default.
+### Formula
 
-### Example
-
-```python
-a, b, c = map(
-    int,
-    input("Enter three integers: ").split()
-)
-
-total = a + b + c
-
-print("Total:", total)
-```
-
-### Sample Input
-
-```text
-Enter three integers: 10 20 30
-```
-
-### Output
-
-```text
-Total: 60
-```
-
-### Explanation
-
-The statement performs three operations:
-
-1. `input()` reads a line of text.
-2. `split()` separates the text into parts.
-3. `map(int, ...)` converts the parts into integers.
-
-The values are assigned to `a`, `b`, and `c`.
+`Area = Length × Width`
 
 ### Flowchart
 
@@ -556,558 +337,371 @@ The values are assigned to `a`, `b`, and `c`.
         ( START )
             |
             v
-    / Read A, B, and C /
+      / Input Length /
             |
             v
-    [ TOTAL = A + B + C ]
+       / Input Width /
             |
             v
-      / Display TOTAL /
+ [ AREA = LENGTH * WIDTH ]
             |
             v
-         ( STOP )
+      / Display AREA /
+            |
+            v
+         ( END )
 ```
 
-**Note:** The user must enter the expected number of valid integers. More advanced input validation can be added later.
+### Python implementation
+
+```python
+length = float(input("Enter length: "))
+width = float(input("Enter width: "))
+
+if length < 0 or width < 0:
+    print("Dimensions cannot be negative.")
+else:
+    area = length * width
+    print("Area:", area)
+```
+
+### Sample calculation
+
+If length is `5` and width is `3`:
+
+`Area = 5 × 3 = 15`
+
+Expected area: `15` square units.
+
+The diagram represents the expected logical flow. When input validation is added, the flowchart should also include a decision symbol for checking whether the dimensions are valid.
 
 ---
 
-## 11. Example 6 - Calculate an Average
+## Worked Example: Simple Interest
 
-### Problem
-
-Read three numbers and calculate their average.
+**Problem:** Read principal, annual interest rate, and time in years; calculate simple interest.
 
 ### Formula
 
-```text
-Average = (A + B + C) / 3
-```
+`Simple Interest = (Principal × Rate × Time) / 100`
 
-### Algorithm
+`Total Amount = Principal + Simple Interest`
 
-1. Start.
-2. Read A, B, and C.
-3. Calculate `TOTAL = A + B + C`.
-4. Calculate `AVERAGE = TOTAL / 3`.
-5. Display AVERAGE.
-6. Stop.
+### IPO table
 
-### Flowchart
-
-```text
-         ( START )
-             |
-             v
-     / Read A, B, C /
-             |
-             v
-    [ AVG = (A+B+C)/3 ]
-             |
-             v
-       / Display AVG /
-             |
-             v
-          ( STOP )
-```
-
-### Python Code
-
-```python
-a = float(input("Enter the first number: "))
-b = float(input("Enter the second number: "))
-c = float(input("Enter the third number: "))
-
-average = (a + b + c) / 3
-
-print("Average:", average)
-```
-
-### Sample Input
-
-```text
-Enter the first number: 10
-Enter the second number: 20
-Enter the third number: 30
-```
-
-### Output
-
-```text
-Average: 20.0
-```
-
-### Explanation
-
-`float()` allows the program to accept integers as well as decimal values.
-
-The calculation is completed before the average is displayed.
-
----
-
-## 12. Example 7 - Area of a Rectangle
-
-### Problem
-
-Read the length and breadth of a rectangle and display the area.
-
-### Formula
-
-```text
-Area = Length × Breadth
-```
-
-### Algorithm
-
-1. Start.
-2. Read LENGTH.
-3. Read BREADTH.
-4. Calculate `AREA = LENGTH × BREADTH`.
-5. Display AREA.
-6. Stop.
-
-### Flowchart
-
-```text
-              ( START )
-                  |
-                  v
-     / Read Length and Breadth /
-                  |
-                  v
-     [ AREA = LENGTH * BREADTH ]
-                  |
-                  v
-            / Display AREA /
-                  |
-                  v
-               ( STOP )
-```
-
-### Python Code
-
-```python
-length = float(input("Enter the length: "))
-breadth = float(input("Enter the breadth: "))
-
-area = length * breadth
-
-print("Area:", area)
-```
-
-### Sample Input
-
-```text
-Enter the length: 8
-Enter the breadth: 4
-```
-
-### Output
-
-```text
-Area: 32.0
-```
-
----
-
-## 13. Example 8 - Celsius to Fahrenheit
-
-### Problem
-
-Read a temperature in Celsius and convert it into Fahrenheit.
-
-### Formula
-
-```text
-Fahrenheit = (Celsius × 9 / 5) + 32
-```
-
-### Algorithm
-
-1. Start.
-2. Read the Celsius temperature.
-3. Apply the conversion formula.
-4. Display the Fahrenheit value.
-5. Stop.
-
-### Flowchart
-
-```text
-         ( START )
-             |
-             v
-     / Read Celsius /
-             |
-             v
- [ F = (C * 9 / 5) + 32 ]
-             |
-             v
-    / Display Fahrenheit /
-             |
-             v
-          ( STOP )
-```
-
-### Python Code
-
-```python
-celsius = float(input("Enter temperature in Celsius: "))
-
-fahrenheit = (celsius * 9 / 5) + 32
-
-print("Fahrenheit:", fahrenheit)
-```
-
-### Sample Input
-
-```text
-Enter temperature in Celsius: 25
-```
-
-### Output
-
-```text
-Fahrenheit: 77.0
-```
-
----
-
-## 14. Python `input()` and `print()`
-
-### The `input()` Function
-
-`input()` reads a line of text from the user.
-
-Example:
-
-```python
-name = input("Enter your name: ")
-```
-
-The optional prompt is displayed before Python waits for input.
-
-### The `print()` Function
-
-`print()` displays values.
-
-Example:
-
-```python
-print("Hello, Python!")
-```
-
-Output:
-
-```text
-Hello, Python!
-```
-
-### Important Difference
-
-`input()` receives information, while `print()` displays information.
-
-| Function | Purpose |
+| Stage | Values or action |
 |---|---|
-| `input()` | Reads user input as text |
-| `print()` | Displays values or messages |
-| `int()` | Converts suitable input text into an integer |
-| `float()` | Converts suitable input text into a floating-point number |
-| `split()` | Separates a string into parts |
+| Input | Principal, annual rate, time in years |
+| Process | Calculate interest and total amount |
+| Output | Display interest and total amount |
 
----
-
-## 15. Type Conversion
-
-### What Is Type Conversion?
-
-Type conversion means converting a value from one data type into another.
-
-This is important because `input()` returns a string.
-
-### Example: Without Conversion
+### Python implementation
 
 ```python
-a = input("Enter the first number: ")
-b = input("Enter the second number: ")
+principal = float(input("Enter principal amount: "))
+rate = float(input("Enter annual interest rate: "))
+time = float(input("Enter time in years: "))
 
-print(a + b)
+if principal < 0 or rate < 0 or time < 0:
+    print("Values cannot be negative.")
+else:
+    interest = principal * rate * time / 100
+    amount = principal + interest
+
+    print("Simple interest:", round(interest, 2))
+    print("Total amount:", round(amount, 2))
 ```
 
-If the user enters `10` and `20`, the output is:
+### Dry run
 
-```text
-1020
-```
+Assume:
 
-Python concatenates the two strings instead of performing numeric addition.
+- Principal = 1,000
+- Annual rate = 5%
+- Time = 2 years
 
-### Correct Addition Using `int()`
+Calculation:
 
-```python
-a = int(input("Enter the first number: "))
-b = int(input("Enter the second number: "))
+`Interest = (1000 × 5 × 2) / 100 = 100`
 
-print(a + b)
-```
+`Total Amount = 1000 + 100 = 1100`
 
-For the same input, the output is:
-
-```text
-30
-```
-
-### When to Use `int()` and `float()`
-
-- Use `int()` when the input must be an integer.
-- Use `float()` when decimal values may be supplied.
-
-The input must contain text that can be converted to the requested type. Otherwise, Python raises a `ValueError`.
+The output is simple interest of `100` and a total amount of `1100`.
 
 ---
 
-## 16. Dry Run
+## Input Types and Validation
 
-A dry run means tracing an algorithm manually with sample values.
+Python's `input()` function returns text. Convert it to the required type before performing arithmetic.
 
-Consider the addition example.
-
-Input:
-
-```text
-A = 10
-B = 20
-```
-
-### Dry-Run Table
-
-| Step | Operation | A | B | SUM |
-|---|---|---:|---:|---:|
-| 1 | Read A | 10 | — | — |
-| 2 | Read B | 10 | 20 | — |
-| 3 | Calculate SUM | 10 | 20 | 30 |
-| 4 | Display SUM | 10 | 20 | 30 |
-
-Expected output:
-
-```text
-Sum: 30
-```
-
-A dry run helps us verify that the sequence of input, processing, and output operations is correct.
-
----
-
-## 17. Rules for Input/Output Flowcharts
-
-1. Use a terminator to represent the start and end of the process.
-2. Use a parallelogram for input operations.
-3. Use a parallelogram for output operations.
-4. Use a rectangle for calculations and assignments.
-5. Connect the symbols using arrows.
-6. Arrange operations in a logical sequence.
-7. Label each operation clearly.
-8. Ensure that all required inputs are collected before they are processed.
-9. Display or return the intended result.
-10. Test the flowchart using sample values.
-
-For example, an addition flowchart should read both numbers before calculating their sum.
-
----
-
-## 18. Common Beginner Mistakes
-
-### Mistake 1: Forgetting That Input Is Text
-
-Incorrect:
-
-```python
-a = input("Enter a number: ")
-```
-
-If a calculation requires a numeric value, convert the input appropriately.
-
-Correct:
-
-```python
-a = int(input("Enter a number: "))
-```
-
-### Mistake 2: Using the Wrong Flowchart Symbol
-
-Use a parallelogram for input/output and a rectangle for processing.
-
-### Mistake 3: Missing a Processing Step
-
-A flowchart that reads two values but never specifies their addition is incomplete for a sum problem.
-
-### Mistake 4: Incorrect Formula
-
-Always verify the formula before writing the corresponding process symbol.
-
-### Mistake 5: Entering Values in the Wrong Format
-
-If a program expects three space-separated integers, enter:
-
-```text
-10 20 30
-```
-
-rather than a single number or an unexpected format.
-
-### Mistake 6: Confusing Output with Input
-
-The instruction `Read A` represents input, whereas `Display A` represents output.
-
----
-
-## 19. Important Terminology
-
-| Term | Meaning |
+| Required data | Python approach |
 |---|---|
-| Input | Data provided to an algorithm |
-| Output | Information produced by an algorithm |
-| Process | A calculation or operation |
-| Parallelogram | Common input/output flowchart symbol |
-| Terminator | Symbol representing start or stop |
-| Flow line | Arrow showing the direction of execution |
-| `input()` | Python function used to read a line of text |
-| `print()` | Python function used to display values |
-| Type conversion | Converting a value into another data type |
-| Dry run | Manually tracing an algorithm |
-| `split()` | Separating a string into parts |
-| `int()` | Converting suitable input text into an integer |
-| `float()` | Converting suitable input text into a floating-point value |
+| Text | `input()` |
+| Integer | `int(input(...))` |
+| Decimal number | `float(input(...))` |
+
+### Reading text
+
+```python
+name = input("Enter your name: ").strip()
+print("Name:", name)
+```
+
+`.strip()` removes whitespace at the beginning and end of the input.
+
+### Reading an integer
+
+```python
+age = int(input("Enter age: "))
+print("Age:", age)
+```
+
+This code expects valid integer input. In a robust interactive program, catch `ValueError` if the user enters something other than a whole number.
+
+### Reading a decimal
+
+```python
+price = float(input("Enter price: "))
+print("Price:", price)
+```
+
+### Why validation matters
+
+A program may receive values outside the expected range or a value that makes an operation invalid.
+
+For example:
+
+```python
+divisor = float(input("Enter divisor: "))
+
+if divisor == 0:
+    print("Division by zero is not allowed.")
+else:
+    print("Result:", 10 / divisor)
+```
+
+For integer input, `int()` conversion rejects decimal strings such as `"3.5"`. Choose an input type based on the problem requirements.
 
 ---
 
-## 20. Interview Questions
+## Dry Run and Testing
 
-### Q1. What is an input/output flowchart?
+A dry run means manually following the algorithm using known sample inputs before relying on the program.
 
-It is a flowchart that represents how a process receives data and produces results using standard symbols.
+For input/output flowcharts, check that:
 
-### Q2. Which shape represents input and output?
+1. Each required input is collected.
+2. The calculation uses the correct values.
+3. The output is displayed after processing.
+4. Division by zero is handled when division is used.
+5. Inputs with restricted ranges are validated.
+6. Boundary cases produce sensible results.
 
-A parallelogram is commonly used.
+### Example test cases for addition
 
-### Q3. What is the difference between input and output?
+| Input A | Input B | Expected sum |
+|---:|---:|---:|
+| 2 | 3 | 5 |
+| 0 | 8 | 8 |
+| -4 | 6 | 2 |
+| -3 | -7 | -10 |
+| 100 | 200 | 300 |
 
-Input supplies information to a process. Output presents the result of that process.
-
-### Q4. Which Python function reads user input?
-
-The `input()` function.
-
-### Q5. Which Python function displays output?
-
-The `print()` function.
-
-### Q6. What does `input()` return?
-
-It returns a string containing the line entered by the user, without the trailing newline character.
-
-### Q7. Why is `int()` used with `input()`?
-
-Because arithmetic operations may require an integer, while `input()` returns a string.
-
-### Q8. What is the purpose of a process symbol?
-
-A rectangle represents an operation, calculation, or assignment.
-
-### Q9. What are input, processing, and output?
-
-They are the three stages of many computational tasks: receiving data, transforming it, and producing a result.
-
-### Q10. Why is a dry run useful?
-
-It helps verify the expected behavior and identify missing or incorrectly ordered steps before executing a program.
+Testing negative numbers and zero helps verify that the solution is not working only for positive inputs.
 
 ---
 
-## 21. Practice Questions
+## Time and Space Complexity
 
-Try drawing the flowchart first, then write the Python program.
+For introductory input/output programs, complexity is often constant because the program reads a fixed number of values and performs a fixed number of operations.
 
-### Beginner Level
-
-**Question 1:** Take a name as input and display a welcome message.
-
-**Question 2:** Take two integers and display their sum.
-
-**Question 3:** Take two numbers and display their difference.
-
-**Question 4:** Take a number and display its double.
-
-**Question 5:** Take a number and display its square.
-
-### Intermediate Level
-
-**Question 6:** Take three numbers and calculate their average.
-
-**Question 7:** Take the length and breadth of a rectangle and calculate its area.
-
-**Question 8:** Take a Celsius temperature and convert it into Fahrenheit.
-
-**Question 9:** Take three integers on one line and calculate their sum.
-
-**Question 10:** Take a product's price and quantity and calculate the total price.
-
-### Challenge
-
-Choose any two questions and complete these tasks:
-
-1. Write the algorithm.
-2. Draw the input/output flowchart.
-3. Implement the algorithm in Python.
-4. Test the program with sample values.
-5. Compare the output against a manually calculated result.
-
----
-
-## 22. Learning Checklist
-
-- [ ] Understand what input means.
-- [ ] Understand what output means.
-- [ ] Identify the input/output symbol.
-- [ ] Identify the process symbol.
-- [ ] Use `input()` to receive data.
-- [ ] Use `print()` to display results.
-- [ ] Convert input into numeric types.
-- [ ] Read multiple values on one line.
-- [ ] Write flowcharts for simple calculations.
-- [ ] Perform a dry run.
-- [ ] Identify common input/output mistakes.
-- [ ] Solve the practice questions.
-
----
-
-## 23. What's Next?
-
-Continue with:
-
-**03 - Decision Flowchart**
-
-The next topic will explain how a flowchart represents conditions and different execution paths.
-
----
-
-## Files in This Folder
-
-| File | Purpose |
+| Operation | Typical complexity |
 |---|---|
-| `02_input_output_flowchart.py` | Practical input/output programs with corresponding flowchart steps |
-| `README.md` | Detailed theory, diagrams, code examples, dry runs, interview questions, and practice problems |
+| Read a fixed number of values | `O(1)` for a fixed-size model |
+| Add two numbers | `O(1)` for fixed-size numeric values |
+| Calculate a rectangle's area | `O(1)` for fixed-size numeric values |
+| Calculate a five-subject total | `O(1)` because the number of subjects is fixed |
+| Read and process N values | `O(N)` time, usually `O(1)` auxiliary space if only a running total is stored |
+
+For programs that read an input list whose size grows, the complexity depends on the number of items and how they are stored and processed.
 
 ---
 
-## Conclusion
+## Folder Structure
 
-Input and output are essential components of most beginner programming problems.
+```text
+02_Input_Output_FlowChart/
+│
+├── README.md
+└── 02_input_output_flowchart.py
+```
 
-Flowcharts help represent when data is received, how it is processed, and how the result is produced.
+The Python file contains the examples and practice programs. This README explains the concepts, formulas, flowchart patterns, and testing approach.
 
-Remember:
+---
 
-**Start → Input → Process → Output → Stop**
+## How to Run the Program
 
-Learn the symbols, practise drawing the diagrams, and implement each example in Python to strengthen your understanding.
+Open PowerShell at the root of your `DSA-Python` repository.
+
+Run:
+
+```powershell
+python "PYTHON\Week-1-Programming-Fundamentals\02-Flowcharts-Algorithms\Flowcharts\02_Input_Output_FlowChart\02_input_output_flowchart.py"
+```
+
+The interactive menu provides:
+
+1. Run examples.
+2. Run solved practice questions.
+3. Show unsolved practice questions.
+0. Exit.
+
+Choose the desired option, enter the requested values, and observe the result.
+
+If Python is not recognized, verify your Python installation. On Windows, the `py` command may also work instead of `python`.
+
+---
+
+## Practice Questions
+
+The Python file contains 12 examples, 12 solved questions, and 5 unsolved questions.
+
+### 12 Examples
+
+1. Read and display a name.
+2. Add two numbers.
+3. Perform arithmetic operations.
+4. Calculate rectangle area.
+5. Calculate simple interest.
+6. Convert Celsius to Fahrenheit.
+7. Calculate the average of three values.
+8. Calculate quotient and remainder.
+9. Calculate a bill with tax.
+10. Calculate percentage for five subjects.
+11. Convert seconds to hours, minutes, and seconds.
+12. Calculate average speed.
+
+### 12 Solved Questions
+
+1. Calculate the area and circumference of a circle.
+2. Swap two numbers.
+3. Convert minutes into hours and remaining minutes.
+4. Calculate gross salary using percentage-based allowances.
+5. Calculate discounted price.
+6. Calculate percentage and an example grade.
+7. Convert kilometres to miles.
+8. Find the average of N numbers.
+9. Perform safe integer division.
+10. Calculate an educational example electricity bill with slab rates.
+11. Calculate a right triangle's hypotenuse.
+12. Convert seconds into days, hours, minutes, and seconds.
+
+The electricity rates used by that example are illustrative practice values, not official rates.
+
+### 5 Unsolved Questions
+
+1. Create a flowchart to calculate a multi-item bill with a user-entered tax rate.
+2. Read a student's name and marks, then display a formatted result summary.
+3. Convert a given number of days into weeks and remaining days.
+4. Calculate a final price after applying a discount and then a separate tax.
+5. Read N numbers and display their minimum, maximum, and average.
+
+For each unsolved question:
+
+1. Identify the inputs and outputs.
+2. Write the IPO table.
+3. Write the algorithm.
+4. Draw the flowchart.
+5. Perform a dry run.
+6. Implement the solution in Python.
+7. Test normal and boundary cases.
+
+---
+
+## Common Mistakes
+
+- Forgetting to convert `input()` text before performing arithmetic.
+- Using the wrong formula.
+- Displaying the result before calculating it.
+- Ignoring invalid or out-of-range inputs.
+- Dividing by zero.
+- Confusing integer division (`//`) with regular division (`/`).
+- Forgetting units when interpreting calculated values.
+- Using a flowchart that does not match the implemented logic.
+- Testing only one sample input.
+- Storing unnecessary intermediate values.
+
+---
+
+## Interview Questions
+
+**1. What is input in programming?**
+
+Input is the data supplied to a program for processing.
+
+**2. What is output?**
+
+Output is the information or result produced by a program.
+
+**3. Which flowchart symbol represents input and output?**
+
+A parallelogram is commonly used for input/output operations.
+
+**4. What does IPO stand for?**
+
+IPO stands for Input, Process, Output.
+
+**5. Why is the IPO model useful?**
+
+It helps identify required inputs, the operations to perform, and the output expected from a solution.
+
+**6. What does Python's `input()` function return?**
+
+It returns text, represented by a string.
+
+**7. How do you convert input text into an integer?**
+
+Use `int(input(...))` when the user is expected to enter a valid integer.
+
+**8. What is the difference between `/` and `//` in Python?**
+
+`/` performs true division. `//` performs floor division.
+
+**9. Why should division by zero be checked?**
+
+A zero divisor makes division invalid and raises an error for ordinary numeric division in Python.
+
+**10. What is a dry run?**
+
+A dry run manually traces an algorithm with sample input values to verify its logic.
+
+**11. Why are test cases important?**
+
+They help identify incorrect calculations, missing conditions, and unexpected behaviour.
+
+**12. How are an algorithm, flowchart, and Python program related?**
+
+An algorithm describes the logical steps, a flowchart represents them visually, and a Python program implements them in code.
+
+---
+
+## Learning Checklist
+
+- [ ] I understand the difference between input, processing, and output.
+- [ ] I can identify the input/output flowchart symbol.
+- [ ] I can use the IPO model.
+- [ ] I can draw an input/output flowchart.
+- [ ] I can convert a flowchart into Python.
+- [ ] I can use integer, decimal, and text input.
+- [ ] I understand why input validation matters.
+- [ ] I have run all examples.
+- [ ] I have studied the solved questions.
+- [ ] I have attempted the five unsolved questions.
+- [ ] I have tested my solutions with multiple inputs.
+
+---
+
+## Next Topic
+
+After completing Input/Output Flowcharts, move to **Decision Flowcharts** to learn how to represent conditions, branching paths, and multiple outcomes.

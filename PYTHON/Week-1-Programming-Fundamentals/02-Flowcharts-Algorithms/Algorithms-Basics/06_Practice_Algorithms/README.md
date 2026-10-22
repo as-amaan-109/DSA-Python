@@ -1,1074 +1,895 @@
 # Practice Algorithms
 
-> **Week:** 01 - Programming Fundamentals  
-> **Section:** Algorithms and Flowcharts  
-> **Topic:** Practice Algorithms  
-> **Level:** Beginner  
-> **Goal:** Apply algorithm steps, correctness, dry runs, and complexity analysis to practical problems.
+Welcome to **Practice Algorithms**, the sixth and final topic in the Algorithms Basics section of Python Programming Fundamentals.
+
+This topic brings together the concepts learned in algorithm fundamentals, step-by-step design, examples, characteristics, and analysis. The focus is on implementing algorithms, tracing their execution, testing edge cases, and improving problem-solving skills.
+
+Practice is essential because understanding an algorithm's explanation is different from being able to implement it independently.
 
 ---
 
-## Table of Contents
+## 1. About This Topic
 
-1. Introduction
-2. How to Approach a Problem
-3. Addition of Two Numbers
-4. Subtraction and Multiplication
-5. Average of a List
-6. Area of a Rectangle
-7. Celsius to Fahrenheit
-8. Square of a Number
-9. Even or Odd
-10. Find the Largest Number
-11. Linear Search
-12. Binary Search
-13. Reverse a List
-14. Count Element Frequencies
-15. Factorial
-16. Time and Space Complexity Summary
-17. Testing and Edge Cases
-18. Common Beginner Mistakes
-19. Interview Questions
-20. Practice Questions
-21. Learning Checklist
-22. What's Next?
+- **Week:** 1 – Programming Fundamentals
+- **Section:** 02 – Flowcharts and Algorithms
+- **Subsection:** Algorithms Basics
+- **Topic:** Practice Algorithms
+- **Level:** Beginner to Intermediate
+- **Language:** Python
+- **Practical File:** `06_practice_algorithms.py`
 
----
+### Learning Objectives
 
-## 1. Introduction
+After completing this topic, you should be able to:
 
-Learning an algorithm's definition is only the first step. To develop problem-solving skills, we must practise converting problem statements into logical steps and working Python programs.
-
-This topic combines the concepts covered in the previous folders:
-
-- Algorithm Basics
-- Algorithm Steps
-- Algorithm Examples
-- Algorithm Characteristics
-- Algorithm Analysis
-
-For each problem, identify the inputs, write the algorithm, implement it in Python, test the result, and understand its complexity.
+- Convert problem statements into algorithms.
+- Write pseudocode before implementation.
+- Solve arithmetic and number-based problems.
+- Use conditions and loops effectively.
+- Understand digit-processing algorithms.
+- Implement searching and sorting techniques.
+- Apply the Euclidean algorithm to calculate GCD.
+- Understand basic list processing.
+- Test solutions with normal and edge cases.
+- Estimate time and auxiliary space complexity.
+- Explain and debug your own code.
+- Practise independent problem solving.
 
 ---
 
-## 2. How to Approach a Problem
+## 2. How to Approach a Practice Problem
 
-Follow this method whenever you receive a coding question.
+For every problem, follow the same systematic method.
 
 ### Step 1: Understand the Problem
 
-Read the question carefully and identify the required result.
+Read the problem statement and describe the required result in your own words.
 
 ### Step 2: Identify Inputs and Outputs
 
-Determine which values the algorithm needs and what it must produce.
+Record the information the program receives and the result it must return or display.
 
-### Step 3: Design the Logic
+### Step 3: Define Constraints
 
-Write the mathematical formula or ordered steps.
+Determine allowed input values, whether a list can be empty, whether values may repeat, and how special cases should be handled.
 
-### Step 4: Implement the Solution
+### Step 4: Design the Algorithm
 
-Convert the algorithm into Python code.
+Write the solution as ordered steps. Identify which operations require decisions or repetition.
 
-### Step 5: Test the Solution
+### Step 5: Write Pseudocode
 
-Try normal values, edge cases, and invalid inputs where relevant.
+Represent the logic without depending on exact Python syntax.
 
-### Step 6: Analyze Complexity
+### Step 6: Implement in Python
 
-Estimate the algorithm's time and auxiliary space complexity.
+Translate the planned steps into code using appropriate variables, conditions, and loops.
 
-The general workflow is:
+### Step 7: Perform a Dry Run
 
-```text
-Problem
-   |
-   v
-Understand Inputs and Outputs
-   |
-   v
-Write Algorithm Steps
-   |
-   v
-Implement in Python
-   |
-   v
-Test the Result
-   |
-   v
-Analyze Complexity
-```
+Trace your variables with a small example before relying on the program output.
+
+### Step 8: Test the Solution
+
+Try ordinary inputs, boundary cases, and relevant unusual inputs.
+
+### Step 9: Analyse the Algorithm
+
+Estimate how computational work and additional memory grow with the input size.
+
+### Step 10: Review and Improve
+
+Check the correctness, readability, and assumptions of the solution.
 
 ---
 
-## 3. Addition of Two Numbers
+## 3. Common Algorithms in This Topic
+
+The practical file includes examples of several important beginner algorithms.
+
+| Algorithm | Purpose | Typical complexity |
+|---|---|---|
+| Sum from 1 to N | Accumulate a sequence of numbers | O(N) with a loop |
+| Factorial | Multiply positive integers up to N | O(N) time |
+| Prime check | Test whether a number has a divisor other than 1 and itself | O(√N) time with trial division |
+| Fibonacci sequence | Generate terms of a numeric sequence | O(N) time for N terms |
+| Sum of digits | Add the decimal digits of an integer | O(D) time |
+| Reverse an integer | Reverse the order of digits | O(D) time |
+| Linear search | Find an element in a list | O(N) worst-case time |
+| Binary search | Search a sorted list by repeatedly halving the range | O(log N) search time |
+| Bubble sort | Sort values by exchanging adjacent out-of-order elements | O(N²) worst-case time |
+| GCD | Find the greatest common divisor of two integers | O(log min(A, B)) for positive inputs |
+
+Here, `D` is the number of decimal digits. Complexity estimates use the usual introductory operation-count model and exclude unrelated input/output costs. The precise interpretation depends on the algorithm and what memory is counted.
+
+---
+
+## 4. Example 1 — Sum from 1 to N
 
 ### Problem
 
-Calculate the sum of two numbers.
-
-### Formula
-
-```text
-Sum = A + B
-```
+Calculate the sum of all integers from 1 through a non-negative integer N.
 
 ### Algorithm
 
-1. Start.
-2. Obtain A and B.
-3. Calculate `SUM = A + B`.
-4. Display SUM.
-5. Stop.
+1. Read N.
+2. Reject N if it is negative.
+3. Initialise the total to zero.
+4. Add each value from 1 through N.
+5. Display the sum.
+
+### Pseudocode
+
+```text
+START
+    INPUT N
+
+    IF N < 0
+        DISPLAY "Invalid input"
+    ELSE
+        SET TOTAL = 0
+
+        FOR I = 1 TO N
+            SET TOTAL = TOTAL + I
+        END FOR
+
+        DISPLAY TOTAL
+    END IF
+END
+```
 
 ### Python Code
 
 ```python
-def add_numbers(a, b):
-    return a + b
+n = int(input("Enter N: "))
 
-print(add_numbers(10, 20))
-```
-
-### Output
-
-```text
-30
-```
-
-### Complexity
-
-- Time: `O(1)`
-- Auxiliary space: `O(1)`
-
-This assumes a fixed number of operations on fixed-size numeric values.
-
-### Practice
-
-Test the function with positive values, negative values, and zero.
-
----
-
-## 4. Subtraction and Multiplication
-
-### Subtraction
-
-Formula:
-
-```text
-Difference = A - B
-```
-
-```python
-def subtract_numbers(a, b):
-    return a - b
-
-print(subtract_numbers(25, 10))
-```
-
-Output:
-
-```text
-15
-```
-
-**Important:** The order matters. `25 - 10` is not the same as `10 - 25`.
-
-### Multiplication
-
-Formula:
-
-```text
-Product = A * B
-```
-
-```python
-def multiply_numbers(a, b):
-    return a * b
-
-print(multiply_numbers(6, 7))
-```
-
-Output:
-
-```text
-42
-```
-
-### Complexity
-
-Both examples use a fixed number of operations, so their time and auxiliary space complexities are `O(1)` under the usual fixed-size numeric model.
-
----
-
-## 5. Average of a List
-
-### Problem
-
-Calculate the average of a list of numbers.
-
-### Formula
-
-```text
-Average = Sum of all values / Number of values
-```
-
-### Algorithm
-
-1. Check that the list contains at least one element.
-2. Initialize a total to zero.
-3. Visit every number and add it to the total.
-4. Divide the total by the number of elements.
-5. Return the average.
-
-### Python Code
-
-```python
-def calculate_average(numbers):
-    if not numbers:
-        raise ValueError("The list must not be empty.")
-
+if n < 0:
+    print("N must be non-negative.")
+else:
     total = 0
 
-    for number in numbers:
-        total += number
+    for value in range(1, n + 1):
+        total += value
 
-    return total / len(numbers)
-
-print(calculate_average([10, 20, 30]))
+    print("Sum:", total)
 ```
 
-### Output
-
-```text
-20.0
-```
-
-### Dry Run
-
-| Step | Operation | Total |
-|---|---|---:|
-| 1 | Initialize total | 0 |
-| 2 | Add 10 | 10 |
-| 3 | Add 20 | 30 |
-| 4 | Add 30 | 60 |
-| 5 | Divide by 3 | 20.0 |
-
-### Complexity
-
-- Time: `O(n)`, because every element is processed once.
-- Auxiliary space: `O(1)`, because only a running total and a fixed number of other variables are used.
-
-Here, `n` is the number of elements.
-
-### Edge Case
-
-An empty list has no average under this definition. The implementation raises `ValueError` rather than dividing by zero.
-
----
-
-## 6. Area of a Rectangle
-
-### Problem
-
-Calculate the area of a rectangle from its length and breadth.
-
-### Formula
-
-```text
-Area = Length × Breadth
-```
-
-### Algorithm
-
-1. Obtain length and breadth.
-2. Multiply the two values.
-3. Return or display the area.
-
-### Python Code
-
-```python
-def rectangle_area(length, breadth):
-    return length * breadth
-
-print(rectangle_area(8, 4))
-```
-
-### Output
-
-```text
-32
-```
-
-If length and breadth are measured in centimetres, the area is measured in square centimetres.
-
-### Complexity
-
-- Time: `O(1)`
-- Auxiliary space: `O(1)`
-
-This example performs a fixed number of arithmetic operations.
-
----
-
-## 7. Celsius to Fahrenheit
-
-### Problem
-
-Convert a temperature in Celsius to Fahrenheit.
-
-### Formula
-
-```text
-Fahrenheit = (Celsius × 9 / 5) + 32
-```
-
-### Algorithm
-
-1. Obtain the Celsius temperature.
-2. Multiply it by 9.
-3. Divide the result by 5.
-4. Add 32.
-5. Return the Fahrenheit result.
-
-### Python Code
-
-```python
-def celsius_to_fahrenheit(celsius):
-    return (celsius * 9 / 5) + 32
-
-print(celsius_to_fahrenheit(25))
-```
-
-### Output
-
-```text
-77.0
-```
-
-### Complexity
-
-- Time: `O(1)`
-- Auxiliary space: `O(1)`
-
----
-
-## 8. Square of a Number
-
-### Problem
-
-Calculate the square of a number.
-
-### Formula
-
-```text
-Square = Number × Number
-```
-
-### Python Code
-
-```python
-def square_number(number):
-    return number * number
-
-print(square_number(9))
-```
-
-### Output
-
-```text
-81
-```
-
-### Complexity
-
-- Time: `O(1)`
-- Auxiliary space: `O(1)`
-
-For fixed-size numeric values, calculating the square uses a constant number of operations.
-
----
-
-## 9. Even or Odd
-
-### Problem
-
-Determine whether an integer is even or odd.
-
-### Concept
-
-The modulo operator `%` calculates a remainder.
-
-If an integer divided by 2 has remainder zero, it is even. Otherwise, it is odd.
-
-### Algorithm
-
-1. Obtain an integer.
-2. Calculate `number % 2`.
-3. If the remainder is zero, return that the number is even.
-4. Otherwise, return that it is odd.
-
-### Python Code
-
-```python
-def is_even(number):
-    return number % 2 == 0
-
-print(is_even(12))
-print(is_even(17))
-```
-
-### Output
-
-```text
-True
-False
-```
-
-The first result means 12 is even. The second means 17 is odd.
-
-### Complexity
-
-- Time: `O(1)`
-- Auxiliary space: `O(1)`
-
-### Practice
-
-Test with zero, a negative integer, and a positive integer.
-
----
-
-## 10. Find the Largest Number
-
-### Problem
-
-Find the largest number in a list.
-
-### Algorithm
-
-1. Check that the list is not empty.
-2. Assume the first element is the largest.
-3. Visit every remaining element.
-4. If the current element is larger, update the largest value.
-5. Return the final largest value.
-
-### Python Code
-
-```python
-def find_largest(numbers):
-    if not numbers:
-        raise ValueError("The list must not be empty.")
-
-    largest = numbers[0]
-
-    for number in numbers[1:]:
-        if number > largest:
-            largest = number
-
-    return largest
-
-numbers = [34, 67, 89, 12, 60]
-
-print(find_largest(numbers))
-```
-
-### Output
-
-```text
-89
-```
-
-### Dry Run
-
-| Current number | Largest value |
-|---:|---:|
-| 34 | 34 |
-| 67 | 67 |
-| 89 | 89 |
-| 12 | 89 |
-| 60 | 89 |
-
-### Complexity
-
-- Time: `O(n)`, because the algorithm examines every element.
-- Auxiliary space: `O(1)`, using a fixed number of variables.
-
-The slice `numbers[1:]` shown in this implementation creates a copy in Python. If strict constant auxiliary space is required, use an index-based loop instead:
-
-```python
-for index in range(1, len(numbers)):
-    if numbers[index] > largest:
-        largest = numbers[index]
-```
-
-That avoids creating the slice.
-
----
-
-## 11. Linear Search
-
-### Problem
-
-Find the index of a target value in a list.
-
-### Algorithm
-
-1. Start at the first element.
-2. Compare each element with the target.
-3. Return the index when a match is found.
-4. If no match is found, return `-1`.
-
-### Python Code
-
-```python
-def linear_search(numbers, target):
-    for index, value in enumerate(numbers):
-        if value == target:
-            return index
-
-    return -1
-
-numbers = [10, 20, 30, 40, 50]
-
-print(linear_search(numbers, 40))
-print(linear_search(numbers, 99))
-```
-
-### Output
-
-```text
-3
--1
-```
-
-The target `40` is at index 3. The target `99` is absent, so the function returns `-1`.
-
-### Complexity
-
-| Case | Time Complexity |
-|---|---|
-| Best case | `O(1)` |
-| Average case | `O(n)` under common assumptions |
-| Worst case | `O(n)` |
-
-Auxiliary space: `O(1)`.
-
-### Important Point
-
-Linear search does not require the list to be sorted.
-
----
-
-## 12. Binary Search
-
-### Problem
-
-Find a target value in a sorted list.
-
-### Important Requirement
-
-**Binary search requires sorted input.** The implementation in this section assumes ascending order.
-
-### Algorithm
-
-1. Set pointers to the beginning and end of the list.
-2. Find the middle index.
-3. If the middle value equals the target, return the index.
-4. If the target is larger, search the right half.
-5. Otherwise, search the left half.
-6. Repeat until the target is found or the range becomes empty.
-
-### Python Code
-
-```python
-def binary_search(numbers, target):
-    left = 0
-    right = len(numbers) - 1
-
-    while left <= right:
-        middle = (left + right) // 2
-
-        if numbers[middle] == target:
-            return middle
-        elif numbers[middle] < target:
-            left = middle + 1
-        else:
-            right = middle - 1
-
-    return -1
-
-numbers = [3, 7, 11, 15, 19, 23, 27, 31]
-
-print(binary_search(numbers, 23))
-print(binary_search(numbers, 8))
-```
-
-### Output
-
-```text
-5
--1
-```
-
-### Complexity
-
-- Best-case time: `O(1)`.
-- Worst-case time: `O(log n)`.
-- Auxiliary space: `O(1)` for this iterative implementation.
-
-### Why Is Binary Search Efficient?
-
-After each unsuccessful comparison, it discards roughly half of the remaining search range.
-
-This is why its number of comparisons grows logarithmically with input size.
-
----
-
-## 13. Reverse a List
-
-### Problem
-
-Return a new list containing the same values in reverse order.
-
-### Example
-
-Input:
-
-```text
-[1, 2, 3, 4, 5]
-```
+### Dry Run for N = 4
+
+| Iteration | Value | Total before | Total after |
+|---|---:|---:|---:|
+| 1 | 1 | 0 | 1 |
+| 2 | 2 | 1 | 3 |
+| 3 | 3 | 3 | 6 |
+| 4 | 4 | 6 | 10 |
 
 Output:
 
 ```text
-[5, 4, 3, 2, 1]
-```
-
-### Algorithm
-
-1. Create a copy of the input list.
-2. Set a left pointer to the first index and a right pointer to the last index.
-3. Swap the values at those positions.
-4. Move the left pointer forward and the right pointer backward.
-5. Continue until the pointers meet or cross.
-6. Return the reversed list.
-
-### Python Code
-
-```python
-def reverse_list(numbers):
-    reversed_numbers = numbers.copy()
-
-    left = 0
-    right = len(reversed_numbers) - 1
-
-    while left < right:
-        reversed_numbers[left], reversed_numbers[right] = (
-            reversed_numbers[right],
-            reversed_numbers[left]
-        )
-        left += 1
-        right -= 1
-
-    return reversed_numbers
-
-print(reverse_list([1, 2, 3, 4, 5]))
+Sum: 10
 ```
 
 ### Complexity
 
-- Time: `O(n)`.
-- Auxiliary space: `O(n)`, because a copy of the input is created.
+- Time: O(N)
+- Auxiliary space: O(1)
 
-This implementation preserves the original list.
-
----
-
-## 14. Count Element Frequencies
-
-### Problem
-
-Count how many times each value occurs in a list.
-
-### Example
-
-Input:
-
-```text
-[1, 2, 2, 3, 1, 4, 2]
-```
-
-Output:
-
-```text
-{1: 2, 2: 3, 3: 1, 4: 1}
-```
-
-### Algorithm
-
-1. Create an empty dictionary.
-2. Visit each element.
-3. If the element exists in the dictionary, increase its count.
-4. Otherwise, add it with a count of 1.
-5. Return the dictionary.
-
-### Python Code
-
-```python
-def count_frequency(numbers):
-    counts = {}
-
-    for number in numbers:
-        if number in counts:
-            counts[number] += 1
-        else:
-            counts[number] = 1
-
-    return counts
-
-numbers = [1, 2, 2, 3, 1, 4, 2]
-
-print(count_frequency(numbers))
-```
-
-### Complexity
-
-Let:
-
-- `n` be the total number of elements.
-- `k` be the number of distinct values.
-
-With ordinary dictionary operations, the average time complexity is `O(n)`.
-
-The auxiliary space complexity is `O(k)` because the dictionary stores one entry for each distinct value.
-
-In the worst case, `k` can equal `n`.
+The loop visits each integer in the requested range once.
 
 ---
 
-## 15. Factorial
+## 5. Example 2 — Factorial
 
 ### Problem
 
 Calculate the factorial of a non-negative integer.
 
-### Definition
+For N greater than zero:
 
-For a positive integer:
-
-```text
-n! = n × (n - 1) × (n - 2) × ... × 2 × 1
-```
+\[
+N! = 1 \times 2 \times 3 \times \cdots \times N
+\]
 
 By definition:
 
-```text
+\[
 0! = 1
-```
-
-### Example
-
-```text
-5! = 5 × 4 × 3 × 2 × 1
-5! = 120
-```
-
-### Algorithm
-
-1. Check that the input is a non-negative integer.
-2. Initialize the result to 1.
-3. Multiply the result by each integer from 2 through n.
-4. Return the result.
+\]
 
 ### Python Code
 
 ```python
-def factorial(number):
-    if not isinstance(number, int) or isinstance(number, bool):
-        raise TypeError("The number must be an integer.")
+n = int(input("Enter a non-negative integer: "))
 
-    if number < 0:
-        raise ValueError("Factorial is not defined here for negatives.")
-
+if n < 0:
+    print("Factorial is not defined for negative integers.")
+else:
     result = 1
 
-    for value in range(2, number + 1):
+    for value in range(1, n + 1):
         result *= value
 
-    return result
-
-print(factorial(5))
-print(factorial(0))
+    print("Factorial:", result)
 ```
 
-### Output
+### Sample Output
 
 ```text
-120
-1
+Enter a non-negative integer: 5
+Factorial: 120
+```
+
+For N = 0, the loop does not execute and the initial value remains 1.
+
+### Complexity
+
+- Time: O(N) loop iterations
+- Auxiliary space: O(1)
+
+For extremely large integers, the actual cost of arithmetic grows with the size of the values.
+
+---
+
+## 6. Example 3 — Prime Number Check
+
+### Problem
+
+Determine whether an integer is prime.
+
+A prime number is an integer greater than 1 whose only positive divisors are 1 and itself.
+
+### Algorithm
+
+1. Read N.
+2. If N is less than 2, report that it is not prime.
+3. Test candidate divisors starting at 2.
+4. Continue while the divisor squared is at most N.
+5. If a divisor divides N exactly, report that N is not prime.
+6. Otherwise, report that N is prime.
+
+### Python Code
+
+```python
+n = int(input("Enter an integer: "))
+
+if n < 2:
+    print("Not prime.")
+else:
+    divisor = 2
+
+    while divisor * divisor <= n:
+        if n % divisor == 0:
+            print("Not prime.")
+            break
+
+        divisor += 1
+    else:
+        print("Prime.")
+```
+
+### Why Stop at the Square Root?
+
+For a composite number, at least one non-trivial factor must be no greater than its square root. If no divisor is found by that point, the number is prime.
+
+### Complexity
+
+- Time: O(√N) for N ≥ 2
+- Auxiliary space: O(1)
+
+---
+
+## 7. Example 4 — Fibonacci Sequence
+
+The Fibonacci sequence starts with 0 and 1. Each subsequent term is the sum of the previous two terms.
+
+Example sequence:
+
+```text
+0, 1, 1, 2, 3, 5, 8, 13, ...
+```
+
+### Python Code
+
+```python
+n = int(input("How many terms? "))
+
+if n < 0:
+    print("Number of terms must be non-negative.")
+else:
+    first, second = 0, 1
+    sequence = []
+
+    for _ in range(n):
+        sequence.append(first)
+        first, second = second, first + second
+
+    print("Fibonacci sequence:", sequence)
 ```
 
 ### Complexity
 
-- Time: `O(n)`.
-- Auxiliary space: `O(1)` in the basic operation-counting model.
+- Time: O(N) iterations
+- Auxiliary space: O(N) for the returned list
 
-The number of iterations grows with the input `n`.
-
----
-
-## 16. Time and Space Complexity Summary
-
-| Problem | Time Complexity | Auxiliary Space | Important Note |
-|---|---|---|---|
-| Add two numbers | `O(1)` | `O(1)` | Fixed number of operations |
-| Subtract two numbers | `O(1)` | `O(1)` | Fixed number of operations |
-| Multiply two numbers | `O(1)` | `O(1)` | Fixed-size numeric model |
-| Average of a list | `O(n)` | `O(1)` | Every element is visited once |
-| Rectangle area | `O(1)` | `O(1)` | Single calculation |
-| Celsius conversion | `O(1)` | `O(1)` | Fixed number of calculations |
-| Check even or odd | `O(1)` | `O(1)` | One remainder operation |
-| Find largest element | `O(n)` | `O(1)` | Every element must be considered |
-| Linear search | `O(n)` worst case | `O(1)` | Does not require sorted data |
-| Binary search | `O(log n)` worst case | `O(1)` | Requires sorted data |
-| Reverse a list | `O(n)` | `O(n)` | A copy is created |
-| Count frequencies | `O(n)` average | `O(k)` | Dictionary stores distinct values |
-| Factorial | `O(n)` | `O(1)` | Iterative calculation |
-
-These complexities describe growth under the usual introductory analysis model. Exact runtime also depends on input types, implementation details, and the execution environment.
+If terms are printed directly without storing them in a list, auxiliary space can be O(1), excluding the output stream.
 
 ---
 
-## 17. Testing and Edge Cases
+## 8. Example 5 — Sum of Digits
 
-A good solution should be checked using more than one example.
+### Problem
 
-### What Is an Edge Case?
+Calculate the sum of an integer's decimal digits. For this example, use the absolute value, so a negative sign is not counted as a digit.
 
-An edge case is an input at a boundary or an unusual part of the valid input domain that is important to test.
-
-### Examples
-
-**Addition**
-- Two positive numbers.
-- A negative number and a positive number.
-- Zero as an input.
-
-**Largest element**
-- A list containing one element.
-- All elements are negative.
-- Multiple elements share the largest value.
-- An empty list, which should be handled according to the problem specification.
-
-**Linear search**
-- Target at the first index.
-- Target at the last index.
-- Target missing from the list.
-- An empty list.
-
-**Binary search**
-- Target equals the middle element.
-- Target is smaller than all elements.
-- Target is greater than all elements.
-- Target is absent.
-- An empty sorted list.
-
-**Factorial**
-- `0`.
-- `1`.
-- A positive integer.
-- A negative or non-integer input.
-
-Testing these cases helps identify errors that ordinary examples might not reveal.
-
----
-
-## 18. Common Beginner Mistakes
-
-### Mistake 1: Ignoring Empty Inputs
-
-An empty list has no average or largest element under the definitions used in this topic.
-
-**Solution:** Check whether the input is valid before processing it.
-
-### Mistake 2: Using Binary Search on an Unsorted List
-
-Binary search relies on sorted data.
-
-**Solution:** Ensure the list is sorted, or choose linear search when the input is not sorted.
-
-### Mistake 3: Forgetting That Indexing Starts at Zero
-
-In Python, the first element is at index 0.
-
-For example:
+### Python Code
 
 ```python
-numbers = [10, 20, 30]
-print(numbers[0])
+number = abs(int(input("Enter an integer: ")))
+total = 0
+
+while number > 0:
+    digit = number % 10
+    total += digit
+    number //= 10
+
+print("Sum of digits:", total)
+```
+
+For input `352`, the algorithm processes the digits 2, 5, and 3, giving a sum of 10.
+
+For zero, the total remains zero.
+
+### Complexity
+
+- Time: O(D)
+- Auxiliary space: O(1)
+
+Here D is the number of decimal digits.
+
+---
+
+## 9. Example 6 — Reverse an Integer
+
+### Problem
+
+Reverse the decimal digits of an integer while preserving the original sign.
+
+### Algorithm
+
+1. Save the sign.
+2. Work with the absolute value.
+3. Extract the last digit using modulo 10.
+4. Append the digit to the reversed number.
+5. Remove the processed digit using integer division by 10.
+6. Repeat until the remaining value becomes zero.
+7. Restore the sign and display the result.
+
+### Python Code
+
+```python
+number = int(input("Enter an integer: "))
+
+sign = -1 if number < 0 else 1
+remaining = abs(number)
+reversed_number = 0
+
+while remaining > 0:
+    digit = remaining % 10
+    reversed_number = reversed_number * 10 + digit
+    remaining //= 10
+
+print("Reversed integer:", sign * reversed_number)
+```
+
+Examples:
+
+| Input | Output |
+|---:|---:|
+| 1234 | 4321 |
+| 560 | 65 |
+| -123 | -321 |
+| 0 | 0 |
+
+Leading zeroes disappear because the result is an integer.
+
+### Complexity
+
+- Time: O(D)
+- Auxiliary space: O(1)
+
+---
+
+## 10. Example 7 — Palindrome Check
+
+### Problem
+
+Determine whether a non-negative integer reads the same forward and backward.
+
+Examples include 121, 1331, and 7.
+
+### Python Code
+
+```python
+number = int(input("Enter a non-negative integer: "))
+
+if number < 0:
+    print("Enter a non-negative integer.")
+else:
+    original = number
+    remaining = number
+    reversed_number = 0
+
+    while remaining > 0:
+        digit = remaining % 10
+        reversed_number = reversed_number * 10 + digit
+        remaining //= 10
+
+    if original == reversed_number:
+        print("Palindrome.")
+    else:
+        print("Not a palindrome.")
+```
+
+Zero is a palindrome under this definition because its reversed value is also zero.
+
+### Complexity
+
+- Time: O(D)
+- Auxiliary space: O(1)
+
+---
+
+## 11. Example 8 — Linear Search
+
+### Problem
+
+Find the first occurrence of a target value in a list.
+
+### Python Code
+
+```python
+values = [10, 20, 30, 40, 50]
+target = 40
+
+position = -1
+
+for index, value in enumerate(values):
+    if value == target:
+        position = index
+        break
+
+if position == -1:
+    print("Target not found.")
+else:
+    print("Target found at index:", position)
 ```
 
 Output:
 
 ```text
-10
+Target found at index: 3
 ```
 
-### Mistake 4: Confusing a Value with Its Index
+The returned position is zero-based. The first item has index 0.
 
-In linear and binary search, returning `3` means index 3, not necessarily that the target value is 3.
+### Complexity
 
-### Mistake 5: Ignoring Auxiliary Space
+- Best-case time: O(1)
+- Worst-case time: O(N)
+- Auxiliary space: O(1)
 
-Creating a new list uses additional memory.
-
-**Solution:** Analyze the data structures the algorithm creates, not just its loop count.
-
-### Mistake 6: Returning the Wrong Result
-
-A search algorithm should return a consistent result when the target is missing.
-
-This topic uses `-1` to mean "not found".
+The algorithm may inspect every item when the target is absent or appears at the end.
 
 ---
 
-## 19. Interview Questions
+## 12. Example 9 — Bubble Sort
 
-### Q1. What is an algorithm?
+Bubble sort compares adjacent values and swaps them when they are out of order.
 
-An algorithm is a finite sequence of clear and ordered steps used to solve a problem.
+### Python Code
 
-### Q2. What is the difference between linear search and binary search?
+```python
+values = [5, 1, 4, 2, 8]
+n = len(values)
 
-Linear search checks elements one by one and works on unsorted data. Binary search repeatedly halves a search range and requires sorted data.
+for i in range(n):
+    swapped = False
 
-### Q3. What is the worst-case time complexity of linear search?
+    for j in range(0, n - i - 1):
+        if values[j] > values[j + 1]:
+            values[j], values[j + 1] = values[j + 1], values[j]
+            swapped = True
 
-`O(n)`, because it may need to check every element.
+    if not swapped:
+        break
 
-### Q4. What is the worst-case time complexity of binary search?
+print("Sorted list:", values)
+```
 
-`O(log n)`, when the input is sorted and the standard binary search algorithm is used.
+Output:
 
-### Q5. How do you find the largest element in a list?
+```text
+Sorted list: [1, 2, 4, 5, 8]
+```
 
-Start with the first element as the current largest and compare every remaining element. Update the largest value whenever a greater value is found.
+The `swapped` flag lets this version stop early if a complete pass makes no changes.
 
-### Q6. Why should an empty list be checked before calculating an average?
+### Complexity
 
-Because the average requires dividing the sum by the number of elements, and an empty list has a count of zero.
-
-### Q7. What is the time complexity of finding the largest element?
-
-`O(n)`, because every list element must be considered in the general case.
-
-### Q8. What is the difference between time complexity and auxiliary space complexity?
-
-Time complexity describes the growth of computational work. Auxiliary space complexity describes additional memory usage.
-
-### Q9. What is factorial?
-
-For a non-negative integer n, its factorial is the product of all positive integers from 1 to n, with `0! = 1`.
-
-### Q10. How can you count element frequencies efficiently?
-
-Use a dictionary to store each distinct value and its count. This usually takes average `O(n)` time for `n` elements.
+- Best case: O(N) for already sorted input with this early-exit implementation
+- Average case: O(N²)
+- Worst case: O(N²)
+- Auxiliary space: O(1)
 
 ---
 
-## 20. Practice Questions
+## 13. Example 10 — Greatest Common Divisor
 
-Try to write the algorithm and Python implementation for each question.
+The greatest common divisor (GCD) of two integers is the largest positive integer that divides both, when at least one input is non-zero.
 
-### Beginner Level
+The Euclidean algorithm uses repeated remainder operations.
 
-**Question 1:** Write a function to calculate the sum of three numbers.
+### Python Code
 
-**Question 2:** Write a function to calculate the cube of a number.
+```python
+a = abs(int(input("Enter first integer: ")))
+b = abs(int(input("Enter second integer: ")))
 
-**Question 3:** Write a function to convert kilometres into metres.
+while b != 0:
+    a, b = b, a % b
 
-**Question 4:** Write a function to calculate the perimeter of a rectangle.
+print("GCD:", a)
+```
 
-**Question 5:** Write a function to determine whether an integer is positive, negative, or zero.
+For `48` and `18`, the GCD is 6.
 
-### Intermediate Level
+When both inputs are zero, this implementation returns zero as a computational convention, though the positive-divisor definition of GCD does not define a unique positive GCD for that pair.
 
-**Question 6:** Write a function that returns the smallest element in a non-empty list.
+### Complexity
 
-**Question 7:** Write a function that counts how many even numbers occur in a list.
-
-**Question 8:** Write a function that returns the index of the first occurrence of a target.
-
-**Question 9:** Write a function that returns a reversed copy of a list.
-
-**Question 10:** Write a function that counts the frequency of each element in a list.
-
-### Challenge
-
-**Question 11:** Write an iterative binary search and test it with a sorted list.
-
-**Question 12:** Write a function that calculates factorial iteratively.
-
-**Question 13:** Explain the time and auxiliary space complexities of your largest-element solution.
-
-**Question 14:** Create test cases for linear search when the target is found, missing, or searched for in an empty list.
-
-**Question 15:** Compare linear search and binary search and explain which one is appropriate for a given input.
-
-For each problem:
-
-1. Write the algorithm steps.
-2. Implement the solution in Python.
-3. Test normal cases and edge cases.
-4. Record time and auxiliary space complexity.
+For positive inputs, the Euclidean algorithm takes O(log min(A, B)) iterations in the standard asymptotic analysis, with O(1) auxiliary space.
 
 ---
 
-## 21. Learning Checklist
+## 14. Example 11 — Binary Search
 
-- [ ] Implement basic arithmetic algorithms.
-- [ ] Calculate averages and rectangle areas.
-- [ ] Convert Celsius to Fahrenheit.
-- [ ] Check even or odd.
-- [ ] Find the largest element.
-- [ ] Implement linear search.
-- [ ] Implement binary search.
-- [ ] Reverse a list.
-- [ ] Count element frequencies.
-- [ ] Calculate factorial.
-- [ ] Handle empty inputs where appropriate.
-- [ ] Test edge cases.
-- [ ] Explain time complexity.
-- [ ] Explain auxiliary space complexity.
-- [ ] Solve the practice questions independently.
+Binary search repeatedly divides the remaining search interval approximately in half.
+
+**Precondition:** The input list must be sorted in ascending order for the following implementation.
+
+### Python Code
+
+```python
+values = [10, 20, 30, 40, 50, 60, 70]
+target = 50
+
+left = 0
+right = len(values) - 1
+position = -1
+
+while left <= right:
+    mid = (left + right) // 2
+
+    if values[mid] == target:
+        position = mid
+        break
+    elif target < values[mid]:
+        right = mid - 1
+    else:
+        left = mid + 1
+
+if position == -1:
+    print("Target not found.")
+else:
+    print("Index:", position)
+```
+
+### Complexity
+
+- Search time: O(log N)
+- Auxiliary space: O(1) for this iterative implementation
+
+If your program first validates that the input is sorted, the validation itself takes O(N) time. The O(log N) complexity refers to binary search when the sorted-input requirement is already satisfied.
 
 ---
 
-## 22. What's Next?
+## 15. Example 12 — Count Even and Odd Values
 
-You have now completed the planned six folders under **Algorithms-Basics**.
+### Problem
 
-The next step is to review the concepts and then continue with the Flowcharts section using its own folder structure.
+Count how many values in a list are even and how many are odd.
+
+### Python Code
+
+```python
+values = [10, 15, 22, 7, 8]
+
+even_count = 0
+odd_count = 0
+
+for value in values:
+    if value % 2 == 0:
+        even_count += 1
+    else:
+        odd_count += 1
+
+print("Even count:", even_count)
+print("Odd count:", odd_count)
+```
+
+Output:
+
+```text
+Even count: 3
+Odd count: 2
+```
+
+### Complexity
+
+- Time: O(N)
+- Auxiliary space: O(1)
+
+The algorithm examines every list element once and maintains two counters.
 
 ---
 
-## Files in This Folder
+## 16. Overview of the 12 Python Examples
 
-| File | Purpose |
+The practical file `06_practice_algorithms.py` includes these examples:
+
+| No. | Example | Main concept |
+|---:|---|---|
+| 1 | Sum from 1 to N | Accumulation |
+| 2 | Multiplication Table | Loops and arithmetic |
+| 3 | Factorial | Repeated multiplication |
+| 4 | Prime Number Check | Divisibility |
+| 5 | Fibonacci Sequence | Sequence generation |
+| 6 | Sum of Digits | Modulo and integer division |
+| 7 | Reverse an Integer | Digit processing |
+| 8 | Palindrome Check | Comparing original and reversed values |
+| 9 | Greatest Common Divisor | Euclidean algorithm |
+| 10 | Linear Search | Sequential searching |
+| 11 | Bubble Sort | Adjacent comparisons and swaps |
+| 12 | Count Even and Odd Values | List traversal and counting |
+
+Each example can be run individually from the menu.
+
+---
+
+## 17. Twelve Solved Practice Questions
+
+The same Python file includes the following solved questions:
+
+1. Minimum and Maximum
+2. Second-Largest Distinct Value
+3. Leap Year
+4. Armstrong Number
+5. Binary Search
+6. Remove Duplicates
+7. Frequency Count
+8. Merge Two Sorted Lists
+9. Selection Sort
+10. Greatest Common Divisor
+11. Least Common Multiple
+12. Missing Number
+
+These exercises broaden your practice from arithmetic and number processing to collection manipulation, search, and sorting.
+
+### Important assumptions
+
+- Binary search requires an ascending-sorted input list.
+- Removing duplicates preserves the order of first occurrences.
+- The missing-number problem assumes exactly one missing value from the range 1 through N and distinct, in-range inputs.
+- The second-largest problem asks for the second-largest **distinct** value.
+- GCD and LCM behaviour for zero inputs is handled explicitly in the code.
+
+Read these assumptions before running an exercise. Understanding the problem specification is part of algorithm design.
+
+---
+
+## 18. Five Questions for Independent Practice
+
+These questions are displayed by the program menu without providing their solutions.
+
+### Question 1: Two Sum
+
+Given a list of integers and a target, find two distinct elements whose sum equals the target.
+
+Define what should happen if no valid pair exists.
+
+### Question 2: Insertion Sort
+
+Implement insertion sort to arrange a list in ascending order. Count comparisons or shifts and explain its complexity.
+
+### Question 3: Anagram Check
+
+Accept two strings and determine whether they contain the same characters with the same frequencies.
+
+Decide how uppercase/lowercase differences and spaces should be handled.
+
+### Question 4: Rotate a List
+
+Given a list and a non-negative rotation count K, rotate the list to the right by K positions.
+
+Handle empty lists and K values larger than the list length.
+
+### Question 5: Maximum Subarray Sum
+
+Given a non-empty list of integers, find the contiguous subarray with the greatest sum.
+
+Test lists containing negative values and explain how your approach handles them.
+
+### Suggested method
+
+For each question:
+
+1. Rewrite the problem in your own words.
+2. Identify the inputs and expected output.
+3. Define the assumptions and edge cases.
+4. Design the algorithm and pseudocode.
+5. Implement the solution in Python.
+6. Test the result with several inputs.
+7. Explain the time and auxiliary space complexity.
+
+---
+
+## 19. How to Choose Test Cases
+
+Testing should include a range of cases, not just the first example that comes to mind.
+
+| Test category | Example for a factorial algorithm |
 |---|---|
-| `06_practice_algorithms.py` | Runnable implementations of basic algorithms |
-| `README.md` | Detailed notes, algorithm steps, complexity analysis, testing guidance, and practice questions |
+| Typical value | N = 5 |
+| Boundary value | N = 0 |
+| Invalid value | N = -2 |
+| Smallest non-zero input | N = 1 |
+| Larger value | N = 15, subject to practical limits |
+
+For searching algorithms, test a target at the beginning, middle, and end, as well as a target that is absent.
+
+For sorting algorithms, test a list that is already sorted, reverse-sorted, contains duplicate values, and contains only one element.
+
+A test case is useful when it checks a specific aspect of the solution's behaviour.
 
 ---
 
-## Conclusion
+## 20. Common Mistakes
 
-Practice is what turns algorithm theory into problem-solving ability.
+### Coding before understanding the problem
 
-For every new question, understand the requirements, write the steps, implement the logic, test multiple inputs, and analyze the resources used.
+**Issue:** The program solves a slightly different task from the one requested.
 
-**Understand → Design → Implement → Test → Analyze**
+**Improvement:** Define the inputs, output, constraints, and special cases before choosing the algorithm.
 
-Repeat this process for every practice problem to develop a strong foundation for Data Structures and Algorithms.
+### Forgetting zero and negative values
+
+**Issue:** Number-based algorithms may return incorrect results for zero or mishandle a negative sign.
+
+**Improvement:** Define whether the problem accepts negative values and test zero explicitly.
+
+### Using binary search on unsorted data
+
+**Issue:** Binary search depends on sorted order when deciding which half to discard.
+
+**Improvement:** Ensure the input is sorted or use an algorithm suited to unsorted data.
+
+### Not handling duplicates
+
+**Issue:** Problems involving the second-largest value or unique elements may produce unexpected answers.
+
+**Improvement:** Decide whether the output refers to distinct values or permits repeated values.
+
+### Incorrect loop boundaries
+
+**Issue:** An algorithm skips a required value or performs an extra iteration.
+
+**Improvement:** Trace the first and final iterations manually.
+
+### Trusting only one test
+
+**Issue:** A program can succeed for a normal input while failing on an edge case.
+
+**Improvement:** Create a small test table before declaring the algorithm complete.
+
+---
+
+## 21. Interview Questions and Answers
+
+**Q1. What is algorithm practice?**
+
+It is the process of applying algorithm design and implementation concepts to programming problems and checking the results.
+
+**Q2. What is the difference between linear search and binary search?**
+
+Linear search examines elements sequentially. Binary search reduces the search range by half at each step and requires sorted data.
+
+**Q3. What is bubble sort?**
+
+Bubble sort repeatedly compares adjacent values and swaps out-of-order pairs to sort a list.
+
+**Q4. What is a palindrome number?**
+
+It is a number that reads the same forward and backward under the chosen representation.
+
+**Q5. What is an Armstrong number?**
+
+For an integer with D decimal digits, it is a non-negative integer that equals the sum of each digit raised to the power D.
+
+**Q6. What is the Euclidean algorithm?**
+
+It calculates the greatest common divisor using repeated remainder operations.
+
+**Q7. What is the purpose of dry running an algorithm?**
+
+It helps trace variable values and conditions manually so that the program's logic becomes easier to verify.
+
+**Q8. Why are edge cases important?**
+
+They can reveal errors that ordinary input values do not expose.
+
+**Q9. What is time complexity?**
+
+It describes how an algorithm's computational work grows with input size.
+
+**Q10. What is auxiliary space?**
+
+It is the additional working memory an algorithm uses, excluding input storage according to the chosen analysis convention.
+
+**Q11. Why is duplicate handling important?**
+
+The problem may require distinct values or may require preserving repeated values. The algorithm must match that requirement.
+
+**Q12. When should an algorithm be improved?**
+
+When there is a clear need to improve correctness, readability, resource usage, or suitability for the stated constraints.
+
+---
+
+## 22. How to Run the Python File
+
+From the repository root, execute:
+
+```powershell
+python "PYTHON\Week-1-Programming-Fundamentals\02-Flowcharts-Algorithms\Algorithms-Basics\06_Practice_Algorithms\06_practice_algorithms.py"
+```
+
+The menu offers:
+
+1. Run the 12 examples.
+2. Run the 12 solved practice questions.
+3. View the 5 unsolved questions.
+
+Select one task at a time. This makes it easier to focus on a single algorithm and understand how it behaves for different inputs.
+
+---
+
+## ✅ Completion Checklist
+
+- [ ] Understand the purpose of algorithm practice.
+- [ ] Run all 12 examples.
+- [ ] Complete the 12 solved practice questions.
+- [ ] Attempt all 5 independent questions.
+- [ ] Use pseudocode before implementing new solutions.
+- [ ] Test normal, boundary, and special cases.
+- [ ] Trace loop-based algorithms with dry runs.
+- [ ] Understand the assumptions of each algorithm.
+- [ ] Review time and auxiliary space complexity.
+- [ ] Explain your solutions in your own words.
+
+---
+
+## 🚀 Learning Outcome
+
+After completing this topic, you should be able to apply the core algorithm concepts from this section to a wide range of beginner programming tasks.
+
+You will have practised arithmetic algorithms, conditionals, loops, digit processing, searching, sorting, and mathematical algorithms while learning to test and explain your solutions.
+
+This completes the **Algorithms Basics** subsection of Week 1.
+
+---
+
+## 📌 Final Note
+
+**The goal of practice is not merely to obtain the right output. It is to understand why the algorithm works, which inputs it supports, and how to test it reliably.**
+
+Practise consistently, write solutions independently, and review your mistakes as part of the learning process.

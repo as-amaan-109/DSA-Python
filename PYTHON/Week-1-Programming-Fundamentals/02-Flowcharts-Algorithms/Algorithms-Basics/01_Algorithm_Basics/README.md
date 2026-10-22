@@ -1,815 +1,1050 @@
 # Algorithm Basics
 
-> **Week:** 01 - Programming Fundamentals  
-> **Section:** Algorithms and Flowcharts  
-> **Topic:** Algorithm Basics  
-> **Level:** Beginner  
-> **Goal:** Understand algorithms and learn how to describe a solution step by step.
+Welcome to **Algorithm Basics**, the first topic in the Algorithms section of Python Programming Fundamentals.
+
+An algorithm is a clear, ordered method for solving a problem or completing a task. Before writing a Python program, it is useful to design the solution as a sequence of steps, verify the logic, and then implement it in code.
+
+This topic introduces the foundations of algorithms through practical examples, solved exercises, and independent practice questions.
 
 ---
 
-## Table of Contents
+## 1. About This Topic
 
-1. Introduction
-2. What Is an Algorithm?
-3. Why Do We Need Algorithms?
-4. Real-Life Example of an Algorithm
-5. Basic Structure of an Algorithm
-6. Input, Process, and Output
-7. Algorithm vs Program
-8. Algorithm vs Flowchart
-9. How to Write an Algorithm
-10. Example: Add Two Numbers
-11. Example: Calculate an Average
-12. Example: Area of a Rectangle
-13. What Is Pseudocode?
-14. Algorithm and Python Implementation
-15. Common Beginner Mistakes
-16. Important Terminology
-17. Interview Questions
-18. Practice Questions
-19. Learning Checklist
-20. What's Next?
+- **Week:** 1 – Programming Fundamentals
+- **Section:** 02 – Flowcharts and Algorithms
+- **Subsection:** Algorithms Basics
+- **Topic:** Algorithm Basics
+- **Level:** Beginner
+- **Language:** Python
+- **Practical File:** `01_algorithm_basics.py`
 
----
+### Learning Objectives
 
-## 1. Introduction
+After completing this topic, you should be able to:
 
-Before writing code, we need to understand the problem and decide how to solve it.
-
-In programming, this step-by-step problem-solving approach is represented using an **algorithm**.
-
-An algorithm describes the instructions required to solve a problem in a logical order.
-
-For example, if we want to add two numbers, we need to:
-
-1. Get the first number.
-2. Get the second number.
-3. Add the numbers.
-4. Display the result.
-
-Once we understand these steps, we can convert the solution into Python code.
-
-**Important concept:**
-
-Understand the problem first, design the algorithm next, and then write the program.
+- Define an algorithm and explain its purpose.
+- Identify the input, processing, and output of a problem.
+- Write clear, ordered algorithm steps.
+- Understand the important characteristics of a good algorithm.
+- Convert an algorithm into pseudocode and Python.
+- Trace the execution of an algorithm with a dry run.
+- Check whether a solution produces the expected result.
+- Recognize basic edge cases and invalid inputs.
+- Understand introductory time and space complexity.
+- Solve beginner-level programming problems systematically.
 
 ---
 
 ## 2. What Is an Algorithm?
 
-An **algorithm** is a finite sequence of clear and ordered steps used to solve a problem or complete a task.
+An **algorithm** is a finite, clearly defined sequence of steps used to solve a problem or perform a computation.
 
-Algorithms describe the logic of a solution without requiring a specific programming language.
+Algorithms are not limited to computers. A recipe, a set of instructions for assembling an object, or a process for calculating a bill can also be described as a sequence of steps.
 
-For example, an algorithm for adding two numbers can be written in simple English, pseudocode, or implemented in Python.
+In programming, an algorithm provides the logic that a program implements.
 
-### Example
+### Example: Adding Two Numbers
 
-Problem: Add two numbers.
+**Problem:** Find the sum of two numbers.
 
-Algorithm:
+**Algorithm:**
 
 1. Start.
-2. Read the first number.
-3. Read the second number.
-4. Calculate their sum.
-5. Display the sum.
+2. Read the first number, `A`.
+3. Read the second number, `B`.
+4. Calculate `SUM = A + B`.
+5. Display `SUM`.
 6. Stop.
 
-The algorithm explains how to solve the problem without depending on Python syntax.
-
-### In simple words
-
-An algorithm is a step-by-step plan for solving a problem.
-
----
-
-## 3. Why Do We Need Algorithms?
-
-Algorithms help us organize our thinking before writing code.
-
-### 3.1 Clear Problem-Solving Logic
-
-Breaking a problem into smaller steps makes it easier to understand.
-
-### 3.2 Easier Implementation
-
-Once the steps are clear, converting them into a programming language becomes easier.
-
-### 3.3 Easier Debugging
-
-When a program produces an incorrect result, we can review the algorithm to find a logical mistake.
-
-### 3.4 Language Independence
-
-The same algorithm can often be implemented in different programming languages.
-
-For example, the steps for adding two numbers remain the same whether the solution is implemented in Python, Java, C, or C++.
-
-### 3.5 Preparation for DSA
-
-Data Structures and Algorithms involve designing and analyzing solutions to computational problems.
-
-Learning basic algorithms builds a foundation for:
-
-- Arrays
-- Searching
-- Sorting
-- Strings
-- Recursion
-- Linked lists
-- Stacks and queues
-- Trees and graphs
-- Problem-solving and coding interviews
-
----
-
-## 4. Real-Life Example of an Algorithm
-
-We use step-by-step procedures in daily life without necessarily calling them algorithms.
-
-### Example: Making a Cup of Tea
-
-Algorithm:
-
-1. Start.
-2. Take a saucepan.
-3. Add water.
-4. Heat the water.
-5. Add tea leaves and other desired ingredients.
-6. Allow the tea to brew.
-7. Strain the tea into a cup.
-8. Serve the tea.
-9. Stop.
-
-Each step describes an action in a logical sequence.
-
-### Programming Connection
-
-A computer program also follows instructions to perform tasks.
-
-The difference is that programming instructions must be expressed in a form the computer can execute.
-
----
-
-## 5. Basic Structure of an Algorithm
-
-A simple algorithm can be represented using the following structure:
-
-```text
-START
-
-Step 1: Receive the required input.
-Step 2: Process the input.
-Step 3: Produce the result.
-
-STOP
-```
-
-The exact steps depend on the problem being solved.
-
-### Common elements
-
-| Element | Meaning |
-|---|---|
-| Start | Marks the beginning of the procedure |
-| Input | Information required to solve the problem |
-| Processing | Operations performed on the input |
-| Output | Result produced by the procedure |
-| Stop | Marks the end of the procedure |
-
-Not every algorithm requires external input. For example, an algorithm that displays a fixed message may not need any input.
-
----
-
-## 6. Input, Process, and Output
-
-Many beginner programming problems can be understood using three stages.
-
-### 6.1 Input
-
-Input is the information supplied to the algorithm.
-
-Example:
-
-```text
-First number = 10
-Second number = 20
-```
-
-### 6.2 Process
-
-Processing means performing the operation required to solve the problem.
-
-Example:
-
-```text
-10 + 20 = 30
-```
-
-### 6.3 Output
-
-Output is the result produced by the algorithm.
-
-Example:
-
-```text
-Sum = 30
-```
-
-### Complete representation
-
-```text
-Input
-  |
-  v
-Process
-  |
-  v
-Output
-```
-
-### Why is this important?
-
-Understanding input, processing, and output helps us identify what a problem requires before writing code.
-
----
-
-## 7. Algorithm vs Program
-
-An algorithm and a program are related, but they are not the same thing.
-
-| Algorithm | Program |
-|---|---|
-| Describes the steps to solve a problem | Implements instructions in a programming language |
-| Focuses on solution logic | Focuses on executable code |
-| Can be written in plain language or pseudocode | Must follow the syntax of its programming language |
-| Does not require a specific programming language | Uses a particular programming language or execution environment |
-
-### Example: Algorithm
-
-Problem: Add two numbers.
-
-```text
-1. Start.
-2. Read A and B.
-3. Calculate SUM = A + B.
-4. Display SUM.
-5. Stop.
-```
-
-### Example: Python Program
+**Python implementation:**
 
 ```python
-a = 10
-b = 20
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
 
 total = a + b
 
 print("Sum:", total)
 ```
 
-Output:
-
-```text
-Sum: 30
-```
-
-The algorithm describes the solution, while the Python program implements it.
+The algorithm describes the solution. The Python program implements it using Python syntax.
 
 ---
 
-## 8. Algorithm vs Flowchart
+## 3. Why Are Algorithms Important?
 
-An algorithm and a flowchart can represent the logic of the same solution in different ways.
+Algorithms help programmers organise their reasoning before coding.
 
-| Algorithm | Flowchart |
-|---|---|
-| Represents steps using written instructions | Represents steps using a visual diagram |
-| Easy to write as a numbered list | Uses standardized shapes and arrows |
-| Focuses on the ordered steps | Shows the flow between steps |
-| Can be written without drawing | Requires a diagram to show the process visually |
+They are useful because they:
 
-### Example
+- Make problem-solving steps clear.
+- Separate the logic from programming-language syntax.
+- Help reveal missing operations or incorrect assumptions.
+- Make solutions easier to test and explain.
+- Provide a basis for comparing different approaches.
+- Support debugging and maintenance.
+- Prepare you for Data Structures and Algorithms (DSA).
 
-Algorithm for adding two numbers:
-
-1. Start.
-2. Input A and B.
-3. Calculate A + B.
-4. Display the result.
-5. Stop.
-
-A flowchart would represent these stages using appropriate symbols and arrows.
-
-**Note:** Flowcharts will be studied in a separate section of this repository.
+A well-designed algorithm is not necessarily the shortest one. It must correctly solve the specified problem, and it should be clear and practical for the situation.
 
 ---
 
-## 9. How to Write an Algorithm
+## 4. Basic Elements of an Algorithm
 
-Follow these steps when designing an algorithm for a programming problem.
-
-### Step 1: Understand the Problem
-
-Identify exactly what needs to be calculated or achieved.
-
-### Step 2: Identify the Input
-
-Determine what values or information the solution needs.
-
-### Step 3: Identify the Output
-
-Determine what result should be produced.
-
-### Step 4: Decide the Processing Logic
-
-Choose the operations required to transform the input into the output.
-
-### Step 5: Write the Steps in Order
-
-Use numbered instructions and make sure the sequence is logical.
-
-### Step 6: Test the Algorithm
-
-Try sample inputs and manually verify the expected result.
-
-### Step 7: Implement the Algorithm
-
-Convert the steps into Python code or another programming language.
-
----
-
-## 10. Example: Add Two Numbers
-
-### Problem
-
-Write an algorithm to add two numbers and display the result.
+Many beginner algorithms can be understood using three main stages.
 
 ### Input
 
-```text
-A = 10
-B = 20
-```
+The information required by the solution.
 
-### Algorithm
-
-1. Start.
-2. Read the first number A.
-3. Read the second number B.
-4. Calculate SUM = A + B.
-5. Display SUM.
-6. Stop.
-
-### Processing
-
-```text
-SUM = A + B
-SUM = 10 + 20
-SUM = 30
-```
-
-### Expected Output
-
-```text
-Sum = 30
-```
-
-### Python Implementation
-
-```python
-a = int(input("Enter the first number: "))
-b = int(input("Enter the second number: "))
-
-total = a + b
-
-print("Sum:", total)
-```
-
-### Sample Run
-
-```text
-Enter the first number: 10
-Enter the second number: 20
-Sum: 30
-```
-
-### Explanation
-
-- `input()` receives information from the user.
-- `int()` converts the entered text into an integer.
-- `a + b` calculates the sum.
-- `print()` displays the result.
-
-This example connects the written algorithm to an actual Python implementation.
-
----
-
-## 11. Example: Calculate an Average
-
-### Problem
-
-Calculate the average of two numbers.
-
-### Algorithm
-
-1. Start.
-2. Read the first number A.
-3. Read the second number B.
-4. Calculate SUM = A + B.
-5. Calculate AVERAGE = SUM / 2.
-6. Display AVERAGE.
-7. Stop.
-
-### Example Input
-
-```text
-A = 10
-B = 20
-```
-
-### Calculation
-
-```text
-SUM = 10 + 20
-SUM = 30
-
-AVERAGE = 30 / 2
-AVERAGE = 15
-```
-
-### Output
-
-```text
-Average = 15
-```
-
-### Python Implementation
-
-```python
-a = 10
-b = 20
-
-average = (a + b) / 2
-
-print("Average:", average)
-```
-
-Output:
-
-```text
-Average: 15.0
-```
-
-Python's `/` operator produces a floating-point result for this division.
-
----
-
-## 12. Example: Calculate the Area of a Rectangle
-
-### Problem
-
-Find the area of a rectangle using its length and breadth.
-
-### Formula
-
-```text
-Area = Length × Breadth
-```
-
-### Algorithm
-
-1. Start.
-2. Read the length.
-3. Read the breadth.
-4. Calculate AREA = LENGTH × BREADTH.
-5. Display AREA.
-6. Stop.
-
-### Example Input
-
-```text
-Length = 5
-Breadth = 3
-```
-
-### Calculation
-
-```text
-AREA = 5 × 3
-AREA = 15
-```
-
-### Output
-
-```text
-Area = 15
-```
-
-### Python Implementation
-
-```python
-length = 5
-breadth = 3
-
-area = length * breadth
-
-print("Area:", area)
-```
-
-Output:
-
-```text
-Area: 15
-```
-
-This example demonstrates how a mathematical formula can be converted into an algorithm and then into code.
-
----
-
-## 13. What Is Pseudocode?
-
-Pseudocode is a way of describing the logic of an algorithm using simple, structured, language-independent instructions.
-
-It resembles programming code but does not need to follow the exact syntax of a programming language.
-
-### Example: Add Two Numbers
-
-```text
-BEGIN
-
-    INPUT A
-    INPUT B
-
-    SUM = A + B
-
-    OUTPUT SUM
-
-END
-```
-
-The instructions describe the logic without using Python-specific syntax.
-
-### Pseudocode vs Python
-
-Pseudocode:
+Example:
 
 ```text
 INPUT A
 INPUT B
-SUM = A + B
-OUTPUT SUM
 ```
 
-Python:
+### Processing
 
-```python
-a = int(input("Enter A: "))
-b = int(input("Enter B: "))
+The calculations or operations performed on the input.
 
-total = a + b
+Example:
 
-print(total)
+```text
+SET SUM = A + B
 ```
 
-### Why Use Pseudocode?
+### Output
 
-- It helps organize the solution logic.
-- It is easier to revise than a full program.
-- It can be understood without knowing a specific programming language.
-- It helps prepare for implementation.
+The result produced by the solution.
 
-Pseudocode conventions vary. The important thing is that the steps remain clear and understandable.
+Example:
+
+```text
+DISPLAY SUM
+```
+
+These stages can be summarised as:
+
+```text
+INPUT → PROCESSING → OUTPUT
+```
+
+Not every algorithm follows exactly one input-processing-output sequence. More complex algorithms can have repeated operations, decisions, multiple outputs, and several intermediate stages.
 
 ---
 
-## 14. Algorithm and Python Implementation
+## 5. Characteristics of a Good Algorithm
 
-The same problem can be expressed in three stages.
+A good algorithm should meet the requirements of the problem and should be designed carefully.
 
-### Stage 1: Problem
+### 1. Clearly Defined Inputs
 
-Find the sum of two numbers.
+An algorithm should make clear what information it needs.
 
-### Stage 2: Algorithm
+For example, calculating the area of a rectangle requires its length and width.
 
-```text
+### 2. Clearly Defined Outputs
+
+The required result should be identifiable.
+
+For a rectangle-area problem, the output is the calculated area.
+
+### 3. Definiteness
+
+Every step should be sufficiently clear and unambiguous for the intended task.
+
+For example, “add the two input values” is clearer than “process the values appropriately.”
+
+### 4. Finiteness
+
+The algorithm should finish after a finite number of steps for inputs within its intended scope.
+
+A loop with no reachable stopping condition may fail this requirement.
+
+### 5. Effectiveness
+
+The operations should be basic enough to carry out as specified and should contribute to solving the problem.
+
+### 6. Correctness
+
+The algorithm should produce the required results for valid inputs, including relevant boundary cases.
+
+### 7. Generality
+
+Where required, the solution should work for the full range of inputs described by the problem, rather than only one example.
+
+### 8. Efficiency
+
+The algorithm should use reasonable amounts of time and memory for its intended input sizes.
+
+These characteristics are useful principles for analysing algorithms. The exact requirements depend on the problem being solved.
+
+---
+
+## 6. Algorithm vs Pseudocode vs Flowchart vs Program
+
+These terms are related, but they describe different aspects of a solution.
+
+| Concept | Meaning | Example |
+|---|---|---|
+| Algorithm | Ordered logical steps that solve a problem | Read two numbers, add them, display the sum |
+| Pseudocode | A readable textual representation of the logic | `SET SUM = A + B` |
+| Flowchart | A diagram representing the flow of the solution | Input symbol → process symbol → output symbol |
+| Program | An implementation written in a programming language | Python code using `input()` and `print()` |
+
+You can design an algorithm, describe it in pseudocode, represent it using a flowchart, and then implement it as a Python program.
+
+---
+
+## 7. Steps to Design an Algorithm
+
+Use the following process when approaching a new programming problem.
+
+### Step 1: Understand the Problem
+
+Identify precisely what the problem asks you to solve.
+
+Read the statement carefully and identify any conditions or restrictions.
+
+### Step 2: Identify the Inputs
+
+List the values required by the solution.
+
+For a simple-interest calculation, the inputs are principal, annual rate, and time.
+
+### Step 3: Identify the Outputs
+
+Determine what the algorithm needs to produce.
+
+For simple interest, the output might include both the interest and the final amount.
+
+### Step 4: Identify the Required Formula or Logic
+
+Decide which mathematical rule, condition, or sequence of actions solves the problem.
+
+### Step 5: Write the Steps in Order
+
+Put the operations in a logical sequence. Ensure that values are obtained before they are used.
+
+### Step 6: Trace the Algorithm
+
+Perform a dry run using sample input values.
+
+Track the values of variables after each operation.
+
+### Step 7: Implement the Algorithm
+
+Translate the steps into Python.
+
+### Step 8: Test the Result
+
+Compare the actual output against the expected result. Include boundary values and special cases where relevant.
+
+### Step 9: Review the Solution
+
+Check whether the algorithm is clear, correct, and suitable for the problem's constraints.
+
+---
+
+## 8. Example 1 — Display a Greeting
+
+### Problem
+
+Display a welcome message.
+
+### Algorithm
+
 1. Start.
-2. Read A and B.
-3. Calculate SUM = A + B.
-4. Display SUM.
-5. Stop.
-```
+2. Display `Hello! Welcome to Algorithm Basics.`
+3. Stop.
 
-### Stage 3: Python Code
+### Python Code
 
 ```python
-a = 10
-b = 20
+print("Hello! Welcome to Algorithm Basics.")
+```
+
+### Output
+
+```text
+Hello! Welcome to Algorithm Basics.
+```
+
+### Explanation
+
+This is a simple sequential algorithm. It performs one output operation and then finishes.
+
+---
+
+## 9. Example 2 — Addition of Two Numbers
+
+### Problem
+
+Accept two numbers and calculate their sum.
+
+### Algorithm
+
+1. Read `A`.
+2. Read `B`.
+3. Calculate `SUM = A + B`.
+4. Display `SUM`.
+
+### Pseudocode
+
+```text
+START
+    INPUT A
+    INPUT B
+    SET SUM = A + B
+    DISPLAY SUM
+END
+```
+
+### Python Code
+
+```python
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
 
 total = a + b
 
-print(total)
+print("Sum:", total)
+```
+
+### Sample Output
+
+```text
+Enter first number: 10
+Enter second number: 20
+Sum: 30.0
+```
+
+### Dry Run
+
+| Step | Operation | Value |
+|---|---|---|
+| 1 | Read first input | A = 10 |
+| 2 | Read second input | B = 20 |
+| 3 | Calculate the sum | SUM = 30 |
+| 4 | Display the result | 30.0 |
+
+Because the Python code uses `float()`, the result is displayed as `30.0`.
+
+---
+
+## 10. Example 3 — Find the Difference
+
+### Problem
+
+Subtract the second number from the first.
+
+### Algorithm
+
+1. Read `A` and `B`.
+2. Calculate `DIFFERENCE = A - B`.
+3. Display the difference.
+
+### Python Code
+
+```python
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+difference = a - b
+
+print("Difference:", difference)
+```
+
+### Sample Output
+
+```text
+Enter first number: 15
+Enter second number: 5
+Difference: 10.0
+```
+
+### Important Point
+
+Subtraction is order-dependent. In general, `A - B` is not equal to `B - A`.
+
+---
+
+## 11. Example 4 — Multiplication of Two Numbers
+
+### Problem
+
+Calculate the product of two numbers.
+
+### Algorithm
+
+1. Read `A` and `B`.
+2. Calculate `PRODUCT = A × B`.
+3. Display the product.
+
+### Python Code
+
+```python
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+product = a * b
+
+print("Product:", product)
+```
+
+### Sample Output
+
+```text
+Enter first number: 6
+Enter second number: 7
+Product: 42.0
+```
+
+### Edge Case
+
+If either input is zero, the product is zero.
+
+---
+
+## 12. Example 5 — Area of a Rectangle
+
+### Problem
+
+Calculate the area using the rectangle's length and width.
+
+### Formula
+
+\[
+\text{Area} = \text{Length} \times \text{Width}
+\]
+
+### Algorithm
+
+1. Read length and width.
+2. Check that neither dimension is negative.
+3. Multiply length by width.
+4. Display the area.
+
+### Python Code
+
+```python
+length = float(input("Enter length: "))
+width = float(input("Enter width: "))
+
+if length < 0 or width < 0:
+    print("Dimensions must be non-negative.")
+else:
+    area = length * width
+    print("Area:", area)
+```
+
+### Sample Output
+
+```text
+Enter length: 5
+Enter width: 4
+Area: 20.0
+```
+
+This example introduces a basic validation step. Zero is accepted under the illustrative non-negative dimension rule, though a physical rectangle normally has positive dimensions.
+
+---
+
+## 13. Example 6 — Average of Three Numbers
+
+### Problem
+
+Calculate the average of three values.
+
+### Formula
+
+\[
+\text{Average} = \frac{A+B+C}{3}
+\]
+
+### Algorithm
+
+1. Read the three values.
+2. Add them.
+3. Divide their sum by 3.
+4. Display the average.
+
+### Python Code
+
+```python
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+c = float(input("Enter third number: "))
+
+average = (a + b + c) / 3
+
+print("Average:", average)
+```
+
+### Sample Output
+
+```text
+Enter first number: 10
+Enter second number: 20
+Enter third number: 30
+Average: 20.0
+```
+
+---
+
+## 14. Example 7 — Check Even or Odd
+
+### Problem
+
+Determine whether an integer is even or odd.
+
+### Algorithm
+
+1. Read an integer.
+2. Calculate its remainder when divided by 2.
+3. If the remainder is zero, display “Even.”
+4. Otherwise, display “Odd.”
+
+### Pseudocode
+
+```text
+START
+    INPUT NUMBER
+
+    IF NUMBER MOD 2 = 0
+        DISPLAY "Even"
+    ELSE
+        DISPLAY "Odd"
+    END IF
+END
+```
+
+### Python Code
+
+```python
+number = int(input("Enter an integer: "))
+
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+```
+
+### Sample Output
+
+```text
+Enter an integer: 7
+Odd
+```
+
+The remainder operator in Python is `%`. For integer parity, it allows the program to distinguish even from odd numbers, including negative integers and zero.
+
+---
+
+## 15. Example 8 — Classify a Number
+
+### Problem
+
+Determine whether a number is positive, negative, or zero.
+
+### Algorithm
+
+1. Read a number.
+2. If it is greater than zero, classify it as positive.
+3. Otherwise, if it is less than zero, classify it as negative.
+4. Otherwise, classify it as zero.
+
+### Python Code
+
+```python
+number = float(input("Enter a number: "))
+
+if number > 0:
+    print("Positive number")
+elif number < 0:
+    print("Negative number")
+else:
+    print("Zero")
+```
+
+### Sample Outputs
+
+| Input | Result |
+|---:|---|
+| `10` | Positive number |
+| `-5` | Negative number |
+| `0` | Zero |
+
+This algorithm demonstrates decision-making through multiple conditions.
+
+---
+
+## 16. Example 9 — Find the Larger of Two Numbers
+
+### Problem
+
+Compare two values and display the larger one, handling equality as well.
+
+### Algorithm
+
+1. Read `A` and `B`.
+2. If `A > B`, select `A`.
+3. Otherwise, if `B > A`, select `B`.
+4. Otherwise, the values are equal.
+5. Display the appropriate result.
+
+### Python Code
+
+```python
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+
+if a > b:
+    print("Larger number:", a)
+elif b > a:
+    print("Larger number:", b)
+else:
+    print("Both numbers are equal.")
+```
+
+### Sample Output
+
+```text
+Enter first number: 12
+Enter second number: 18
+Larger number: 18.0
+```
+
+A good solution accounts for equality rather than assuming one value must always be greater than the other.
+
+---
+
+## 17. Example 10 — Find the Largest of Three Numbers
+
+### Problem
+
+Determine the largest value among three numbers.
+
+### Algorithm
+
+1. Read `A`, `B`, and `C`.
+2. Check whether `A` is greater than or equal to both other values.
+3. If not, check whether `B` is greater than or equal to both other values.
+4. Otherwise, select `C`.
+5. Display the largest value.
+
+### Python Code
+
+```python
+a = float(input("Enter first number: "))
+b = float(input("Enter second number: "))
+c = float(input("Enter third number: "))
+
+if a >= b and a >= c:
+    largest = a
+elif b >= a and b >= c:
+    largest = b
+else:
+    largest = c
+
+print("Largest number:", largest)
+```
+
+### Dry Run
+
+Suppose `A = 10`, `B = 25`, and `C = 15`.
+
+| Step | Condition | Result |
+|---|---|---|
+| 1 | Is A greater than or equal to B and C? | False |
+| 2 | Is B greater than or equal to A and C? | True |
+| 3 | Select B | 25 |
+| 4 | Display the largest number | 25 |
+
+The use of `>=` means the logic also works when some or all input values are equal.
+
+---
+
+## 18. Example 11 — Swap Two Values
+
+### Problem
+
+Exchange the values stored in two variables.
+
+### Algorithm
+
+1. Read `A` and `B`.
+2. Store `A` in a temporary variable.
+3. Assign `B` to `A`.
+4. Assign the temporary value to `B`.
+5. Display the new values.
+
+### Pseudocode
+
+```text
+START
+    INPUT A, B
+    SET TEMP = A
+    SET A = B
+    SET B = TEMP
+    DISPLAY A, B
+END
+```
+
+### Python Code
+
+```python
+a = 5
+b = 10
+
+temp = a
+a = b
+b = temp
+
+print("A =", a)
+print("B =", b)
 ```
 
 Output:
 
 ```text
-30
+A = 10
+B = 5
 ```
 
-### Complete Learning Process
+A temporary variable preserves the original value of `A` while the assignments take place.
+
+Python also supports tuple assignment to swap values, but the temporary-variable approach makes the algorithm explicit for beginners.
+
+---
+
+## 19. Example 12 — Calculate Simple Interest
+
+### Problem
+
+Calculate simple interest using principal, annual rate, and time.
+
+### Formula
+
+\[
+\text{Simple Interest}
+=
+\frac{\text{Principal}\times\text{Rate}\times\text{Time}}{100}
+\]
+
+### Algorithm
+
+1. Read the principal.
+2. Read the annual interest rate as a percentage.
+3. Read time in years.
+4. Validate that the values are non-negative.
+5. Calculate simple interest.
+6. Add the interest to principal to obtain the total amount.
+7. Display the results.
+
+### Python Code
+
+```python
+principal = float(input("Enter principal: "))
+rate = float(input("Enter annual rate (%): "))
+time = float(input("Enter time in years: "))
+
+if principal < 0 or rate < 0 or time < 0:
+    print("Values must be non-negative.")
+else:
+    interest = principal * rate * time / 100
+    amount = principal + interest
+
+    print("Simple interest:", interest)
+    print("Total amount:", amount)
+```
+
+### Sample Output
 
 ```text
-Understand the Problem
-         |
-         v
-Design the Algorithm
-         |
-         v
-Write Pseudocode
-         |
-         v
-Implement in Python
-         |
-         v
-Test the Result
+Enter principal: 1000
+Enter annual rate (%): 5
+Enter time in years: 2
+Simple interest: 100.0
+Total amount: 1100.0
 ```
 
-This process helps avoid writing code before understanding the solution.
+This example illustrates how a mathematical formula can be translated into a sequence of program instructions.
 
 ---
 
-## 15. Common Beginner Mistakes
+## 20. Correctness and Testing
 
-### Mistake 1: Writing Steps in the Wrong Order
+An algorithm should be checked against the problem requirements.
 
-For example, trying to calculate a sum before obtaining the required numbers.
+### Expected result
 
-**Solution:** Identify the inputs before deciding how to process them.
+For each test, calculate the expected result independently when possible.
 
-### Mistake 2: Forgetting the Output
+### Normal cases
 
-An algorithm may calculate the correct result but fail to state how that result will be presented.
+Use common inputs to verify the main processing logic.
 
-**Solution:** Include an output step when the problem requires a displayed result.
+### Boundary cases
 
-### Mistake 3: Writing Unclear Steps
+Test values at the limits of the allowed input range.
 
-A step such as "do the calculation" does not specify what calculation is needed.
+Examples include zero dimensions, equal numbers, or the smallest permitted input.
 
-**Solution:** Write precise instructions, such as `SUM = A + B`.
+### Invalid inputs
 
-### Mistake 4: Confusing an Algorithm with Code
+Where relevant, check that invalid values are rejected or handled in a clearly defined way.
 
-Algorithms do not need to use Python syntax. A Python program is an implementation of the solution.
+### Dry runs
 
-**Solution:** Write the logical steps first, then translate them into code.
+A dry run manually traces the variable values and steps of an algorithm.
 
-### Mistake 5: Not Testing the Algorithm
+For the largest-of-three problem, a dry run helps verify which comparison succeeds and which value is selected.
 
-A solution may appear correct but fail for some inputs.
-
-**Solution:** Try sample values and verify each step manually.
+Testing a few inputs cannot prove that every algorithm is correct, but carefully chosen cases provide useful evidence and can reveal mistakes.
 
 ---
 
-## 16. Important Terminology
+## 21. Introductory Time and Space Complexity
 
-| Term | Meaning |
-|---|---|
-| Algorithm | Ordered steps used to solve a problem |
-| Input | Information supplied to a solution |
-| Process | Operations performed on the input |
-| Output | Result produced by a solution |
-| Program | Instructions implemented in a programming language |
-| Pseudocode | Structured description of an algorithm |
-| Implementation | Converting a solution into executable code |
-| Debugging | Finding and correcting problems in a program |
-| Test case | Input and expected result used to test a solution |
+Complexity analysis considers how the resources used by an algorithm grow as input size increases.
 
----
+### Time complexity
 
-## 17. Interview Questions
+Time complexity describes the growth of computational work as input size grows.
 
-### Q1. What is an algorithm?
+### Space complexity
 
-An algorithm is a finite sequence of clear and ordered steps used to solve a problem or complete a task.
+Space complexity describes how memory requirements grow as input size grows.
 
-### Q2. Why are algorithms important?
+Many single-calculation examples in this topic use a fixed number of arithmetic operations and a fixed number of variables. Under the usual model for fixed-size values, their time and auxiliary space complexity are generally described as **O(1)**.
 
-They help us organize problem-solving logic, implement solutions, test correctness, and prepare for more advanced programming concepts.
+The digit-counting solved question processes one decimal digit per loop iteration. If the integer has \(d\) digits, its time complexity is **O(d)**, and the iterative solution uses **O(1)** auxiliary space.
 
-### Q3. What is the difference between an algorithm and a program?
-
-An algorithm describes the steps needed to solve a problem. A program implements those steps using a programming language.
-
-### Q4. What is pseudocode?
-
-Pseudocode describes algorithm logic using structured, human-readable instructions without requiring the exact syntax of a programming language.
-
-### Q5. What are input, processing, and output?
-
-- Input is the information required by the solution.
-- Processing is the operation performed on that information.
-- Output is the resulting information produced by the solution.
-
-### Q6. Can one algorithm be implemented in different languages?
-
-Yes. The same solution logic can often be implemented in Python, Java, C, C++, or other languages.
-
-### Q7. What should you do before writing an algorithm?
-
-Understand the problem, identify the inputs and expected outputs, and determine the necessary processing steps.
-
-### Q8. What is the difference between an algorithm and a flowchart?
-
-An algorithm presents the solution as ordered steps. A flowchart presents the solution visually using symbols and arrows.
+Complexity labels should describe how work grows with input size; they do not measure the exact number of seconds a program takes.
 
 ---
 
-## 18. Practice Questions
+## 22. Overview of the 12 Examples
 
-Try to write the algorithm first. After that, implement it in Python.
+The practical file `01_algorithm_basics.py` includes:
 
-### Beginner Level
+| No. | Example | Main concept |
+|---:|---|---|
+| 1 | Display a Greeting | Output |
+| 2 | Add Two Numbers | Arithmetic |
+| 3 | Find the Difference | Subtraction |
+| 4 | Multiply Two Numbers | Multiplication |
+| 5 | Rectangle Area | Formula and validation |
+| 6 | Average of Three Numbers | Aggregation and division |
+| 7 | Even or Odd | Modulo and decision-making |
+| 8 | Number Classification | Multiple conditions |
+| 9 | Larger of Two Numbers | Comparison |
+| 10 | Largest of Three Numbers | Combined conditions |
+| 11 | Swap Two Values | Temporary variable |
+| 12 | Simple Interest | Formula-based algorithm |
 
-**Question 1:** Write an algorithm to display your name.
+For each example, identify the input, the processing steps, and the expected output. Then run the example and compare your prediction with the result.
 
-**Question 2:** Write an algorithm to add two numbers.
+---
 
-**Question 3:** Write an algorithm to calculate the difference between two numbers.
+## 23. Twelve Solved Practice Questions
 
-**Question 4:** Write an algorithm to calculate the product of two numbers.
+The Python file also contains these solved questions:
 
-**Question 5:** Write an algorithm to calculate the average of three numbers.
+1. Perimeter of a Rectangle
+2. Area of a Square
+3. Circumference of a Circle
+4. Celsius to Fahrenheit
+5. Quotient and Remainder
+6. Seconds to Time Components
+7. Percentage of Five Subjects
+8. Calculate Discount
+9. Calculate Speed
+10. Count Digits
+11. Check Leap Year
+12. Calculate Total Amount
 
-### Intermediate Level
+These exercises extend the same algorithm-design principles to geometry, conversions, validation, arithmetic operations, and basic number processing.
 
-**Question 6:** Write an algorithm to calculate the area of a rectangle.
+For every problem, practise writing the algorithm yourself before inspecting the implementation.
 
-**Question 7:** Write an algorithm to convert Celsius into Fahrenheit using:
+---
 
-```text
-Fahrenheit = (Celsius × 9 / 5) + 32
+## 24. Five Independent Practice Questions
+
+The following questions do not include solution code.
+
+### Question 1: Find the Smallest of Three Numbers
+
+Accept three numbers and identify the smallest. Handle cases where two or more values are equal.
+
+### Question 2: Sum of Digits
+
+Accept an integer and calculate the sum of its digits. Decide how negative numbers should be handled.
+
+### Question 3: Reverse an Integer
+
+Accept an integer and display its digits in reverse order. Consider how the sign and trailing zeroes should be handled.
+
+### Question 4: Check a Prime Number
+
+Accept an integer and determine whether it is prime. Remember that integers below 2 are not prime.
+
+### Question 5: Grade Classification
+
+Accept marks out of 100 and assign a grade using a grading scale you define. Validate the marks before assigning a grade.
+
+### Recommended solving method
+
+1. Rewrite the problem in your own words.
+2. Identify inputs and outputs.
+3. Document constraints and assumptions.
+4. Write the algorithm in numbered steps.
+5. Convert it into pseudocode.
+6. Implement it in Python.
+7. Trace sample input and test boundary cases.
+
+---
+
+## 25. Common Algorithm-Design Mistakes
+
+### Missing steps
+
+**Problem:** The algorithm uses a value before it has been obtained.
+
+**Improvement:** Check the order of input, processing, and output instructions.
+
+### Incorrect conditions
+
+**Problem:** A comparison does not include an equality case where one is required.
+
+**Improvement:** Test values that are equal and values around a decision boundary.
+
+### Incorrect formulas
+
+**Problem:** The code runs but gives an incorrect mathematical result.
+
+**Improvement:** Write the formula explicitly and verify it with known values.
+
+### Ignoring invalid inputs
+
+**Problem:** The solution assumes every possible input is permitted.
+
+**Improvement:** Define allowed values and implement checks where required.
+
+### Confusing an algorithm with code
+
+**Problem:** The logic is described only through Python syntax, making it harder to reason about the solution independently.
+
+**Improvement:** Write the steps or pseudocode first, then implement the program.
+
+### Testing only one example
+
+**Problem:** The algorithm works for one input but fails for another.
+
+**Improvement:** Test ordinary values, boundary cases, and relevant special cases.
+
+---
+
+## 26. Interview Questions and Answers
+
+**Q1. What is an algorithm?**
+
+An algorithm is a finite, clearly defined sequence of steps used to solve a problem or perform a task.
+
+**Q2. Why are algorithms important?**
+
+They help organise logic, verify correctness, explain solutions, and compare possible approaches before implementation.
+
+**Q3. What are the main characteristics of a good algorithm?**
+
+Common characteristics include clearly defined inputs and outputs, definiteness, finiteness, and effective operations. Correctness, generality, and efficiency are also important design goals.
+
+**Q4. What is the difference between an algorithm and a program?**
+
+An algorithm describes the solution method. A program implements that method in a programming language.
+
+**Q5. What is pseudocode?**
+
+Pseudocode is a readable, language-independent way of expressing an algorithm's logic.
+
+**Q6. What is a dry run?**
+
+A dry run manually traces an algorithm using sample values to understand its execution.
+
+**Q7. What is algorithm correctness?**
+
+Correctness means that the algorithm produces the results required by the problem for all inputs within its specified scope.
+
+**Q8. What is time complexity?**
+
+Time complexity describes how an algorithm's computational work grows with input size.
+
+**Q9. What is space complexity?**
+
+Space complexity describes how an algorithm's memory requirements grow with input size.
+
+**Q10. Why are edge cases important?**
+
+They can reveal errors at the boundaries or under unusual conditions that ordinary test inputs do not expose.
+
+**Q11. Can two algorithms solve the same problem?**
+
+Yes. Different algorithms may solve the same problem while differing in clarity, time requirements, or memory usage.
+
+**Q12. What is the purpose of input validation?**
+
+It checks whether supplied values meet the problem's requirements before the program proceeds.
+
+---
+
+## 27. How to Run the Python File
+
+From the repository root, run:
+
+```powershell
+python "PYTHON\Week-1-Programming-Fundamentals\02-Flowcharts-Algorithms\Algorithms-Basics\01_Algorithm_Basics\01_algorithm_basics.py"
 ```
 
-**Question 8:** Write an algorithm to calculate the square of a number.
+The menu provides three options:
 
-**Question 9:** Write pseudocode to calculate the total price of three items.
+1. Run the 12 algorithm examples.
+2. Run the 12 solved practice questions.
+3. View the 5 questions without answers.
 
-**Question 10:** Choose any one of the above questions and implement its algorithm in Python.
-
-### Challenge
-
-Choose a daily activity, such as preparing for college, and write a clear algorithm for it. Make sure each step is in a logical order and the procedure has a clear beginning and end.
+Select one item at a time. Enter `0` to return to the previous menu or exit from the main menu.
 
 ---
 
-## 19. Learning Checklist
+## ✅ Completion Checklist
 
 - [ ] Understand the definition of an algorithm.
-- [ ] Understand why algorithms are useful.
 - [ ] Identify input, processing, and output.
-- [ ] Write steps in a logical order.
-- [ ] Distinguish algorithms from programs.
-- [ ] Understand how algorithms differ from flowcharts.
-- [ ] Write basic pseudocode.
-- [ ] Convert an algorithm into Python code.
-- [ ] Test an algorithm with sample values.
-- [ ] Solve the practice questions.
+- [ ] Learn the characteristics of a good algorithm.
+- [ ] Distinguish an algorithm, pseudocode, a flowchart, and a program.
+- [ ] Practise designing algorithms before coding.
+- [ ] Perform dry runs.
+- [ ] Test normal and boundary cases.
+- [ ] Run all 12 examples.
+- [ ] Complete the 12 solved questions.
+- [ ] Attempt the 5 independent practice questions.
+- [ ] Understand the introductory complexity notes.
+- [ ] Answer the interview questions in your own words.
 
 ---
 
-## 20. What's Next?
+## 🚀 Learning Outcome
 
-Continue with the next subtopic:
+After completing this topic, you should be able to describe a problem as a sequence of logical steps, implement those steps in Python, test the result, and explain the reasoning behind the solution.
 
-**02 - Algorithm Steps**
-
-In that folder, practise writing algorithms in a structured sequence and learn how to express problem-solving steps clearly.
+These concepts form the foundation for the next topics in Algorithms Basics: algorithm steps, algorithm examples, characteristics, analysis, and practice.
 
 ---
 
-## Files in This Folder
+## 📌 Final Note
 
-| File | Purpose |
-|---|---|
-| `01_algorithm_basics.py` | Practical examples of basic algorithms |
-| `README.md` | Detailed concepts, examples, theory, interview questions, and practice |
+**First understand the problem, then design the algorithm, and only after that write the code.**
 
----
-
-## Conclusion
-
-Algorithms are a foundation of programming and problem-solving.
-
-Before writing code, understand the problem, identify the input and output, design clear steps, and test the result.
-
-Remember the main idea:
-
-**Problem → Algorithm → Implementation → Testing**
-
-Practising this approach will help you build a stronger foundation for Python programming and Data Structures and Algorithms.
+Clear reasoning and consistent practice will make more advanced algorithm and DSA problems easier to approach.
