@@ -1,64 +1,68 @@
-# Python DSA Placement Preparation
+# 🚀 Python DSA Placement Preparation
 
-### A Structured Journey of Programming, Python, OOP, Databases, DSA and Technical Interview Preparation
+### A Complete Journey of Programming, Python, OOP, Databases, DSA and Technical Interview Preparation
 
-Welcome to **Python DSA Placement Preparation**!
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3.x-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python 3.x" />
+  <img src="https://img.shields.io/badge/DSA-Problem%20Solving-orange?style=for-the-badge" alt="DSA Problem Solving" />
+  <img src="https://img.shields.io/badge/SQL-Database-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="SQL Database" />
+  <img src="https://img.shields.io/badge/DBMS-Fundamentals-success?style=for-the-badge" alt="DBMS Fundamentals" />
+  <img src="https://img.shields.io/badge/Placement-Preparation-red?style=for-the-badge" alt="Placement Preparation" />
+</p>
+
+<p align="center">
+  <b>A structured learning journey covering Programming, Python, OOP, AI, SQL, DBMS, DSA, Operating Systems and Computer Networks.</b>
+</p>
+
+Welcome to **Python DSA Placement Preparation!**
 
 This repository is a structured learning and coding project focused on building strong programming fundamentals, developing problem-solving skills, learning Data Structures and Algorithms, understanding databases and preparing for software development placement opportunities.
 
-The repository follows a step-by-step learning roadmap, starting from programming fundamentals and progressing towards Python, Object-Oriented Programming, SQL, DBMS, DSA, Operating Systems, Computer Networks and technical interview preparation.
+The goal is to progress from programming fundamentals to advanced computer science concepts through theory, practical implementations, coding exercises and continuous revision.
 
-Each section is organized to support conceptual learning, practical implementation, coding exercises and revision.
+> 📚 **Learn → 💻 Code → 🧠 Practice → 🐞 Debug → ⚡ Optimize → 🚀 Improve**
 
 ---
 
-## About the Project
+## 📌 About This Repository
 
-The main purpose of this repository is to create a complete and organized learning resource for programming and placement preparation.
+The main purpose of this project is to create a complete and organized learning resource for programming and placement preparation.
 
-It focuses on:
+This repository covers six major areas of learning:
 
 - Programming Fundamentals
 - Python Programming
-- Object-Oriented Programming
-- AI and Prompt Engineering
-- SQL and Database Management
-- Data Structures and Algorithms
-- Operating Systems
-- Computer Networks
-- Technical Assessments
-- Interview Preparation
+- Object-Oriented Programming and AI Productivity
+- SQL and Databases
+- Advanced SQL and DBMS
+- Data Structures, Algorithms and Core Computer Science
 
-This repository is intended to support consistent learning through theory, practical coding, problem-solving and revision.
+Each section follows a structured approach to learning concepts, writing programs, solving problems and understanding practical applications.
 
----
-
-## Project Objectives
-
-The primary objectives of this project are:
+### Project Objectives
 
 1. Build strong programming fundamentals.
-2. Develop problem-solving and logical-thinking abilities.
+2. Develop logical thinking and problem-solving abilities.
 3. Learn Python programming from beginner to advanced concepts.
 4. Understand Object-Oriented Programming principles.
 5. Learn SQL queries and database concepts.
 6. Understand Data Structures and Algorithms.
 7. Develop knowledge of Operating Systems and Computer Networks.
-8. Improve coding speed and accuracy.
+8. Improve coding speed, accuracy and code quality.
 9. Prepare for technical assessments and placement examinations.
 10. Build confidence for software development interviews.
 
 ---
 
-# Complete Learning Roadmap
+# 🗺️ Complete Learning Roadmap
 
-The repository is divided into six major learning sections.
+The repository is divided into six major learning sections. Each section builds upon concepts introduced in previous sections.
 
-## 01. Programming Fundamentals
+## 🟦 01. Programming Fundamentals
 
-**Folder:** `Programming-Fundamentals/`
+**Main Folder:** `Programming-Fundamentals/`
 
-This section builds the foundation required to understand programming and computational problem-solving.
+This section builds the foundation required to understand programming, computational thinking and problem-solving.
 
 ### Topics Covered
 
@@ -81,11 +85,11 @@ This section builds the foundation required to understand programming and comput
 
 ---
 
-## 02. Python Fundamentals
+## 🟩 02. Python Fundamentals
 
-**Folder:** `Python-Fundamentals/`
+**Main Folder:** `Python-Fundamentals/`
 
-This section focuses on learning Python programming through concepts, examples and practical exercises.
+This section focuses on learning Python programming through concepts, examples, practical exercises and problem-solving.
 
 ### Topics Covered
 
@@ -98,6 +102,36 @@ This section focuses on learning Python programming through concepts, examples a
 - String Manipulation
 - Python Practice Lab
 
+### Python Learning Flow
+
+```text
+Python Basics
+     |
+     v
+Variables and Data Types
+     |
+     v
+Operators and Conditions
+     |
+     v
+Loops
+     |
+     v
+Functions
+     |
+     v
+Lists, Tuples and Collections
+     |
+     v
+Dictionaries and Sets
+     |
+     v
+Strings and Manipulation
+     |
+     v
+Problem Solving
+```
+
 ### Learning Goals
 
 - Develop a strong understanding of Python syntax.
@@ -109,13 +143,15 @@ This section focuses on learning Python programming through concepts, examples a
 
 ---
 
-## 03. OOP, AI and Productivity
+## 🟨 03. OOP, AI and Productivity
 
-**Folder:** `OOP-AI-Productivity/`
+**Main Folder:** `OOP-AI-Productivity/`
 
 This section introduces Object-Oriented Programming and productivity concepts relevant to modern software development.
 
 ### Topics Covered
+
+**Object-Oriented Programming**
 
 - OOP Fundamentals
 - Classes and Objects
@@ -123,7 +159,14 @@ This section introduces Object-Oriented Programming and productivity concepts re
 - Inheritance
 - Polymorphism
 - Abstraction
+
+**AI and Productivity**
+
 - Prompt Engineering
+- AI-assisted Coding
+- AI for Research and Learning
+- AI for Problem Solving
+- AI Productivity Tools
 
 ### Learning Goals
 
@@ -136,11 +179,11 @@ This section introduces Object-Oriented Programming and productivity concepts re
 
 ---
 
-## 04. SQL and Databases
+## 🟧 04. SQL and Databases
 
-**Folder:** `SQL-Databases/`
+**Main Folder:** `SQL-Databases/`
 
-This section focuses on database fundamentals and SQL query development.
+This section focuses on relational database fundamentals and SQL query development.
 
 ### Topics Covered
 
@@ -162,24 +205,29 @@ This section focuses on database fundamentals and SQL query development.
 - Apply conditions and filtering.
 - Perform aggregate calculations.
 - Group and organize database records.
-- Practice SQL queries.
+- Write and practice SQL queries.
 
 ---
 
-## 05. Advanced SQL and DBMS
+## 🟥 05. Advanced SQL and DBMS
 
-**Folder:** `Advanced-SQL-DBMS/`
+**Main Folder:** `Advanced-SQL-DBMS/`
 
-This section covers advanced database queries and core Database Management System concepts.
+This section covers advanced database queries and important Database Management System concepts.
 
 ### Topics Covered
 
-- Joins
+**Advanced SQL**
+
+- SQL Joins
 - Advanced Joins
 - Subqueries
+
+**Database Management System**
+
 - DBMS Fundamentals
-- Keys
-- Relationships
+- Database Keys
+- Database Relationships
 - Normalization
 - Transactions
 - ACID Properties
@@ -197,13 +245,15 @@ This section covers advanced database queries and core Database Management Syste
 
 ---
 
-## 06. DSA, Operating Systems and Networks
+## 🟪 06. DSA, Operating Systems and Networks
 
-**Folder:** `DSA-OS-Networks/`
+**Main Folder:** `DSA-OS-Networks/`
 
 This section focuses on important computer science subjects and technical preparation required for software development placements.
 
 ### Topics Covered
+
+**Data Structures and Algorithms**
 
 - Arrays
 - Linked Lists
@@ -211,9 +261,27 @@ This section focuses on important computer science subjects and technical prepar
 - Queue
 - Sorting
 - Searching
-- Operating Systems
-- Computer Networks
-- Technical Assessment
+
+**Operating Systems**
+
+- Operating Systems Fundamentals
+- Process Management
+- Threads
+- Memory Management
+
+**Computer Networks**
+
+- Computer Networks Fundamentals
+- OSI Model
+- TCP/IP
+- HTTP and HTTPS
+- Networking Concepts
+
+**Technical Preparation**
+
+- Technical Assessments
+- Coding Questions
+- Core Computer Science Questions
 - Interview Preparation
 
 ### Learning Goals
@@ -229,7 +297,7 @@ This section focuses on important computer science subjects and technical prepar
 
 ---
 
-# Repository Structure
+## 📂 Repository Structure
 
 The project follows this main directory structure:
 
@@ -243,63 +311,66 @@ Python-DSA-Placement-Preparation/
 ├── SECURITY.md
 │
 ├── Programming-Fundamentals/
-│
 ├── Python-Fundamentals/
-│
 ├── OOP-AI-Productivity/
-│
 ├── SQL-Databases/
-│
 ├── Advanced-SQL-DBMS/
-│
 └── DSA-OS-Networks/
 ```
 
-Each major section maintains its own organized learning material and practical implementations.
+Each major section contains its own organized learning material, source code, exercises and documentation. The project maintains a consistent folder organization to make learning and revision easier.
 
 ---
 
-# Learning Methodology
+## 📖 Learning Methodology
 
 This repository follows a practical and structured learning methodology.
 
-### 1. Understand the Concept
+### 01. Understand the Concept
 
 Start by understanding the meaning, purpose and importance of each topic.
 
-### 2. Study the Theory
+### 02. Study the Theory
 
-Read the detailed documentation and understand the concepts before attempting implementation.
+Read the documentation, understand definitions and learn the important concepts before implementation.
 
-### 3. Explore Practical Examples
+### 03. Explore Practical Examples
 
 Study the code examples and understand how each concept works.
 
-### 4. Implement the Programs
+### 04. Implement the Programs
 
 Write and execute Python programs and SQL queries independently.
 
-### 5. Solve Practice Problems
+### 05. Solve Practice Problems
 
-Attempt programming exercises and problem-solving questions.
+Attempt solved and unsolved programming exercises. Focus on developing your own logic instead of memorizing solutions.
 
-### 6. Analyze Complexity
+### 06. Analyze Complexity
 
-Understand the time and space complexity of algorithms wherever applicable.
+Understand the time and auxiliary space complexity of algorithms wherever applicable.
 
-### 7. Revise Important Concepts
+### 07. Revise Important Concepts
 
-Use learning checklists, revision notes and interview questions to strengthen understanding.
+Use learning checklists, revision notes and interview questions to strengthen your understanding.
 
-### 8. Apply Your Knowledge
+### 08. Apply Your Knowledge
 
-Connect individual concepts and apply them to larger programming problems.
+Connect individual concepts and apply them to larger programming problems and practical applications.
 
 ---
 
-# Technologies and Tools
+## 💻 Technologies and Tools
 
 The following technologies and tools are part of this learning journey.
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
+  <img src="https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="SQL" />
+  <img src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white" alt="Git" />
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  <img src="https://img.shields.io/badge/VS_Code-007ACC?style=for-the-badge&logo=visualstudiocode&logoColor=white" alt="Visual Studio Code" />
+</p>
 
 | Technology / Tool | Purpose |
 |---|---|
@@ -307,16 +378,151 @@ The following technologies and tools are part of this learning journey.
 | SQL | Database querying |
 | DBMS | Database concepts and management |
 | Git | Version control |
-| GitHub | Repository hosting |
-| Markdown | Documentation |
+| GitHub | Repository hosting and collaboration |
+| Markdown | Notes and documentation |
 | Visual Studio Code | Code editing and development |
 | AI Tools | Learning and productivity |
 
 ---
 
-# Coding and Documentation Standards
+## ⏱️ Time and Space Complexity
 
-To maintain consistency throughout the repository, the following standards will be followed.
+Understanding algorithm complexity is an important part of this preparation.
+
+### Time Complexity
+
+Time complexity describes how the running time of an algorithm grows as the input size increases.
+
+### Auxiliary Space Complexity
+
+Auxiliary space complexity describes the additional memory an algorithm uses, excluding the original input. The exact analysis depends on the implementation.
+
+### Common Complexity Classes
+
+| Complexity | Name | Example |
+|---|---|---|
+| O(1) | Constant | List/array index access |
+| O(log n) | Logarithmic | Binary Search |
+| O(n) | Linear | Linear Search |
+| O(n log n) | Linearithmic | Merge Sort |
+| O(n²) | Quadratic | Basic Bubble Sort |
+| O(2ⁿ) | Exponential | Naive recursive Fibonacci (upper-bound description) |
+
+### Example: Linear Search
+
+```python
+def linear_search(arr, target):
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i
+
+    return -1
+```
+
+**Complexity Analysis**
+
+```text
+Best Case       : O(1)
+Average Case    : O(n)
+Worst Case      : O(n)
+Auxiliary Space : O(1)
+```
+
+The goal is not just to write code but also to understand how efficiently it solves a problem.
+
+---
+
+## 🎯 Placement Preparation Strategy
+
+This repository is designed to develop skills needed for technical assessments and software development roles.
+
+### Programming Skills
+
+- Programming Logic
+- Python Programming
+- Functions and Recursion
+- Problem Solving
+- Code Debugging
+- Code Optimization
+
+### Database Skills
+
+- SQL Queries
+- Joins and Subqueries
+- DBMS Fundamentals
+- Database Normalization
+- Transactions and ACID Properties
+
+### Core Computer Science
+
+- Data Structures and Algorithms
+- Object-Oriented Programming
+- Operating Systems
+- Computer Networks
+- Database Management Systems
+
+### Technical Preparation
+
+- Coding Assessments
+- Technical Questions
+- Algorithm Analysis
+- Interview Problem Solving
+- Core Computer Science Revision
+
+### Placement Preparation Focus
+
+The concepts covered in this repository are relevant to technical assessments and software development opportunities at organizations such as:
+
+- TCS
+- Infosys
+- Accenture
+- Wipro
+- Capgemini
+- Cognizant
+- Tech Mahindra
+- Other technology companies and software development teams
+
+The preparation focuses on building transferable programming and computer science skills rather than targeting only one company.
+
+---
+
+## 🛠️ How to Get Started
+
+Follow these steps to access the repository and run the programs.
+
+### 01. Clone the Repository
+
+```bash
+git clone https://github.com/as-amaan-109/DSA-Python.git Python-DSA-Placement-Preparation
+```
+
+### 02. Navigate to the Project
+
+```bash
+cd Python-DSA-Placement-Preparation
+```
+
+### 03. Check Python Installation
+
+```bash
+python --version
+```
+
+### 04. Run a Python Program
+
+For example, to run the recursion lesson from the Python Fundamentals section:
+
+```bash
+python Python-Fundamentals/02-Functions/09-Recursion/09_recursion.py
+```
+
+Use the path of the specific Python file you want to execute. The command assumes the topic folders follow the repository structure.
+
+---
+
+## 🧑‍💻 Coding and Documentation Standards
+
+To maintain consistency throughout the repository, the following standards are followed.
 
 ### Python Coding Standards
 
@@ -335,7 +541,7 @@ To maintain consistency throughout the repository, the following standards will 
 - Write readable SQL queries.
 - Maintain consistent query formatting.
 - Use appropriate filtering conditions.
-- Understand the purpose of each query.
+- Understand the purpose of every query.
 - Avoid unnecessary query complexity.
 
 ### Documentation Standards
@@ -350,60 +556,7 @@ To maintain consistency throughout the repository, the following standards will 
 
 ---
 
-# Placement Preparation Strategy
-
-This repository is designed to develop skills required for technical placement preparation.
-
-### Programming Skills
-
-- Programming logic
-- Python programming
-- Functions and recursion
-- Problem solving
-- Code debugging
-
-### Database Skills
-
-- SQL queries
-- Joins and subqueries
-- DBMS fundamentals
-- Database normalization
-- Transactions and ACID properties
-
-### Computer Science Fundamentals
-
-- Data Structures and Algorithms
-- Operating Systems
-- Computer Networks
-- Object-Oriented Programming
-
-### Technical Preparation
-
-- Coding assessments
-- Technical questions
-- Algorithm analysis
-- Interview problem solving
-- Core computer science revision
-
----
-
-# How to Use This Repository
-
-Follow the learning roadmap in the order provided.
-
-1. Start with Programming Fundamentals.
-2. Continue with Python Fundamentals.
-3. Study Object-Oriented Programming and AI Productivity.
-4. Learn SQL and Databases.
-5. Continue with Advanced SQL and DBMS.
-6. Study DSA, Operating Systems and Computer Networks.
-7. Practice technical assessments and interview questions.
-
-It is recommended to understand each section before moving to the next.
-
----
-
-# Contribution Guidelines
+## 🤝 Contributions
 
 Suggestions, improvements and contributions are welcome.
 
@@ -413,28 +566,58 @@ Before contributing, please review the following repository documents:
 - [Contributing Guidelines](CONTRIBUTING.md)
 - [Security Policy](SECURITY.md)
 
-Make sure that any submitted code is readable, properly organized and documented.
+Contributors are encouraged to submit useful improvements, accurate implementations, documentation updates and learning resources.
+
+Please ensure that submitted code is readable, relevant, properly organized and documented.
 
 ---
 
-# License
+## 📜 License
 
-This project is licensed under the MIT License.
+This project is licensed under the **MIT License**.
 
-You can review the complete terms in the [LICENSE](LICENSE) file.
+You are permitted to use, copy, modify and distribute the project in accordance with the license terms.
 
----
-
-# Important Note
-
-This repository is a structured learning and placement-preparation project.
-
-Its purpose is not simply to collect code, but to develop a strong understanding of programming concepts, improve logical thinking, practice problem solving and build the technical foundation needed for software development careers.
-
-The documentation and learning material will be maintained in an organized and consistent manner as the project develops.
+See the [LICENSE](LICENSE) file for complete details.
 
 ---
 
-## Learn. Practice. Build. Improve.
+## 👨‍💻 Author
 
-**Happy Coding!**
+### Amaan Syed
+
+**B.Tech CSE 2026 Batch | Full Stack Developer | MERN Stack Developer | Java Developer**
+
+### Areas of Interest
+
+- Software Development
+- Full Stack Development
+- Python Programming
+- Data Structures and Algorithms
+- Artificial Intelligence
+- Backend Development
+- Problem Solving
+
+**GitHub Repository:** [Python DSA Placement Preparation](https://github.com/as-amaan-109/DSA-Python)
+
+---
+
+## ⭐ Support
+
+If you find this repository useful for learning programming, practicing coding or preparing for technical placements, consider giving it a ⭐ on GitHub.
+
+Your support and suggestions are appreciated!
+
+---
+
+## 🚀 Keep Learning. Keep Growing.
+
+**Python • DSA • Core CS • Placement Preparation**
+
+Learn with curiosity. Practice with consistency. Build with confidence.
+
+**Made with dedication by Amaan Syed**
+
+⭐ If you find this repository useful, don't forget to give it a star!
+
+---
